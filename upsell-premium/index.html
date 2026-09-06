@@ -205,15 +205,15 @@
                     </div>
                 </div>
 
-                <a href="#checkout" class="cta-gold-btn">
+                <button type="button" onclick="acceptUpsell('https://checkout.kashpay.com.br/u/a04337c6a1df09f5')" class="cta-gold-btn" style="border: none; cursor: pointer;">
                     RESGATAR MEU BÔNUS AGORA
-                </a>
+                </button>
                 <p class="cta-subtext">Clique no botão acima para adicionar ao seu acesso</p>
 
             </div>
 
             <div class="decline-box">
-                <a href="../obrigado.html" class="decline-link">
+                <a href="../obrigado.html" onclick="if(typeof declineUpsell === 'function') declineUpsell('https://checkout.kashpay.com.br/u/a04337c6a1df09f5');" class="decline-link">
                     Não, obrigado. Prefiro continuar apenas com meu acesso atual.
                 </a>
             </div>
