@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Processando Seu Pedido – Protocolo Redenção</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="../css/membros.css">
+  <link rel="stylesheet" href="../css/upsell.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: #070709;
+      color: #ffffff;
+      font-family: 'Outfit', 'Poppins', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 25px;
+    }
+
+    /* MAIN VSL CONTAINER - 850px MAX WIDTH MATCHING FRONT VSL */
+    .vsl-container {
+      width: 100%;
+      max-width: 850px;
+      padding: 20px 15px 60px;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    .vsl-welcome-msg {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #ffe259;
+      line-height: 1.45;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(13, 14, 18, 0.95) 100%);
+      border: 1px solid var(--gold-border);
+      padding: 18px 24px;
+      border-radius: var(--radius-md);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 15px rgba(212, 175, 55, 0.15);
+    }
+
+    .vsl-sub-title {
+      font-size: 1rem;
+      line-height: 1.5;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 25px;
+      background: rgba(255, 0, 0, 0.12);
+      border: 1px dashed rgba(255, 77, 77, 0.6);
+      padding: 14px 20px;
+      border-radius: var(--radius-md);
+      box-shadow: 0 2px 15px rgba(255, 0, 0, 0.15);
+    }
+
+    .vsl-sub-title strong {
+      color: #ff4d4d;
+    }
+
+    /* VSL PLAYER BOX - EXACT SAME FIT AS FRONT VSL */
+    .vsl-player-box {
+      width: 100%;
+      max-width: 850px;
+      background: #0d0e12;
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.8), var(--gold-glow);
+      overflow: hidden;
+      margin: 0 auto 30px auto;
+      position: relative;
+    }
+
+    .vsl-player-inner {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+      height: 0;
+      overflow: hidden;
+    }
+
+    .vsl-player-inner iframe,
+    .vsl-player-inner vturb-smartplayer,
+    .vsl-player-inner video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* HIDDEN BY DEFAULT (DELAY OF 9 MINUTES = 540s) */
+    .esconder {
+      display: none !important;
+    }
+
+    @media (max-width: 768px) {
+      .vsl-welcome-msg {
+        font-size: 1rem;
+        padding: 14px 16px;
+      }
+      .vsl-sub-title {
+        font-size: 0.88rem;
+        padding: 10px 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SVG Gradient Definitions -->
+  <svg style="width:0;height:0;position:absolute;" aria-hidden="true" focusable="false">
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFE259"/>
+      <stop offset="50%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#FFA751"/>
+    </linearGradient>
+  </svg>
+
+  <!-- MAIN VSL CONTAINER -->
+  <main class="vsl-container">
+
+    <!-- WELCOME MESSAGE (ACIMA DO AVISO IMPORTANTE) -->
+    <div class="vsl-welcome-msg">
+      Que bom que você chegou até aqui! Estamos processando o seu pagamento e preparando o seu acesso à área de membros. É um prazer ter você conosco! Aproveite!
+    </div>
+
+    <!-- AVISO IMPORTANTE -->
+    <p class="vsl-sub-title">
+      <strong>Aviso Importante:</strong> Não feche ou atualize esta página. Para evitar que a transação seja recusada ou cancelada pelo sistema, assista ao vídeo curto abaixo enquanto preparamos o seu acesso.
+    </p>
+
+    <!-- VSL PLAYER CONTAINER (MESMO TAMANHO DO FRONT - 850px) -->
+    <div class="vsl-player-box">
+      <div class="vsl-player-inner">
+        <!-- VTurb / VSL Player Scripts -->
+        <vturb-smartplayer id="ab-6a39812fac6f357d9a020f98" style="display: block; margin: 0 auto; width: 100%;"></vturb-smartplayer>
+        <script type="text/javascript">
+          var s = document.createElement("script");
+          s.src = "https://scripts.converteai.net/bf087439-785c-419a-aebc-e76e6b8ec04f/ab-test/6a39812fac6f357d9a020f98/player.js";
+          s.async = true;
+          document.head.appendChild(s);
+        </script>
+      </div>
+    </div>
+
+    <!-- CALL TO ACTION - SINGLE "PRÓXIMO PASSO" BUTTON (DELAYED BY 9 MINUTES = 540s) -->
+    <div class="esconder" id="ctaContainer" style="max-width: 850px; margin: 0 auto;">
+      <a href="../toque-do-prazer/index.html" class="btn-accept-upsell" id="btnNextStep" style="font-size: 1.2rem; padding: 20px 30px;">
+        <span>✦</span> PRÓXIMO PASSO ➔
+      </a>
+    </div>
+
+  </main>
+
+  <!-- DELAY SCRIPT: 9 MINUTES = 540 SECONDS -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const delaySeconds = 540; // 9 minutos = 540 segundos
+      const ctaContainer = document.getElementById("ctaContainer");
+
+      if (!ctaContainer) return;
+
+      // 1. VTurb Event Listener Integration
+      const player = document.querySelector("vturb-smartplayer");
+      if (player) {
+        player.addEventListener("player:ready", function() {
+          if (typeof player.displayHiddenElements === "function") {
+            player.displayHiddenElements(delaySeconds, [".esconder"], { persist: true });
+          }
+        });
+        player.addEventListener("player:timeupdate", function(e) {
+          if (e && e.detail && e.detail.currentTime >= delaySeconds) {
+            ctaContainer.classList.remove("esconder");
+            ctaContainer.style.display = "block";
+          }
+        });
+      }
+
+      // 2. Timer Fallback (540.000 ms)
+      setTimeout(function() {
+        ctaContainer.classList.remove("esconder");
+        ctaContainer.style.display = "block";
+      }, delaySeconds * 1000);
+    });
+  </script>
+
+</body>
+</html>

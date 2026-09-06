@@ -1,0 +1,515 @@
+/* ==================================================
+   PÁGINA DE UPSELL PREMIUM — ESTILO FIXO & COMPACTO
+   Visual Dashboard Hotmart/Kiwify com Áudio Interativo
+   ================================================== */
+
+:root {
+    --bg-dark: #000000;
+    --card-bg: #0d0f12;
+    --card-border: #1e222b;
+    --gold-primary: #d4a017;
+    --gold-gradient: linear-gradient(135deg, #f7d070 0%, #c89b3c 100%);
+    --gold-glow: rgba(212, 160, 23, 0.35);
+    --text-white: #ffffff;
+    --text-muted: #9aa0b0;
+    --status-green: #10b981;
+    --status-orange: #f59e0b;
+    --font-heading: 'Montserrat', 'Inter', -apple-system, sans-serif;
+    --font-body: 'Inter', -apple-system, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    font-family: var(--font-body);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    padding-bottom: 60px;
+}
+
+.upsell-container {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ==================================================
+   HEADER / HERO
+   ================================================== */
+.upsell-hero {
+    padding: 40px 0 20px 0;
+    text-align: center;
+}
+
+.hero-top-announcement {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1.15;
+    color: var(--text-white);
+    letter-spacing: -0.5px;
+    max-width: 800px;
+    margin: 0 auto 16px auto;
+}
+
+.status-pill-container {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    background: #0a0c0f;
+    border: 1px solid #1c202a;
+    padding: 8px 24px;
+    border-radius: 50px;
+    margin-bottom: 32px;
+}
+
+.status-pill-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.status-confirmed { color: var(--status-green); }
+.status-processing { color: var(--status-orange); }
+.status-divider { color: #2e3440; font-size: 0.8rem; }
+
+.status-icon-check {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: rgba(16, 185, 129, 0.15);
+    border: 1px solid var(--status-green);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+}
+
+.status-pulse-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--status-orange);
+    box-shadow: 0 0 8px var(--status-orange);
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.4; transform: scale(0.9); }
+    50% { opacity: 1; transform: scale(1.1); }
+    100% { opacity: 0.4; transform: scale(0.9); }
+}
+
+.badge-gold-pill {
+    display: inline-block;
+    background: var(--gold-primary);
+    color: #000000;
+    font-family: var(--font-heading);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    padding: 5px 16px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.exclusive-bonus-text {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--gold-primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.hero-sub-title {
+    font-family: var(--font-heading);
+    font-size: 2.8rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #ffffff;
+    letter-spacing: -1px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.discover-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #ffffff;
+    color: #000000;
+    font-family: var(--font-heading);
+    font-size: 0.82rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 12px 28px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(255,255,255,0.15);
+}
+
+.discover-btn:hover {
+    transform: translateY(-2px);
+    background: #f0f0f0;
+}
+
+/* ==================================================
+   SHOWCASE SECTION (CARDS COM BOTÃO DE ÁUDIO)
+   ================================================== */
+.showcase-section {
+    padding: 40px 0 30px 0;
+}
+
+.showcase-headline {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.showcase-frame {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 18px;
+    padding: 24px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+}
+
+.showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.video-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+    background: #14171f;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    cursor: pointer;
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.video-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--gold-primary);
+    box-shadow: 0 8px 25px rgba(212, 160, 23, 0.25);
+}
+
+.video-card video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* BOTÃO DE SOM NO CANTO SUPERIOR DIREITO */
+.card-sound-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid var(--gold-primary);
+    color: var(--gold-primary);
+    border-radius: 50px;
+    padding: 6px 14px;
+    font-family: var(--font-heading);
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    z-index: 10;
+    backdrop-filter: blur(6px);
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+.card-sound-btn:hover {
+    background: var(--gold-primary);
+    color: #000000;
+    transform: scale(1.05);
+}
+
+.card-sound-btn svg {
+    width: 14px;
+    height: 14px;
+    fill: currentColor;
+}
+
+/* ESTADO QUANDO O ÁUDIO ESTÁ ATIVADO NO CARD */
+.video-card.sound-active {
+    border-color: var(--gold-primary);
+    box-shadow: 0 0 25px rgba(212, 160, 23, 0.4);
+}
+
+.video-card.sound-active .card-sound-btn {
+    background: var(--gold-primary);
+    color: #000000;
+    box-shadow: 0 0 15px rgba(212, 160, 23, 0.6);
+    animation: soundPulse 1.5s infinite;
+}
+
+@keyframes soundPulse {
+    0% { box-shadow: 0 0 0 0 rgba(212, 160, 23, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(212, 160, 23, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(212, 160, 23, 0); }
+}
+
+/* Badge indicativo de Play/Video no canto superior esquerdo */
+.card-play-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(212, 160, 23, 0.85);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 4;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+.card-play-badge svg {
+    width: 12px;
+    height: 12px;
+    fill: #000000;
+    margin-left: 2px;
+}
+
+.card-text-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 30px 14px 12px 14px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.6) 60%, transparent 100%);
+    z-index: 3;
+    pointer-events: none;
+}
+
+.card-title {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    margin-bottom: 2px;
+    line-height: 1.2;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+}
+
+.card-meta-text {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #9aa0b0;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+.showcase-footer-bar {
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #5a6072;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* ==================================================
+   SEÇÃO "SEU BÔNUS ESTÁ PRONTO"
+   ================================================== */
+.offer-section {
+    padding: 30px 0 50px 0;
+}
+
+.offer-headline-box {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.offer-main-title {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-bottom: 6px;
+    letter-spacing: -0.5px;
+}
+
+.offer-subtitle {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    max-width: 620px;
+    margin: 0 auto;
+}
+
+.bonus-offer-card {
+    background: #0b0d11;
+    border: 1px solid #1c202a;
+    border-radius: 20px;
+    padding: 40px 32px;
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.9);
+    position: relative;
+}
+
+.bonus-gift-icon-wrapper {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    background: rgba(212, 160, 23, 0.12);
+    border: 1px solid var(--gold-primary);
+    color: var(--gold-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    margin: 0 auto 16px auto;
+}
+
+.bonus-card-title {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.bonus-card-description {
+    font-size: 0.88rem;
+    color: #9aa0b0;
+    max-width: 520px;
+    margin: 0 auto 28px auto;
+    line-height: 1.5;
+}
+
+.bonus-checklist-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px 16px;
+    max-width: 540px;
+    margin: 0 auto 36px auto;
+    text-align: left;
+}
+
+.bonus-check-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.check-gold-icon {
+    color: var(--gold-primary);
+    font-weight: 900;
+    font-size: 1rem;
+}
+
+.cta-gold-btn {
+    display: block;
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    background: var(--gold-gradient);
+    color: #000000;
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 18px 24px;
+    border-radius: 12px;
+    text-decoration: none;
+    box-shadow: 0 6px 25px var(--gold-glow);
+    transition: all 0.25s ease;
+    letter-spacing: 0.5px;
+}
+
+.cta-gold-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 35px rgba(247, 208, 112, 0.5);
+    filter: brightness(1.05);
+}
+
+.cta-subtext {
+    font-size: 0.78rem;
+    color: #707585;
+    margin-top: 12px;
+}
+
+.decline-box {
+    margin-top: 28px;
+    text-align: center;
+}
+
+.decline-link {
+    color: #5a6072;
+    font-size: 0.8rem;
+    text-decoration: underline;
+    transition: color 0.2s ease;
+}
+
+.decline-link:hover {
+    color: #9aa0b0;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    .showcase-grid { grid-template-columns: 1fr; }
+    .hero-top-announcement { font-size: 1.5rem; }
+    .hero-sub-title { font-size: 1.8rem; }
+    .showcase-frame { padding: 16px; }
+    .bonus-checklist-grid { grid-template-columns: 1fr; }
+    .bonus-offer-card { padding: 28px 16px; }
+    .cta-gold-btn { font-size: 0.95rem; padding: 16px 18px; }
+}

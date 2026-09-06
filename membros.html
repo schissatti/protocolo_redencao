@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Área de Membros VIP – Protocolo Redenção</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="css/membros.css">
+</head>
+<body>
+
+  <!-- SVG Gradient Definitions -->
+  <svg style="width:0;height:0;position:absolute;" aria-hidden="true" focusable="false">
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFE259"/>
+      <stop offset="50%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#FFA751"/>
+    </linearGradient>
+  </svg>
+
+  <!-- HEADER NAVBAR -->
+  <header class="header-nav">
+    <a href="#" class="brand-container">
+      <svg class="brand-crown" viewBox="0 0 24 24">
+        <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/>
+      </svg>
+      <span class="brand-title">PROTOCOLO REDENÇÃO</span>
+      <span class="brand-badge">💎 PLATINUM VIP</span>
+    </a>
+
+    <!-- Live Search -->
+    <div class="search-wrapper">
+      <svg class="search-icon" fill="none" viewBox="0 0 24 24">
+        <circle cx="11" cy="11" r="8" stroke-width="2"/>
+        <line x1="21" y1="21" x2="16.65" y2="16.65" stroke-width="2"/>
+      </svg>
+      <input type="text" id="searchInput" class="search-input" placeholder="Pesquisar aula, módulo ou e-book...">
+    </div>
+
+    <!-- User Profile Progress -->
+    <div class="user-profile">
+      <div class="overall-progress-pill">
+        <span id="overallProgressTop">0%</span>
+      </div>
+      <div class="avatar-circle">AG</div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="main-wrapper">
+
+    <!-- HERO WELCOME BANNER -->
+    <section class="hero-banner">
+      <div class="hero-tag">✦ TREINAMENTO EXCLUSIVO VIP</div>
+      <h1 class="hero-title">Sua Jornada de Maestria &amp; Sedução</h1>
+      <button id="btnContinueHero" class="btn-hero">
+        <span>▶</span> Continuar de onde parei
+      </button>
+    </section>
+
+    <!-- GAMIFICATION LEVELING STEPPER -->
+    <section class="level-card">
+      <div class="level-header">
+        <div class="level-title-current">
+          ✦ NÍVEL ATUAL: <span id="rankTitle">Novato na Cama</span>
+        </div>
+        <div class="level-percentage" id="overallPercentageText">0%</div>
+      </div>
+      
+      <div class="level-next-info">
+        PRÓXIMO NÍVEL: <strong id="nextRankTitle">Seducador</strong> | <span id="missingPercentText">Faltam 20% para desbloquear</span>
+      </div>
+
+      <!-- Stepper Track -->
+      <div class="stepper-container">
+        <div class="stepper-bar-bg"></div>
+        <div class="stepper-bar-fill" id="stepperBarFill"></div>
+
+        <div class="step-node active" data-percent="0">
+          <div class="step-circle">✓</div>
+          <div class="step-label">Novato</div>
+          <div class="step-percent-tag">0%</div>
+        </div>
+
+        <div class="step-node" data-percent="20">
+          <div class="step-circle">2</div>
+          <div class="step-label">Seducador</div>
+          <div class="step-percent-tag">20%</div>
+        </div>
+
+        <div class="step-node" data-percent="40">
+          <div class="step-circle">3</div>
+          <div class="step-label">Conquistador</div>
+          <div class="step-percent-tag">40%</div>
+        </div>
+
+        <div class="step-node" data-percent="60">
+          <div class="step-circle">4</div>
+          <div class="step-label">Senhor</div>
+          <div class="step-percent-tag">60%</div>
+        </div>
+
+        <div class="step-node" data-percent="80">
+          <div class="step-circle">5</div>
+          <div class="step-label">Dominante</div>
+          <div class="step-percent-tag">80%</div>
+        </div>
+
+        <div class="step-node" data-percent="100">
+          <div class="step-circle">👑</div>
+          <div class="step-label">Mestre</div>
+          <div class="step-percent-tag">100%</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION TITLE & CATEGORY TABS -->
+    <div class="section-bar">
+      <h2 class="section-title">Módulos de Treinamento</h2>
+      <div class="category-tabs">
+        <button class="tab-btn active" data-category="all">Todos os Conteúdos</button>
+        <button class="tab-btn" data-category="principais">Cursos Principais</button>
+        <button class="tab-btn" data-category="ebooks">E-books &amp; PDFs</button>
+        <button class="tab-btn" data-category="resumos">Resumos &amp; Playlists</button>
+      </div>
+    </div>
+
+    <!-- 6 COURSES GRID CONTAINER -->
+    <div class="courses-grid" id="coursesGrid">
+      <!-- Dynamically rendered via js/membros.js -->
+    </div>
+
+  </main>
+
+  <!-- INTERACTIVE COURSE MODAL / PLAYER DRAWER -->
+  <div class="modal-overlay" id="courseModal">
+    <div class="modal-container">
+      
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <div class="modal-course-title">
+          <svg style="width:24px;height:24px;fill:url(#goldGradient);" viewBox="0 0 24 24">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+          <span id="modalCourseTitle">Nome do Treinamento</span>
+        </div>
+        <button class="btn-close-modal" id="closeModalBtn">✕</button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="modal-body">
+        
+        <!-- Player Stage (Left Column) -->
+        <div class="player-stage">
+          
+          <!-- HTML5 Video Player -->
+          <div class="video-container">
+            <video id="videoPlayer" controls controlsList="nodownload"></video>
+          </div>
+
+          <!-- PDF Embedded Viewer Box -->
+          <div class="pdf-viewer-box" id="pdfViewerBox" style="display: none; flex-direction: column; width: 100%; min-height: 480px; height: 520px;">
+            <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; margin-bottom: 12px;">
+              <h3 id="pdfTitle" style="color: #fff; font-size: 1rem; margin: 0; display: flex; align-items: center; gap: 8px;">
+                📄 <span id="pdfTitleText">Material em PDF</span>
+              </h3>
+              <a id="pdfDownloadBtn" href="#" target="_blank" class="btn-hero" style="font-size: 0.8rem; padding: 6px 16px;">
+                📥 Baixar PDF
+              </a>
+            </div>
+            <iframe id="pdfIframe" src="" style="width: 100%; height: 100%; border: 1px solid var(--gold-border); border-radius: var(--radius-sm); background: #111;" frameborder="0"></iframe>
+          </div>
+
+          <!-- Lesson Meta Bar -->
+          <div class="lesson-meta-bar">
+            <h3 class="lesson-active-title" id="lessonActiveTitle">Título da Aula</h3>
+            <button class="btn-complete-lesson" id="btnCompleteLesson">
+              ◯ Marcar como Concluída
+            </button>
+          </div>
+
+          <!-- Navigation Step Buttons -->
+          <div class="lesson-nav-buttons">
+            <button class="btn-nav-step" id="btnPrevLesson">
+              ◄ Aula Anterior
+            </button>
+            <button class="btn-nav-step" id="btnNextLesson">
+              Próxima Aula ►
+            </button>
+          </div>
+        </div>
+
+        <!-- Modules Accordion (Right Sidebar) -->
+        <div class="modules-sidebar">
+          <div class="sidebar-title-box">
+            <span>MÓDULOS E AULAS</span>
+            <span style="font-size: 0.75rem; font-weight: 600; color: var(--text-muted);">PLAYLIST</span>
+          </div>
+          <div class="accordion-list" id="accordionList">
+            <!-- Dynamically rendered via js/membros.js -->
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- LOCKED COURSE / UPSELL UNLOCK MODAL -->
+  <div class="modal-overlay" id="unlockModal">
+    <div class="modal-container" style="max-width: 520px; border: 1px solid var(--gold-primary); box-shadow: 0 0 40px rgba(212, 175, 55, 0.25);">
+      <div class="modal-header">
+        <div class="modal-course-title">
+          <svg style="width:22px;height:22px;fill:url(#goldGradient);" viewBox="0 0 24 24">
+            <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+          </svg>
+          <span>CONTEÚDO EXCLUSIVO VIP</span>
+        </div>
+        <button class="btn-close-modal" id="closeUnlockModalBtn">✕</button>
+      </div>
+      <div style="padding: 32px 28px; text-align: center; background: #0b0b0f;">
+        <div style="width: 68px; height: 68px; margin: 0 auto 18px; background: rgba(212,175,55,0.1); border: 2px solid var(--gold-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: var(--gold-glow);">
+          <svg style="width: 32px; height: 32px; fill: url(#goldGradient);" viewBox="0 0 24 24">
+            <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+          </svg>
+        </div>
+        <h3 id="unlockModalCourseName" style="color: #fff; font-size: 1.4rem; font-weight: 800; margin-bottom: 10px; background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+          Nome do Treinamento
+        </h3>
+        <p id="unlockModalDesc" style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.6; margin-bottom: 24px;">
+          Este módulo é um treinamento de nível avançado disponível como upgrade exclusivo no aplicativo.
+        </p>
+        <div style="background: rgba(20, 20, 28, 0.85); border: 1px solid var(--gold-border); border-radius: var(--radius-md); padding: 18px; margin-bottom: 24px;">
+          <div style="font-size: 0.78rem; color: var(--gold-primary); font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 6px;">
+            ✦ DESBLOQUEIO DE ACESSO
+          </div>
+          <div style="font-size: 1.05rem; color: #fff; font-weight: 700;">
+            Adquira o módulo completo e libere as videoaulas imediatamente!
+          </div>
+        </div>
+        <a id="unlockCheckoutBtn" href="#" class="btn-hero" style="width: 100%; justify-content: center; font-size: 0.95rem; padding: 14px 20px; box-shadow: 0 4px 25px rgba(212, 175, 55, 0.4);">
+          🔒 Desbloquear Treinamento Agora
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Scripts -->
+  <script src="js/courses-data.js"></script>
+  <script src="js/membros.js"></script>
+
+</body>
+</html>

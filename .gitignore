@@ -1,0 +1,9 @@
+node_modules/
+.DS_Store
+*.log
+.env
+
+# Pastas de Vídeos Pesados (já enviadas e armazenadas diretamente na VPS)
+Entregável/
+Takes cards/
+Vsl e vslupsell/

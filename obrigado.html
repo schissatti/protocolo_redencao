@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedido Confirmado – Protocolo Redenção</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/membros.css">
+  <link rel="stylesheet" href="css/upsell.css">
+</head>
+<body>
+
+  <!-- SVG Gradient Definitions -->
+  <svg style="width:0;height:0;position:absolute;" aria-hidden="true" focusable="false">
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFE259"/>
+      <stop offset="50%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#FFA751"/>
+    </linearGradient>
+  </svg>
+
+  <!-- HEADER NAVBAR -->
+  <header class="header-nav" style="justify-content: center;">
+    <a href="#" class="brand-container">
+      <svg class="brand-crown" viewBox="0 0 24 24">
+        <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/>
+      </svg>
+      <span class="brand-title">PROTOCOLO REDENÇÃO</span>
+      <span class="brand-badge">💎 COMPRA CONFIRMADA</span>
+    </a>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="upsell-wrapper">
+
+    <!-- CONFIRMATION NOTICE BANNER -->
+    <div class="upsell-notice-banner">
+      <div class="upsell-tag">✦ PEDIDO CONFIRMADO COM SUCESSO ✦</div>
+      <h1 class="upsell-headline">Parabéns! O Seu Acesso Está Sendo Preparado</h1>
+      <p class="upsell-subheadline">Sua compra foi processada com sucesso. Obrigado por confiar no Protocolo da Redenção.</p>
+    </div>
+
+    <!-- THANK YOU CARD CONTAINER -->
+    <div class="upsell-card" style="text-align: center; max-width: 680px; margin: 0 auto; padding: 40px 32px;">
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 24px;">
+        
+        <!-- Icon Badge -->
+        <div style="width: 72px; height: 72px; border-radius: 50%; background: var(--gold-gradient); display: flex; align-items: center; justify-content: center; box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);">
+          <svg viewBox="0 0 24 24" style="width: 40px; height: 40px; fill: #000;">
+            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+          </svg>
+        </div>
+
+        <h2 class="upsell-product-title" style="font-size: 2rem;">Compra Concluída com Sucesso!</h2>
+
+        <div class="upsell-product-desc" style="border-left: none; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--gold-border); text-align: center; font-size: 1.1rem; line-height: 1.6; padding: 24px; border-radius: 12px;">
+          Tudo foi preparado com a máxima discrição e segurança.<br><br>
+          ✉️ <strong>Em instantes você receberá um e-mail com a confirmação da sua compra e as instruções completas para acessar a sua Área de Membros.</strong><br><br>
+          <span style="font-size: 0.95rem; color: #a0a5b5;">Por favor, verifique também a sua caixa de entrada, aba de promoções e pasta de spam.</span>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+</body>
+</html>
