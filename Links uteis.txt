@@ -7,40 +7,22 @@ Substitua "seudominio.com" pelo seu domínio principal apontado na Hostinger.
 1. PÁGINAS PRINCIPAIS DE VENDAS E SLUGS
 --------------------------------------------------
 • Principal (Front):
-  https://seudominio.com/
-  https://seudominio.com/protocolo-redencao
+  https://brivanne.com/
+  https://brivanne.com/protocolo-redencao
 
 • VSL Upsell (Vídeo de Vendas):
-  https://seudominio.com/vsl-upsell
+  https://brivanne.com/vsl-upsell
 
 • Upsell Premium (Vitrine de Bônus):
-  https://seudominio.com/upsell-premium
-  https://seudominio.com/upsell
+  https://brivanne.com/upsell-premium
+  https://brivanne.com/upsell
 
 2. ÁREA DE MEMBROS E OBRIGADO
 --------------------------------------------------
 • Área de Membros VIP (Entregável):
-  https://seudominio.com/membros.html
+  https://brivanne.com/membros.html
 
 • Página de Obrigado (Confirmação):
-  https://seudominio.com/obrigado
+  https://brivanne.com/obrigado
 
-3. PÁGINAS INDIVIDUAIS DE BÔNUS
---------------------------------------------------
-• Posições Orgásticas:
-  https://seudominio.com/posicoes-orgasticas
 
-• Porta Secreta:
-  https://seudominio.com/porta-secreta
-
-• O Toque do Prazer:
-  https://seudominio.com/toque-do-prazer
-
-4. ACESSO DIRETO VIA IP DO VPS (HOSTINGER)
---------------------------------------------------
-• IP VPS: http://187.77.231.181/
-• Slug Protocolo Redenção: http://187.77.231.181/protocolo-redencao
-• Upsell Premium: http://187.77.231.181/upsell-premium
-• VSL Upsell: http://187.77.231.181/vsl-upsell
-• Membros: http://187.77.231.181/membros.html
-• Obrigado: http://187.77.231.181/obrigado
