@@ -76,13 +76,23 @@
                 VEJA UMA PRÉVIA DO QUE ESTÁ ESPERANDO POR VOCÊ
             </h2>
 
+            <!-- INDICADOR DE PROGRESSO GERAL DOS BÔNUS -->
+            <div class="overall-progress-container">
+                <div class="overall-progress-badge">
+                    <span class="overall-progress-text" id="overall-progress-text">0/4 BÔNUS SELECIONADOS</span>
+                </div>
+                <div class="overall-progress-bar-bg">
+                    <div class="overall-progress-bar-fill" id="overall-progress-bar-fill"></div>
+                </div>
+            </div>
+
             <!-- MOLDURA DO DASHBOARD (CARDS FRAME) -->
             <div class="showcase-frame">
                 
                 <div class="showcase-grid">
                     
                     <!-- CARD 1: BOCA MÁGICA -->
-                    <div class="video-card" onclick="handleCardClick(this, event)">
+                    <div class="video-card" data-bonus-id="1" data-state="available" onclick="handleCardClick(this, event)">
                         <video class="card-video" autoplay muted loop playsinline poster="../images/boca_magica_thumb.jpg">
                             <source src="../Takes cards/BOCA MAGICA TAKE.mp4" type="video/mp4">
                         </video>
@@ -97,11 +107,20 @@
                         <div class="card-text-overlay">
                             <div class="card-title">BOCA MÁGICA</div>
                             <div class="card-meta-text">2 MÓDULOS • 9 VIDEOAULAS</div>
+                            <div class="bonus-action-wrapper" onclick="selectBonus(1, event)">
+                                <div class="bonus-checkbox-row">
+                                    <span class="bonus-checkbox" id="bonus-check-1"></span>
+                                    <span class="bonus-checkbox-label" id="bonus-label-1">☐ ADICIONAR ESTE BÔNUS</span>
+                                </div>
+                                <div class="bonus-progress-track" id="bonus-track-1" style="display: none;">
+                                    <div class="bonus-progress-fill" id="bonus-fill-1"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
                     <!-- CARD 2: POSIÇÕES ORGÁSTICAS -->
-                    <div class="video-card" onclick="handleCardClick(this, event)">
+                    <div class="video-card" data-bonus-id="2" data-state="locked" onclick="handleCardClick(this, event)">
                         <video class="card-video" autoplay muted loop playsinline poster="../images/posicoes_orgasticas_thumb.jpg">
                             <source src="../Takes cards/POSIÇÕES ORGÁSTICAS TAKE.mp4" type="video/mp4">
                         </video>
@@ -116,11 +135,20 @@
                         <div class="card-text-overlay">
                             <div class="card-title">POSIÇÕES ORGÁSTICAS</div>
                             <div class="card-meta-text">3 MÓDULOS • 13 VIDEOAULAS</div>
+                            <div class="bonus-action-wrapper" onclick="selectBonus(2, event)">
+                                <div class="bonus-checkbox-row">
+                                    <span class="bonus-checkbox" id="bonus-check-2"></span>
+                                    <span class="bonus-checkbox-label" id="bonus-label-2">☐ ADICIONAR ESTE BÔNUS</span>
+                                </div>
+                                <div class="bonus-progress-track" id="bonus-track-2" style="display: none;">
+                                    <div class="bonus-progress-fill" id="bonus-fill-2"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
                     <!-- CARD 3: PORTA SECRETA -->
-                    <div class="video-card" onclick="handleCardClick(this, event)">
+                    <div class="video-card" data-bonus-id="3" data-state="locked" onclick="handleCardClick(this, event)">
                         <video class="card-video" autoplay muted loop playsinline poster="../images/porta_secreta_thumb.jpg">
                             <source src="../Takes cards/PORTA SECRETA TAKE.mp4" type="video/mp4">
                         </video>
@@ -135,11 +163,20 @@
                         <div class="card-text-overlay">
                             <div class="card-title">PORTA SECRETA</div>
                             <div class="card-meta-text">3 MÓDULOS • 7 VIDEOAULAS</div>
+                            <div class="bonus-action-wrapper" onclick="selectBonus(3, event)">
+                                <div class="bonus-checkbox-row">
+                                    <span class="bonus-checkbox" id="bonus-check-3"></span>
+                                    <span class="bonus-checkbox-label" id="bonus-label-3">☐ ADICIONAR ESTE BÔNUS</span>
+                                </div>
+                                <div class="bonus-progress-track" id="bonus-track-3" style="display: none;">
+                                    <div class="bonus-progress-fill" id="bonus-fill-3"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
                     <!-- CARD 4: O TOQUE DO PRAZER -->
-                    <div class="video-card" onclick="handleCardClick(this, event)">
+                    <div class="video-card" data-bonus-id="4" data-state="locked" onclick="handleCardClick(this, event)">
                         <video class="card-video" autoplay muted loop playsinline poster="../images/o_toque_do_prazer_thumb.jpg">
                             <source src="../Takes cards/O TOQUE DO PRAZER TAKE.mp4" type="video/mp4">
                         </video>
@@ -154,6 +191,15 @@
                         <div class="card-text-overlay">
                             <div class="card-title">O TOQUE DO PRAZER</div>
                             <div class="card-meta-text">5 MÓDULOS • 15 VIDEOAULAS</div>
+                            <div class="bonus-action-wrapper" onclick="selectBonus(4, event)">
+                                <div class="bonus-checkbox-row">
+                                    <span class="bonus-checkbox" id="bonus-check-4"></span>
+                                    <span class="bonus-checkbox-label" id="bonus-label-4">☐ ADICIONAR ESTE BÔNUS</span>
+                                </div>
+                                <div class="bonus-progress-track" id="bonus-track-4" style="display: none;">
+                                    <div class="bonus-progress-fill" id="bonus-fill-4"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -195,16 +241,16 @@
                 </p>
 
                 <div class="bonus-checklist-grid">
-                    <div class="bonus-check-item">
+                    <div class="bonus-check-item" data-checklist-id="1">
                         <span class="check-gold-icon">✓</span> Boca Mágica
                     </div>
-                    <div class="bonus-check-item">
+                    <div class="bonus-check-item" data-checklist-id="2">
                         <span class="check-gold-icon">✓</span> Posições Orgásticas
                     </div>
-                    <div class="bonus-check-item">
+                    <div class="bonus-check-item" data-checklist-id="3">
                         <span class="check-gold-icon">✓</span> Porta Secreta
                     </div>
-                    <div class="bonus-check-item">
+                    <div class="bonus-check-item" data-checklist-id="4">
                         <span class="check-gold-icon">✓</span> O Toque do Prazer
                     </div>
                 </div>
@@ -224,7 +270,7 @@
         </div>
     </section>
 
-    <!-- LÓGICA DE ÁUDIO E LOOP DE VÍDEO -->
+    <!-- LÓGICA DE ÁUDIO, LOOP DE VÍDEO E DESBLOQUEIO INTERATIVO -->
     <script>
         function toggleSound(btnElement, event) {
             if (event) event.stopPropagation();
@@ -232,7 +278,6 @@
             const video = card.querySelector('video');
             const isMuted = video.muted;
 
-            // Mutar todos os outros vídeos para tocar o som de apenas um por vez
             document.querySelectorAll('.video-card').forEach(c => {
                 const v = c.querySelector('video');
                 const btn = c.querySelector('.card-sound-btn');
@@ -263,13 +308,116 @@
         }
 
         function handleCardClick(cardElement, event) {
-            // Se o clique não foi no próprio botão de som, chama toggleSound
-            if (!event.target.closest('.card-sound-btn')) {
+            if (!event.target.closest('.card-sound-btn') && !event.target.closest('.bonus-action-wrapper')) {
                 const btn = cardElement.querySelector('.card-sound-btn');
                 if (btn) toggleSound(btn, event);
             }
         }
 
+        /* LÓGICA DE PROGRESSÃO E SELEÇÃO DOS BÔNUS */
+        let completedBonusesCount = 0;
+        const totalBonuses = 4;
+        const isProcessingBonus = {};
+
+        function selectBonus(bonusId, event) {
+            if (event) event.stopPropagation();
+
+            const card = document.querySelector(`.video-card[data-bonus-id="${bonusId}"]`);
+            if (!card) return;
+
+            const state = card.getAttribute('data-state');
+
+            if (state === 'locked') {
+                const activeCard = document.querySelector(`.video-card[data-state="available"]`);
+                if (activeCard) {
+                    activeCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    const wrapper = activeCard.querySelector('.bonus-action-wrapper');
+                    if (wrapper) {
+                        wrapper.style.transform = 'scale(1.04)';
+                        setTimeout(() => { wrapper.style.transform = ''; }, 300);
+                    }
+                }
+                return;
+            }
+
+            if (state !== 'available' || isProcessingBonus[bonusId]) return;
+
+            // Ativa o som do card automaticamente ao selecionar o bônus
+            const btnSound = card.querySelector('.card-sound-btn');
+            const video = card.querySelector('video');
+            if (video && video.muted && btnSound) {
+                toggleSound(btnSound, event);
+            }
+
+            isProcessingBonus[bonusId] = true;
+            card.setAttribute('data-state', 'processing');
+
+            const label = card.querySelector(`#bonus-label-${bonusId}`);
+            const track = card.querySelector(`#bonus-track-${bonusId}`);
+            const fill = card.querySelector(`#bonus-fill-${bonusId}`);
+            const check = card.querySelector(`#bonus-check-${bonusId}`);
+
+            if (track) track.style.display = 'block';
+
+            const duration = 10000; // 10 segundos
+            const intervalTime = 50;
+            let elapsed = 0;
+
+            const timer = setInterval(() => {
+                elapsed += intervalTime;
+                const pct = Math.min(100, Math.floor((elapsed / duration) * 100));
+
+                if (fill) fill.style.width = pct + '%';
+                if (label) label.innerText = `PREPARANDO BÔNUS... ${pct}%`;
+
+                if (elapsed >= duration) {
+                    clearInterval(timer);
+
+                    card.setAttribute('data-state', 'completed');
+                    if (check) check.innerHTML = '✓';
+
+                    if (bonusId < totalBonuses) {
+                        if (label) label.innerText = '✓ BÔNUS SELECIONADO';
+                    } else {
+                        if (label) label.innerText = '✓ TODOS OS BÔNUS SELECIONADOS';
+                    }
+
+                    // Revela o bônus ativado na lista da oferta
+                    const checkItem = document.querySelector(`.bonus-check-item[data-checklist-id="${bonusId}"]`);
+                    if (checkItem) {
+                        checkItem.classList.add('active');
+                    }
+
+                    completedBonusesCount++;
+                    updateOverallProgress();
+
+                    if (bonusId < totalBonuses) {
+                        const nextId = bonusId + 1;
+                        const nextCard = document.querySelector(`.video-card[data-bonus-id="${nextId}"]`);
+                        if (nextCard) {
+                            nextCard.setAttribute('data-state', 'available');
+                        }
+                    }
+
+                    isProcessingBonus[bonusId] = false;
+                }
+            }, intervalTime);
+        }
+
+        function updateOverallProgress() {
+            const badgeText = document.getElementById('overall-progress-text');
+            const fillBar = document.getElementById('overall-progress-bar-fill');
+            const badge = document.querySelector('.overall-progress-badge');
+
+            if (badgeText) badgeText.innerText = `${completedBonusesCount}/${totalBonuses} BÔNUS SELECIONADOS`;
+            if (fillBar) fillBar.style.width = `${(completedBonusesCount / totalBonuses) * 100}%`;
+
+            if (completedBonusesCount === totalBonuses) {
+                if (badge) badge.classList.add('all-completed');
+            }
+        }
+
+        /* INTERCEPTADOR DO BOTÃO DE COMPRA DO UPSELL */
         document.addEventListener('DOMContentLoaded', () => {
             const videos = document.querySelectorAll('.card-video');
             videos.forEach(video => {
@@ -277,6 +425,28 @@
                     console.log("Autoplay aguardando interação:", err);
                 });
             });
+
+            // Intercepta a chamada do acceptUpsell se tentar avançar sem selecionar os bônus
+            const nativeAcceptUpsell = window.acceptUpsell;
+            window.acceptUpsell = function(url) {
+                if (completedBonusesCount < totalBonuses) {
+                    const activeCard = document.querySelector(`.video-card[data-state="available"]`) || document.querySelector(`.video-card[data-state="processing"]`);
+                    if (activeCard) {
+                        activeCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        const wrapper = activeCard.querySelector('.bonus-action-wrapper');
+                        if (wrapper) {
+                            wrapper.style.transform = 'scale(1.06)';
+                            setTimeout(() => { wrapper.style.transform = ''; }, 400);
+                        }
+                    }
+                    return false;
+                }
+                if (typeof nativeAcceptUpsell === 'function') {
+                    nativeAcceptUpsell(url);
+                } else {
+                    window.location.href = url;
+                }
+            };
         });
     </script>
 
