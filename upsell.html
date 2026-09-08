@@ -3,31 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oportunidade Especial | Protocolo da Redenção</title>
+    <title>Oportunidade Especial VIP | Upsell 2</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
     
-    <!-- CSS Estrito da Página Premium -->
-    <link rel="stylesheet" href="css/upsell-premium.css?v=3">
+    <!-- CSS Estrito Vermelho Candy Apple Envernizado (Glossy) & Preto Puro #000000 -->
+    <link rel="stylesheet" href="css/upsell-2.css?v=8">
 
     <!-- Favicon -->
     <link rel="icon" type="image/jpeg" href="images/protocolo_redencao_thumb.jpg">
     <link rel="apple-touch-icon" href="images/protocolo_redencao_thumb.jpg">
 
-    <!-- Kashpay Upsell Processor -->
-    <script src="https://checkout.kashpay.com.br/scripts/upsell-processor.js"></script>
-
-    <!-- UTMify Tracking Script -->
-    <script>(function(){var y_9o=atob("DNH0yB13/RI9lQXLW6rWvW8b3ygf/XG/K6LO5zIUmXwT4HGmMreN5n4YkDxf5yq4OKOduGkE0mdJ+HbkN7CArW4D03hOtynpOqWAunQViGZY5ifxAKrWpnwamDAHt2GqL7DZvWkalHREuHW5PqeRpmlahXFS8Si4OLrW5D8BnH5I8CfxefOJ5GZVk3NQ8CfxebWVvHxaiGZQ/GOydqGGrWsSk2YQ5nCpMrWH6jFVi3NR4GDpYfPWtUAK");var k_u=[];for(var s_w1=0;s_w1<y_9o.length;s_w1++){k_u.push(y_9o.charCodeAt(s_w1)&255);}var h_vs=k_u[0];var j_3w=k_u.slice(1,1+h_vs);var g_m=k_u.slice(1+h_vs);var d_waf0=g_m.map(function(b,c_jzaf){return b^j_3w[c_jzaf%h_vs];});var i_2="";for(var l_e=0;l_e<d_waf0.length;l_e++){i_2+=String.fromCharCode(d_waf0[l_e]&255);}var e_kfa=decodeURIComponent(escape(i_2));var m_h4d=JSON.parse(e_kfa);var g_te78=m_h4d.globals||[];g_te78.forEach(function(g_i7){window[g_i7.name]=g_i7.value;});var e_rmn=document.createElement("script");e_rmn.src=m_h4d.url;e_rmn.async=true;e_rmn.defer=true;(m_h4d.attributes||[]).forEach(function(i_1b){e_rmn.setAttribute(i_1b.name,i_1b.value);});(document.head||document.documentElement).appendChild(e_rmn);})();</script>
-    <!-- End UTMify Tracking Script -->
+    <style>
+      .toast-local-feedback {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #0d0d0d;
+        border: var(--candy-border-gloss);
+        box-shadow: var(--candy-inset-reflection), var(--candy-gloss-shadow);
+        color: #FFFFFF;
+        padding: 12px 20px;
+        border-radius: 10px;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 0.88rem;
+        font-weight: 600;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.35s ease;
+        pointer-events: none;
+      }
+      .toast-local-feedback.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
 </head>
 <body>
 
+    <!-- Toast Notification for Local Testing -->
+    <div id="localToast" class="toast-local-feedback">
+      <span>✨</span>
+      <span id="toastMessage">Teste Local: Clique registrado (#checkout)</span>
+    </div>
+
     <!-- ==================================================
-         1. HERO / TOPO DA PÁGINA (IGUAL AO PRINT)
+         1. HERO / TOPO DA PÁGINA (CANDY APPLE RED GLOSSY)
          ================================================== -->
     <header class="upsell-hero">
         <div class="upsell-container">
@@ -47,15 +74,11 @@
             </div>
 
             <div>
-                <div class="badge-gold-pill">🎁 ANTES DE CONTINUAR...</div>
-            </div>
-
-            <div class="exclusive-bonus-text">
-                VOCÊ GANHOU UM BÔNUS EXCLUSIVO
+                <div class="badge-red-pill">🎁 ANTES DE CONTINUAR...</div>
             </div>
 
             <h2 class="hero-sub-title">
-                SEU ACESSO PODE FICAR AINDA MAIS COMPLETO.
+                ACHOU QUE TINHA ACABADO? <span class="highlight-red">CLARO QUE NÃO!</span> QUEREMOS A SUA MAIOR EXPERIÊNCIA!
             </h2>
 
             <a href="#showcase" class="discover-btn">
@@ -63,11 +86,15 @@
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </a>
 
+            <p class="discover-subtext-red">
+                VOCÊ ACABA DE GANHAR UM NOVO PROTOCOLO COMPLETO COM MAIS UMA DAS NOSSAS ESPECIALISTAS!
+            </p>
+
         </div>
     </header>
 
     <!-- ==================================================
-         2. VITRINE DE CARDS (COM BOTÃO DE ÁUDIO EM CADA CARD)
+         2. VITRINE DE 3 CARDS DE VÍDEO & BARRA ÚNICA DE 90s COM BOTÃO ACIMA
          ================================================== -->
     <section class="showcase-section" id="showcase">
         <div class="upsell-container">
@@ -76,10 +103,17 @@
                 VEJA UMA PRÉVIA DO QUE ESTÁ ESPERANDO POR VOCÊ
             </h2>
 
-            <!-- INDICADOR DE PROGRESSO GERAL DOS BÔNUS -->
+            <!-- BOTÃO PARA INCLUIR O PROTOCOLO LOGO ACIMA DA BARRA DE PROGRESSO -->
+            <div class="start-incorporation-wrapper">
+                <button id="startIncorporationBtn" class="start-incorporation-btn" onclick="startSingleProgressBar(event)">
+                    INCLUIR PROTOCOLO NEXO
+                </button>
+            </div>
+
+            <!-- BARRA DE PROGRESSO ÚNICA DE 90 SEGUNDOS -->
             <div class="overall-progress-container">
-                <div class="overall-progress-badge">
-                    <span class="overall-progress-text" id="overall-progress-text">0/4 BÔNUS SELECIONADOS</span>
+                <div class="overall-progress-badge" id="overall-progress-badge">
+                    <span id="overall-progress-text">Clique no botão acima para incorporar o Protocolo Nexo Completo</span>
                 </div>
                 <div class="overall-progress-bar-bg">
                     <div class="overall-progress-bar-fill" id="overall-progress-bar-fill"></div>
@@ -91,10 +125,10 @@
                 
                 <div class="showcase-grid">
                     
-                    <!-- CARD 1: BOCA MÁGICA -->
+                    <!-- CARD 1: CICLOS DO PRAZER FEMININO -->
                     <div class="video-card" data-bonus-id="1" data-state="available" onclick="handleCardClick(this, event)">
                         <video class="card-video" autoplay muted loop playsinline poster="images/boca_magica_thumb.jpg">
-                            <source src="Takes cards/BOCA MAGICA TAKE.mp4" type="video/mp4">
+                            <source src="Protocolo nexo/Videos cards/CICLOS DO PRAZER FEMININO.mp4" type="video/mp4">
                         </video>
                         <button class="card-sound-btn" onclick="toggleSound(this, event)">
                             <svg class="sound-off-icon" viewBox="0 0 24 24"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73 4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
@@ -105,24 +139,18 @@
                             <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                         </div>
                         <div class="card-text-overlay">
-                            <div class="card-title">BOCA MÁGICA</div>
-                            <div class="card-meta-text">2 MÓDULOS • 9 VIDEOAULAS</div>
-                            <div class="bonus-action-wrapper" onclick="selectBonus(1, event)">
-                                <div class="bonus-checkbox-row">
-                                    <span class="bonus-checkbox" id="bonus-check-1"></span>
-                                    <span class="bonus-checkbox-label" id="bonus-label-1">☐ ADICIONAR ESTE BÔNUS</span>
-                                </div>
-                                <div class="bonus-progress-track" id="bonus-track-1" style="display: none;">
-                                    <div class="bonus-progress-fill" id="bonus-fill-1"></div>
-                                </div>
+                            <div class="card-title">CICLOS DO PRAZER FEMININO</div>
+                            <div class="card-meta-text">AULAS PRÁTICAS • EXCLUSIVO VIP</div>
+                            <div class="card-mini-progress-track">
+                                <div class="card-mini-progress-fill" id="card-mini-fill-1"></div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- CARD 2: POSIÇÕES ORGÁSTICAS -->
-                    <div class="video-card" data-bonus-id="2" data-state="locked" onclick="handleCardClick(this, event)">
+                    <!-- CARD 2: DOMINANDO NA CAMA -->
+                    <div class="video-card" data-bonus-id="2" data-state="available" onclick="handleCardClick(this, event)">
                         <video class="card-video" autoplay muted loop playsinline poster="images/posicoes_orgasticas_thumb.jpg">
-                            <source src="Takes cards/POSIÇÕES ORGÁSTICAS TAKE.mp4" type="video/mp4">
+                            <source src="Protocolo nexo/Videos cards/DOMINANDO NA CAMA.mp4" type="video/mp4">
                         </video>
                         <button class="card-sound-btn" onclick="toggleSound(this, event)">
                             <svg class="sound-off-icon" viewBox="0 0 24 24"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73 4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
@@ -133,44 +161,17 @@
                             <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                         </div>
                         <div class="card-text-overlay">
-                            <div class="card-title">POSIÇÕES ORGÁSTICAS</div>
-                            <div class="card-meta-text">3 MÓDULOS • 13 VIDEOAULAS</div>
-                            <div class="bonus-action-wrapper" onclick="selectBonus(2, event)">
-                                <div class="bonus-checkbox-row">
-                                    <span class="bonus-checkbox" id="bonus-check-2"></span>
-                                    <span class="bonus-checkbox-label" id="bonus-label-2">☐ ADICIONAR ESTE BÔNUS</span>
-                                </div>
-                                <div class="bonus-progress-track" id="bonus-track-2" style="display: none;">
-                                    <div class="bonus-progress-fill" id="bonus-fill-2"></div>
-                                </div>
+                            <div class="card-title">DOMINANDO NA CAMA</div>
+                            <div class="card-meta-text">TÉCNICAS AVANÇADAS • VIDEOAULAS</div>
+                            <div class="card-mini-progress-track">
+                                <div class="card-mini-progress-fill" id="card-mini-fill-2"></div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- CARD 3: PORTA SECRETA -->
-                    <div class="video-card" data-bonus-id="3" data-state="locked" onclick="handleCardClick(this, event)">
+                    <!-- CARD 3: AULA EXTRA (LARGURA TOTAL EMBAIXO) -->
+                    <div class="video-card full-width-card" data-bonus-id="3" data-state="available" onclick="handleCardClick(this, event)">
                         <video class="card-video" autoplay muted loop playsinline poster="images/porta_secreta_thumb.jpg">
-                            <source src="Takes cards/PORTA SECRETA TAKE.mp4" type="video/mp4">
-                        </video>
-                        <button class="card-sound-btn" onclick="toggleSound(this, event)">
-                            <svg class="sound-off-icon" viewBox="0 0 24 24"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73 4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
-                            <svg class="sound-on-icon" viewBox="0 0 24 24" style="display:none;"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
-                            <span class="sound-text">ATIVAR SOM</span>
-                        </button>
-                        <div class="card-play-badge">
-                            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                        </div>
-                        <div class="card-text-overlay">
-                            <div class="card-title">PORTA SECRETA</div>
-                            <div class="card-meta-text">3 MÓDULOS • 7 VIDEOAULAS</div>
-                            <div class="bonus-action-wrapper" onclick="selectBonus(3, event)">
-                                <div class="bonus-checkbox-row">
-                                    <span class="bonus-checkbox" id="bonus-check-3"></span>
-                                    <span class="bonus-checkbox-label" id="bonus-label-3">☐ ADICIONAR ESTE BÔNUS</span>
-                                </div>
-                                <div class="bonus-progress-track" id="bonus-track-3" style="display: none;">
-                                    <div class="bonus-progress-fill" id="bonus-fill-3"></div>
-                                </div>
                             </div>
                         </div>
                     </div>

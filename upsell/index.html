@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oportunidade Especial VIP | Upsell 2</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- CSS Estrito Vermelho Candy Apple Envernizado (Glossy) & Preto Puro #000000 -->
+    <link rel="stylesheet" href="../css/upsell-2.css?v=8">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="../images/protocolo_redencao_thumb.jpg">
+    <link rel="apple-touch-icon" href="../images/protocolo_redencao_thumb.jpg">
+
+    <style>
+      .toast-local-feedback {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #0d0d0d;
+        border: var(--candy-border-gloss);
+        box-shadow: var(--candy-inset-reflection), var(--candy-gloss-shadow);
+        color: #FFFFFF;
+        padding: 12px 20px;
+        border-radius: 10px;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 0.88rem;
+        font-weight: 600;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.35s ease;
+        pointer-events: none;
+      }
+      .toast-local-feedback.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+</head>
+<body>
+
+    <!-- Toast Notification for Local Testing -->
+    <div id="localToast" class="toast-local-feedback">
+      <span>✨</span>
+      <span id="toastMessage">Teste Local: Clique registrado (#checkout)</span>
+    </div>
+
+    <!-- ==================================================
+         1. HERO / TOPO DA PÁGINA (CANDY APPLE RED GLOSSY)
+         ================================================== -->
+    <header class="upsell-hero">
+        <div class="upsell-container">
+            
+            <h1 class="hero-top-announcement">
+                PARABÉNS! SEU ACESSO JÁ ESTÁ SENDO PREPARADO.
+            </h1>
+
+            <div class="status-pill-container">
+                <span class="status-pill-item status-confirmed">
+                    <span class="status-icon-check">✓</span> PAGAMENTO CONFIRMADO
+                </span>
+                <span class="status-divider">|</span>
+                <span class="status-pill-item status-processing">
+                    <span class="status-pulse-dot"></span> PREPARANDO SEUS ACESSOS...
+                </span>
+            </div>
+
+            <div>
+                <div class="badge-red-pill">🎁 ANTES DE CONTINUAR...</div>
+            </div>
+
+            <h2 class="hero-sub-title">
+                ACHOU QUE TINHA ACABADO? <span class="highlight-red">CLARO QUE NÃO!</span> QUEREMOS A SUA MAIOR EXPERIÊNCIA!
+            </h2>
+
+            <a href="#showcase" class="discover-btn">
+                DESCOBRIR O QUE EU GANHEI
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </a>
+
+            <p class="discover-subtext-red">
+                VOCÊ ACABA DE GANHAR UM NOVO PROTOCOLO COMPLETO COM MAIS UMA DAS NOSSAS ESPECIALISTAS!
+            </p>
+
+        </div>
+    </header>
+
+    <!-- ==================================================
+         2. VITRINE DE 3 CARDS DE VÍDEO & BARRA ÚNICA DE 90s COM BOTÃO ACIMA
+         ================================================== -->
+    <section class="showcase-section" id="showcase">
+        <div class="upsell-container">
+            
+            <h2 class="showcase-headline">
+                VEJA UMA PRÉVIA DO QUE ESTÁ ESPERANDO POR VOCÊ
+            </h2>
+
+            <!-- BOTÃO PARA INCLUIR O PROTOCOLO LOGO ACIMA DA BARRA DE PROGRESSO -->
+            <div class="start-incorporation-wrapper">
+                <button id="startIncorporationBtn" class="start-incorporation-btn" onclick="startSingleProgressBar(event)">
+                    INCLUIR PROTOCOLO NEXO
+                </button>
+            </div>
+
+            <!-- BARRA DE PROGRESSO ÚNICA DE 90 SEGUNDOS -->
+            <div class="overall-progress-container">
+                <div class="overall-progress-badge" id="overall-progress-badge">
+                    <span id="overall-progress-text">Clique no botão acima para incorporar o Protocolo Nexo Completo</span>
+                </div>
+                <div class="overall-progress-bar-bg">
+                    <div class="overall-progress-bar-fill" id="overall-progress-bar-fill"></div>
+                </div>
+            </div>
+
+            <!-- MOLDURA DO DASHBOARD (CARDS FRAME) -->
+            <div class="showcase-frame">
+                
+                <div class="showcase-grid">
+                    
+                    <!-- CARD 1: CICLOS DO PRAZER FEMININO -->
+                    <div class="video-card" data-bonus-id="1" data-state="available" onclick="handleCardClick(this, event)">
+                        <video class="card-video" autoplay muted loop playsinline poster="../images/boca_magica_thumb.jpg">
+                            <source src="../Protocolo nexo/Videos cards/CICLOS DO PRAZER FEMININO.mp4" type="video/mp4">
+                        </video>
+                        <button class="card-sound-btn" onclick="toggleSound(this, event)">
+                            <svg class="sound-off-icon" viewBox="0 0 24 24"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73 4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
+                            <svg class="sound-on-icon" viewBox="0 0 24 24" style="display:none;"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+                            <span class="sound-text">ATIVAR SOM</span>
+                        </button>
+                        <div class="card-play-badge">
+                            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                        <div class="card-text-overlay">
+                            <div class="card-title">CICLOS DO PRAZER FEMININO</div>
+                            <div class="card-meta-text">AULAS PRÁTICAS • EXCLUSIVO VIP</div>
+                            <div class="card-mini-progress-track">
+                                <div class="card-mini-progress-fill" id="card-mini-fill-1"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CARD 2: DOMINANDO NA CAMA -->
+                    <div class="video-card" data-bonus-id="2" data-state="available" onclick="handleCardClick(this, event)">
+                        <video class="card-video" autoplay muted loop playsinline poster="../images/posicoes_orgasticas_thumb.jpg">
+                            <source src="../Protocolo nexo/Videos cards/DOMINANDO NA CAMA.mp4" type="video/mp4">
+                        </video>
+                        <button class="card-sound-btn" onclick="toggleSound(this, event)">
+                            <svg class="sound-off-icon" viewBox="0 0 24 24"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73 4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
+                            <svg class="sound-on-icon" viewBox="0 0 24 24" style="display:none;"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+                            <span class="sound-text">ATIVAR SOM</span>
+                        </button>
+                        <div class="card-play-badge">
+                            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                        <div class="card-text-overlay">
+                            <div class="card-title">DOMINANDO NA CAMA</div>
+                            <div class="card-meta-text">TÉCNICAS AVANÇADAS • VIDEOAULAS</div>
+                            <div class="card-mini-progress-track">
+                                <div class="card-mini-progress-fill" id="card-mini-fill-2"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CARD 3: AULA EXTRA (LARGURA TOTAL EMBAIXO) -->
+                    <div class="video-card full-width-card" data-bonus-id="3" data-state="available" onclick="handleCardClick(this, event)">
+                        <video class="card-video" autoplay muted loop playsinline poster="../images/porta_secreta_thumb.jpg">
+                            <source src="../Protocolo nexo/Videos cards/AULA EXTRA.mp4" type="video/mp4">
+                        </video>
+                        <button class="card-sound-btn" onclick="toggleSound(this, event)">
+                            <svg class="sound-off-icon" viewBox="0 0 24 24"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73 4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
+                            <svg class="sound-on-icon" viewBox="0 0 24 24" style="display:none;"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+                            <span class="sound-text">ATIVAR SOM</span>
+                        </button>
+                        <div class="card-play-badge">
+                            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                        <div class="card-text-overlay">
+                            <div class="card-title">AULA EXTRA EXCLUSIVA</div>
+                            <div class="card-meta-text">CONTEÚDO COMPLETO • ESPECIALISTA</div>
+                            <div class="card-mini-progress-track">
+                                <div class="card-mini-progress-fill" id="card-mini-fill-3"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="showcase-footer-bar">
+                    <span>||| ACESSO COMPLETO AO PROTOCOLO NEXO DA ESPECIALISTA</span>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==================================================
+         3. SEÇÃO DE OFERTA E DESBLOQUEIO
+         ================================================== -->
+    <section class="offer-section">
+        <div class="upsell-container">
+            
+            <div class="offer-headline-box">
+                <h2 class="offer-main-title">
+                    SEU PROTOCOLO NEXO ESTÁ PRONTO.
+                </h2>
+                <p class="offer-subtitle">
+                    Confirme abaixo para incorporar o Protocolo Nexo Completo na sua área de membros.
+                </p>
+            </div>
+
+            <div class="bonus-offer-card">
+                <div class="offer-card-badge">✨ ADICIONAR AO ACESSO</div>
+                
+                <h3 class="offer-product-name">
+                    PROTOCOLO NEXO COMPLETO
+                </h3>
+                <p class="offer-product-desc">
+                    Acesso imediato e vitalício ao novo protocolo com mais de 30 videoaulas exclusivas de intimidade e relacionamento.
+                </p>
+
+                <div class="price-box">
+                    <span class="price-old">De R$ 297,00</span>
+                    <div class="price-current">
+                        Por apenas <span class="price-highlight">12x de R$ 9,74</span>
+                    </div>
+                    <span class="price-cash">ou R$ 97,00 à vista</span>
+                </div>
+
+                <div class="cta-button-wrapper">
+                    <a href="#checkout" id="mainCtaBtn" class="cta-gold-btn" onclick="handleCheckoutClick(event)">
+                        <span class="cta-btn-text">INCORPORAR PROTOCOLO NEXO NA MINHA ÁREA DE MEMBROS</span>
+                        <span class="cta-btn-sub">ADICIONAR AO MEU PEDIDO EM 1 CLIQUE</span>
+                    </a>
+                </div>
+
+                <div class="decline-option">
+                    <a href="../obrigado.html" class="decline-link">
+                        Não quero incorporar este protocolo exclusivo agora
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Script de lógica local do Upsell 2 -->
+    <script src="../js/upsell-2-config.js"></script>
+    
+    <script>
+        let singleProgressInterval = null;
+        let isSingleProgressRunning = false;
+        let singleProgressPercent = 0;
+
+        function startSingleProgressBar(e) {
+            if (e) e.preventDefault();
+            if (isSingleProgressRunning) return;
+
+            isSingleProgressRunning = true;
+            const btn = document.getElementById('startIncorporationBtn');
+            if (btn) {
+                btn.disabled = true;
+                btn.innerText = 'INCORPORANDO...';
+                btn.style.opacity = '0.7';
+                btn.style.cursor = 'not-allowed';
+            }
+
+            const badgeText = document.getElementById('overall-progress-text');
+            const mainFill = document.getElementById('overall-progress-bar-fill');
+            const badge = document.getElementById('overall-progress-badge');
+            
+            const fill1 = document.getElementById('card-mini-fill-1');
+            const fill2 = document.getElementById('card-mini-fill-2');
+            const fill3 = document.getElementById('card-mini-fill-3');
+
+            if (badgeText) {
+                badgeText.innerText = 'Estamos incorporando o Protocolo Nexo Completo dentro da sua área de membros...';
+            }
+
+            const totalDurationSeconds = 90;
+            const stepMs = 500;
+            const totalSteps = (totalDurationSeconds * 1000) / stepMs;
+            const incrementPerStep = 100 / totalSteps;
+
+            singleProgressInterval = setInterval(() => {
+                singleProgressPercent += incrementPerStep;
+                if (singleProgressPercent > 100) singleProgressPercent = 100;
+
+                if (mainFill) mainFill.style.width = `${singleProgressPercent}%`;
+                if (fill1) fill1.style.width = `${singleProgressPercent}%`;
+                if (fill2) fill2.style.width = `${singleProgressPercent}%`;
+                if (fill3) fill3.style.width = `${singleProgressPercent}%`;
+
+                if (singleProgressPercent >= 100) {
+                    clearInterval(singleProgressInterval);
+                    if (badgeText) badgeText.innerText = '✓ PROTOCOLO NEXO INCORPORADO COM SUCESSO!';
+                    if (badge) badge.classList.add('all-completed');
+                    if (btn) {
+                        btn.innerText = '✓ PROTOCOLO INCORPORADO';
+                        btn.style.background = '#057932';
+                    }
+                }
+            }, stepMs);
+        }
+
+        function toggleSound(btn, e) {
+            if (e) e.stopPropagation();
+            const card = btn.closest('.video-card');
+            const video = card.querySelector('.card-video');
+            const offIcon = btn.querySelector('.sound-off-icon');
+            const onIcon = btn.querySelector('.sound-on-icon');
+            const textSpan = btn.querySelector('.sound-text');
+
+            if (video.muted) {
+                document.querySelectorAll('.card-video').forEach(v => {
+                    v.muted = true;
+                });
+                document.querySelectorAll('.card-sound-btn').forEach(b => {
+                    const off = b.querySelector('.sound-off-icon');
+                    const on = b.querySelector('.sound-on-icon');
+                    const txt = b.querySelector('.sound-text');
+                    if (off) off.style.display = 'block';
+                    if (on) on.style.display = 'none';
+                    if (txt) txt.innerText = 'ATIVAR SOM';
+                    b.classList.remove('active-sound');
+                });
+
+                video.muted = false;
+                if (offIcon) offIcon.style.display = 'none';
+                if (onIcon) onIcon.style.display = 'block';
+                if (textSpan) textSpan.innerText = 'SOM ATIVADO';
+                btn.classList.add('active-sound');
+            } else {
+                video.muted = true;
+                if (offIcon) offIcon.style.display = 'block';
+                if (onIcon) onIcon.style.display = 'none';
+                if (textSpan) textSpan.innerText = 'ATIVAR SOM';
+                btn.classList.remove('active-sound');
+            }
+        }
+
+        function handleCardClick(card, e) {
+            if (e && e.target.closest('.card-sound-btn')) return;
+            startSingleProgressBar(e);
+        }
+
+        function handleCheckoutClick(e) {
+            const toast = document.getElementById('localToast');
+            const toastMsg = document.getElementById('toastMessage');
+            if (toast && toastMsg) {
+                toastMsg.innerText = 'Sucesso! Direcionando para área de membros...';
+                toast.classList.add('show');
+                setTimeout(() => toast.classList.remove('show'), 4000);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const videos = document.querySelectorAll('.card-video');
+            videos.forEach(video => {
+                video.play().catch(err => {
+                    console.log("Autoplay aguardando interação:", err);
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
