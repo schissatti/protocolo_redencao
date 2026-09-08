@@ -22,7 +22,7 @@ const mime = {
 
 http.createServer((req, res) => {
   let reqUrl = req.url.split('?')[0];
-  if (reqUrl === '/') reqUrl = '/membros.html';
+  if (reqUrl === '/') reqUrl = '/selecao.html';
   
   let filePath = path.join(root, decodeURIComponent(reqUrl));
   if (!fs.existsSync(filePath)) {

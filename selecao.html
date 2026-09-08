@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal de Seleção - Área de Membros VIP</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="images/protocolo_redencao_thumb.jpg">
+
+  <style>
+    :root {
+      --bg-dark: #07070a;
+      --bg-card: rgba(18, 18, 26, 0.75);
+      --bg-card-hover: rgba(26, 26, 38, 0.9);
+      --gold-primary: #D4AF37;
+      --gold-light: #FFE259;
+      --gold-dark: #AA7C11;
+      --gold-gradient: linear-gradient(135deg, #FFE259 0%, #D4AF37 50%, #FFA751 100%);
+      --gold-gradient-hover: linear-gradient(135deg, #FFF099 0%, #E5C158 50%, #FFB870 100%);
+      --gold-border: rgba(212, 175, 55, 0.35);
+      --gold-border-bright: rgba(255, 226, 89, 0.75);
+      --gold-glow: 0 0 25px rgba(212, 175, 55, 0.25);
+      --gold-glow-strong: 0 0 45px rgba(255, 226, 89, 0.45);
+      --text-main: #FFFFFF;
+      --text-muted: #9A9AB0;
+      --radius-lg: 20px;
+      --radius-md: 12px;
+      --transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--bg-dark);
+      background-image: 
+        radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.12) 0%, transparent 60%),
+        radial-gradient(circle at 10% 90%, rgba(212, 175, 55, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 90% 90%, rgba(212, 175, 55, 0.05) 0%, transparent 40%);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 30px 20px 40px;
+      overflow-x: hidden;
+    }
+
+    /* SVG Gradient definitions */
+    .svg-defs {
+      position: absolute;
+      width: 0;
+      height: 0;
+      overflow: hidden;
+    }
+
+    /* Header Nav */
+    .portal-header {
+      width: 100%;
+      max-width: 1200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-bottom: 20px;
+    }
+
+    .brand-badge-top {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 20px;
+      background: rgba(212, 175, 55, 0.08);
+      border: 1px solid var(--gold-border);
+      border-radius: 50px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .brand-badge-top svg {
+      width: 20px;
+      height: 20px;
+      fill: url(#goldGrad);
+    }
+
+    .brand-badge-text {
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Main Container */
+    .portal-container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    /* Hero Titles */
+    .hero-tag {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--gold-primary);
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+
+    .hero-title {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      line-height: 1.15;
+      margin-bottom: 14px;
+      background: linear-gradient(180deg, #FFFFFF 0%, #D1D1E0 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+      color: var(--text-muted);
+      max-width: 620px;
+      margin: 0 auto 45px;
+      line-height: 1.6;
+      font-weight: 400;
+    }
+
+    /* Grid of Cards */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+      width: 100%;
+      margin-bottom: 30px;
+    }
+
+    @media (max-width: 868px) {
+      .cards-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+    }
+
+    /* Individual Card */
+    .member-card {
+      background: var(--bg-card);
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: space-between;
+      text-decoration: none;
+      color: var(--text-main);
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(16px);
+      transition: var(--transition);
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    }
+
+    .member-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--gold-gradient);
+      opacity: 0.6;
+      transition: var(--transition);
+    }
+
+    .member-card:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--gold-border-bright);
+      transform: translateY(-8px);
+      box-shadow: var(--gold-glow-strong), 0 20px 40px rgba(0, 0, 0, 0.8);
+    }
+
+    .member-card:hover::before {
+      opacity: 1;
+      height: 4px;
+    }
+
+    /* Card Media Header */
+    .card-media-wrapper {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      margin-bottom: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: #000;
+    }
+
+    .card-media-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .member-card:hover .card-media-img {
+      transform: scale(1.06);
+    }
+
+    .card-badge-tag {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: rgba(10, 10, 15, 0.85);
+      border: 1px solid var(--gold-primary);
+      color: var(--gold-light);
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      backdrop-filter: blur(8px);
+      box-shadow: var(--gold-glow);
+    }
+
+    /* Card Content */
+    .card-content-body {
+      text-align: left;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-title {
+      font-size: 1.6rem;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      margin-bottom: 10px;
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1.25;
+    }
+
+    .card-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 28px;
+      font-weight: 400;
+    }
+
+    /* Card Footer Button */
+    .card-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 16px 24px;
+      background: var(--gold-gradient);
+      color: #000000;
+      font-weight: 800;
+      font-size: 1rem;
+      border-radius: var(--radius-md);
+      border: none;
+      transition: var(--transition);
+      box-shadow: var(--gold-glow);
+      letter-spacing: 0.3px;
+    }
+
+    .member-card:hover .card-btn {
+      background: var(--gold-gradient-hover);
+      box-shadow: var(--gold-glow-strong);
+      transform: scale(1.02);
+    }
+
+    .btn-arrow {
+      font-size: 1.1rem;
+      transition: transform 0.3s ease;
+    }
+
+    .member-card:hover .btn-arrow {
+      transform: translateX(4px);
+    }
+
+    /* Red Luxury Card Theme for Protocolo Nexo */
+    #cardNexo {
+      border-color: rgba(220, 20, 60, 0.4);
+    }
+    #cardNexo::before {
+      background: linear-gradient(135deg, #ff3355 0%, #dc143c 50%, #800020 100%);
+    }
+    #cardNexo:hover {
+      border-color: rgba(255, 77, 109, 0.85);
+      box-shadow: 0 0 45px rgba(220, 20, 60, 0.5), 0 20px 40px rgba(0, 0, 0, 0.8);
+    }
+    #cardNexo .card-badge-tag {
+      border-color: #dc143c;
+      color: #ff8095;
+      box-shadow: 0 0 20px rgba(220, 20, 60, 0.4);
+    }
+    #cardNexo .card-title {
+      background: linear-gradient(135deg, #ff6b81 0%, #dc143c 50%, #ff3355 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    #cardNexo .card-btn {
+      background: linear-gradient(135deg, #ff3355 0%, #d90429 50%, #900c3f 100%);
+      color: #ffffff;
+      box-shadow: 0 0 25px rgba(220, 20, 60, 0.4);
+    }
+    #cardNexo:hover .card-btn {
+      background: linear-gradient(135deg, #ff4d6d 0%, #e6193c 50%, #a70c38 100%);
+      box-shadow: 0 0 35px rgba(220, 20, 60, 0.65);
+    }
+
+    /* Footer */
+    .portal-footer {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      opacity: 0.7;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SVG Definition -->
+  <svg class="svg-defs">
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFE259"/>
+      <stop offset="50%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#FFA751"/>
+    </linearGradient>
+  </svg>
+
+  <!-- Top Header -->
+  <header class="portal-header">
+    <div class="brand-badge-top">
+      <svg viewBox="0 0 24 24">
+        <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/>
+      </svg>
+      <span class="brand-badge-text">Portal Exclusivo VIP</span>
+    </div>
+  </header>
+
+  <!-- Main Section -->
+  <main class="portal-container">
+    <span class="hero-tag">✦ ACESSO RESTRITO A ALUNOS</span>
+    <h1 class="hero-title">Escolha sua área de membros</h1>
+    <p class="hero-subtitle">Selecione abaixo a área que você deseja acessar para visualizar suas aulas, módulos e treinamentos.</p>
+
+    <!-- Cards Grid -->
+    <div class="cards-grid">
+      
+      <!-- CARD 1: Protocolo Redenção -->
+      <a href="membros.html" class="member-card" id="cardRedencao">
+        <div class="card-media-wrapper">
+          <img src="images/protocolo_redencao_thumb.jpg" alt="Protocolo Redenção" class="card-media-img">
+          <span class="card-badge-tag">💎 PLATINUM VIP</span>
+        </div>
+        <div class="card-content-body">
+          <h2 class="card-title">Protocolo Redenção</h2>
+          <p class="card-desc">
+            Treinamento VIP completo de Maestria & Sedução. Acesse todas as videoaulas, módulos práticos, e-books e materiais exclusivos do seu portal.
+          </p>
+        </div>
+        <button class="card-btn">
+          <span>Acessar Protocolo Redenção</span>
+          <span class="btn-arrow">▶</span>
+        </button>
+      </a>
+
+      <!-- CARD 2: Protocolo Nexo -->
+      <a href="Protocolo nexo/area-membros-protocolonexo.html" class="member-card" id="cardNexo">
+        <div class="card-media-wrapper">
+          <img src="Protocolo nexo/images/protocolo_nexo_thumb.jpg" alt="Protocolo Nexo" class="card-media-img">
+          <span class="card-badge-tag">👑 VIP PLATINUM</span>
+        </div>
+        <div class="card-content-body">
+          <h2 class="card-title">Protocolo Nexo</h2>
+          <p class="card-desc">
+            Treinamento exclusivo de alta inteligência comportamental e atração avançada com roteiros estratégicos e módulos práticos.
+          </p>
+        </div>
+        <button class="card-btn">
+          <span>Acessar Protocolo Nexo</span>
+          <span class="btn-arrow">▶</span>
+        </button>
+      </a>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="portal-footer">
+    &copy; 2026 Portal de Membros VIP. Todos os direitos reservados.
+  </footer>
+
+</body>
+</html>
