@@ -339,7 +339,8 @@
 
         function handleCardClick(cardElement, event) {
             if (!event.target.closest('.card-sound-btn')) {
-                startSingleProgressBar(event);
+                const btn = cardElement.querySelector('.card-sound-btn');
+                if (btn) toggleSound(btn, event);
             }
         }
 
