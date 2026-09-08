@@ -13,6 +13,9 @@
     <!-- CSS Estrito Vermelho Candy Apple Envernizado (Glossy) & Preto Puro #000000 -->
     <link rel="stylesheet" href="../css/upsell-2.css?v=8">
 
+    <!-- Kashpay Upsell Processor -->
+    <script src="https://checkout.kashpay.com.br/scripts/upsell-processor.js"></script>
+
     <!-- Favicon -->
     <link rel="icon" type="image/jpeg" href="../images/protocolo_redencao_thumb.jpg">
     <link rel="apple-touch-icon" href="../images/protocolo_redencao_thumb.jpg">
@@ -218,149 +221,198 @@
             </div>
 
             <div class="bonus-offer-card">
-                <div class="offer-card-badge">✨ ADICIONAR AO ACESSO</div>
+                <div class="bonus-gift-icon-wrapper">🎁</div>
                 
-                <h3 class="offer-product-name">
-                    PROTOCOLO NEXO COMPLETO
-                </h3>
-                <p class="offer-product-desc">
-                    Acesso imediato e vitalício ao novo protocolo com mais de 30 videoaulas exclusivas de intimidade e relacionamento.
+                <h2 class="bonus-card-title">
+                    EXPANDA SUA EXPERIÊNCIA AGORA
+                </h2>
+                
+                <p class="bonus-card-description">
+                    Liberamos uma oportunidade única para você incorporar o Protocolo Nexo Completo com nossa especialista diretamente na sua área de membros.
                 </p>
 
-                <div class="price-box">
-                    <span class="price-old">De R$ 297,00</span>
-                    <div class="price-current">
-                        Por apenas <span class="price-highlight">12x de R$ 9,74</span>
+                <div class="bonus-checklist-grid">
+                    <div class="bonus-check-item" data-checklist-id="1">
+                        <span class="check-red-icon">✓</span> Ciclos do Prazer Feminino
                     </div>
-                    <span class="price-cash">ou R$ 97,00 à vista</span>
+                    <div class="bonus-check-item" data-checklist-id="2">
+                        <span class="check-red-icon">✓</span> Dominando na Cama
+                    </div>
+                    <div class="bonus-check-item" data-checklist-id="3">
+                        <span class="check-red-icon">✓</span> Aula Extra Exclusiva
+                    </div>
                 </div>
 
-                <div class="cta-button-wrapper">
-                    <a href="#checkout" id="mainCtaBtn" class="cta-gold-btn" onclick="handleCheckoutClick(event)">
-                        <span class="cta-btn-text">INCORPORAR PROTOCOLO NEXO NA MINHA ÁREA DE MEMBROS</span>
-                        <span class="cta-btn-sub">ADICIONAR AO MEU PEDIDO EM 1 CLIQUE</span>
-                    </a>
-                </div>
+                <button type="button" onclick="acceptUpsell('https://checkout.kashpay.com.br/u/25795321e014aeca')" class="cta-red-btn">
+                    SEGUIR PARA MINHA ÁREA DE MEMBROS
+                </button>
 
-                <div class="decline-option">
-                    <a href="../obrigado.html" class="decline-link">
-                        Não quero incorporar este protocolo exclusivo agora
-                    </a>
-                </div>
+            </div>
 
+            <div class="decline-box">
+                <a href="../obrigado.html" onclick="handleDeclineClick(event)" class="decline-link">
+                    Não quero incorporar este protocolo exclusivo agora
+                </a>
             </div>
 
         </div>
     </section>
 
-    <!-- Script de lógica local do Upsell 2 -->
-    <script src="../js/upsell-2-config.js"></script>
-    
+    <!-- LÓGICA DE INTERAÇÃO, SOM, BARRA ÚNICA DE 90s POR BOTAO E TESTE LOCAL -->
     <script>
-        let singleProgressInterval = null;
-        let isSingleProgressRunning = false;
-        let singleProgressPercent = 0;
+        // Local Toast Feedback
+        const toast = document.getElementById('localToast');
+        const toastMsg = document.getElementById('toastMessage');
+        let toastTimer = null;
 
-        function startSingleProgressBar(e) {
-            if (e) e.preventDefault();
-            if (isSingleProgressRunning) return;
-
-            isSingleProgressRunning = true;
-            const btn = document.getElementById('startIncorporationBtn');
-            if (btn) {
-                btn.disabled = true;
-                btn.innerText = 'INCORPORANDO...';
-                btn.style.opacity = '0.7';
-                btn.style.cursor = 'not-allowed';
-            }
-
-            const badgeText = document.getElementById('overall-progress-text');
-            const mainFill = document.getElementById('overall-progress-bar-fill');
-            const badge = document.getElementById('overall-progress-badge');
-            
-            const fill1 = document.getElementById('card-mini-fill-1');
-            const fill2 = document.getElementById('card-mini-fill-2');
-            const fill3 = document.getElementById('card-mini-fill-3');
-
-            if (badgeText) {
-                badgeText.innerText = 'Estamos incorporando o Protocolo Nexo Completo dentro da sua área de membros...';
-            }
-
-            const totalDurationSeconds = 90;
-            const stepMs = 500;
-            const totalSteps = (totalDurationSeconds * 1000) / stepMs;
-            const incrementPerStep = 100 / totalSteps;
-
-            singleProgressInterval = setInterval(() => {
-                singleProgressPercent += incrementPerStep;
-                if (singleProgressPercent > 100) singleProgressPercent = 100;
-
-                if (mainFill) mainFill.style.width = `${singleProgressPercent}%`;
-                if (fill1) fill1.style.width = `${singleProgressPercent}%`;
-                if (fill2) fill2.style.width = `${singleProgressPercent}%`;
-                if (fill3) fill3.style.width = `${singleProgressPercent}%`;
-
-                if (singleProgressPercent >= 100) {
-                    clearInterval(singleProgressInterval);
-                    if (badgeText) badgeText.innerText = '✓ PROTOCOLO NEXO INCORPORADO COM SUCESSO!';
-                    if (badge) badge.classList.add('all-completed');
-                    if (btn) {
-                        btn.innerText = '✓ PROTOCOLO INCORPORADO';
-                        btn.style.background = '#057932';
-                    }
-                }
-            }, stepMs);
-        }
-
-        function toggleSound(btn, e) {
-            if (e) e.stopPropagation();
-            const card = btn.closest('.video-card');
-            const video = card.querySelector('.card-video');
-            const offIcon = btn.querySelector('.sound-off-icon');
-            const onIcon = btn.querySelector('.sound-on-icon');
-            const textSpan = btn.querySelector('.sound-text');
-
-            if (video.muted) {
-                document.querySelectorAll('.card-video').forEach(v => {
-                    v.muted = true;
-                });
-                document.querySelectorAll('.card-sound-btn').forEach(b => {
-                    const off = b.querySelector('.sound-off-icon');
-                    const on = b.querySelector('.sound-on-icon');
-                    const txt = b.querySelector('.sound-text');
-                    if (off) off.style.display = 'block';
-                    if (on) on.style.display = 'none';
-                    if (txt) txt.innerText = 'ATIVAR SOM';
-                    b.classList.remove('active-sound');
-                });
-
-                video.muted = false;
-                if (offIcon) offIcon.style.display = 'none';
-                if (onIcon) onIcon.style.display = 'block';
-                if (textSpan) textSpan.innerText = 'SOM ATIVADO';
-                btn.classList.add('active-sound');
-            } else {
-                video.muted = true;
-                if (offIcon) offIcon.style.display = 'block';
-                if (onIcon) onIcon.style.display = 'none';
-                if (textSpan) textSpan.innerText = 'ATIVAR SOM';
-                btn.classList.remove('active-sound');
-            }
-        }
-
-        function handleCardClick(card, e) {
-            if (e && e.target.closest('.card-sound-btn')) return;
-            startSingleProgressBar(e);
+        function showToast(msg) {
+            if (!toast) return;
+            toastMsg.textContent = msg;
+            toast.classList.add('show');
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3200);
         }
 
         function handleCheckoutClick(e) {
-            const toast = document.getElementById('localToast');
-            const toastMsg = document.getElementById('toastMessage');
-            if (toast && toastMsg) {
-                toastMsg.innerText = 'Sucesso! Direcionando para área de membros...';
-                toast.classList.add('show');
-                setTimeout(() => toast.classList.remove('show'), 4000);
+            if (e) e.preventDefault();
+            if (!isProgressStarted) {
+                const progressBox = document.querySelector('.overall-progress-container');
+                if (progressBox) {
+                    progressBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+                showToast('Clique em "INCLUIR PROTOCOLO NEXO" para iniciar a incorporação!');
+                return false;
             }
+            if (!isProgressCompleted) {
+                const progressBox = document.querySelector('.overall-progress-container');
+                if (progressBox) {
+                    progressBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+                showToast('Estamos incorporando o Protocolo Nexo... Por favor aguarde (90s)!');
+                return false;
+            }
+            showToast('Redirecionando para área de membros... (#checkout)');
+        }
+
+        function handleDeclineClick(e) {
+            showToast('Redirecionando para a página de obrigado...');
+            return true;
+        }
+
+        function toggleSound(btnElement, event) {
+            if (event) event.stopPropagation();
+            const card = btnElement.closest('.video-card');
+            const video = card.querySelector('video');
+            const isMuted = video.muted;
+
+            document.querySelectorAll('.video-card').forEach(c => {
+                const v = c.querySelector('video');
+                const btn = c.querySelector('.card-sound-btn');
+                if (v && v !== video) {
+                    v.muted = true;
+                    c.classList.remove('sound-active');
+                    if (btn) {
+                        btn.querySelector('.sound-off-icon').style.display = 'block';
+                        btn.querySelector('.sound-on-icon').style.display = 'none';
+                        btn.querySelector('.sound-text').innerText = 'ATIVAR SOM';
+                    }
+                }
+            });
+
+            if (isMuted) {
+                video.muted = false;
+                card.classList.add('sound-active');
+                btnElement.querySelector('.sound-off-icon').style.display = 'none';
+                btnElement.querySelector('.sound-on-icon').style.display = 'block';
+                btnElement.querySelector('.sound-text').innerText = 'SOM ATIVADO';
+            } else {
+                video.muted = true;
+                card.classList.remove('sound-active');
+                btnElement.querySelector('.sound-off-icon').style.display = 'block';
+                btnElement.querySelector('.sound-on-icon').style.display = 'none';
+                btnElement.querySelector('.sound-text').innerText = 'ATIVAR SOM';
+            }
+        }
+
+        function handleCardClick(cardElement, event) {
+            if (!event.target.closest('.card-sound-btn')) {
+                startSingleProgressBar(event);
+            }
+        }
+
+        /* LÓGICA DA BARRA DE PROGRESSO ÚNICA DE 90 SEGUNDOS E 3 CARDS */
+        let isProgressStarted = false;
+        let isProgressCompleted = false;
+        const DURATION_MS = 90000; // 90 segundos exatamente
+
+        function startSingleProgressBar(event) {
+            if (event) event.stopPropagation();
+            if (isProgressStarted) return;
+
+            isProgressStarted = true;
+            
+            const startBtn = document.getElementById('startIncorporationBtn');
+            const badgeText = document.getElementById('overall-progress-text');
+            const fillBar = document.getElementById('overall-progress-bar-fill');
+            const badge = document.getElementById('overall-progress-badge');
+
+            if (startBtn) {
+                startBtn.classList.add('started');
+                startBtn.innerText = 'INCORPORANDO PROTOCOLO NEXO...';
+            }
+
+            document.querySelectorAll('.video-card').forEach(c => c.setAttribute('data-state', 'processing'));
+
+            const intervalTime = 100;
+            let elapsed = 0;
+
+            const timer = setInterval(() => {
+                elapsed += intervalTime;
+                const pct = Math.min(100, Math.floor((elapsed / DURATION_MS) * 100));
+
+                // Atualiza barra principal e mini-barras dos 3 cards
+                if (fillBar) fillBar.style.width = pct + '%';
+                for (let i = 1; i <= 3; i++) {
+                    const miniFill = document.getElementById(`card-mini-fill-${i}`);
+                    if (miniFill) miniFill.style.width = pct + '%';
+                }
+
+                if (badgeText) {
+                    badgeText.innerText = `Estamos incorporando o Protocolo Nexo Completo dentro da sua área de membros... ${pct}%`;
+                }
+
+                // Libera progressivamente os 3 itens do checklist
+                if (pct >= 33) revealCheckItem(1);
+                if (pct >= 66) revealCheckItem(2);
+                if (pct >= 90) revealCheckItem(3);
+
+                if (elapsed >= DURATION_MS) {
+                    clearInterval(timer);
+                    isProgressCompleted = true;
+
+                    if (badgeText) {
+                        badgeText.innerText = `✓ Protocolo Nexo Completo incorporado com sucesso!`;
+                    }
+                    if (badge) badge.classList.add('all-completed');
+
+                    if (startBtn) {
+                        startBtn.innerText = '✓ PROTOCOLO NEXO INCORPORADO';
+                    }
+
+                    document.querySelectorAll('.video-card').forEach((c) => {
+                        c.setAttribute('data-state', 'completed');
+                    });
+
+                    showToast('Protocolo Nexo incorporado com sucesso!');
+                }
+            }, intervalTime);
+        }
+
+        function revealCheckItem(id) {
+            const item = document.querySelector(`.bonus-check-item[data-checklist-id="${id}"]`);
+            if (item) item.classList.add('active');
         }
 
         document.addEventListener('DOMContentLoaded', () => {
