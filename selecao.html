@@ -336,10 +336,37 @@
 
     /* Footer */
     .portal-footer {
-      font-size: 0.82rem;
+      font-size: 0.85rem;
       color: var(--text-muted);
-      opacity: 0.7;
-      margin-top: 20px;
+      margin-top: 25px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      line-height: 1.5;
+    }
+
+    .portal-footer .support-info {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.04);
+      padding: 6px 16px;
+      border-radius: 50px;
+      border: 1px solid rgba(212, 175, 55, 0.15);
+      color: var(--text-muted);
+    }
+
+    .portal-footer .support-link {
+      color: var(--gold-light);
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .portal-footer .support-link:hover {
+      color: #ffffff;
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -414,7 +441,10 @@
 
   <!-- Footer -->
   <footer class="portal-footer">
-    &copy; 2026 Portal de Membros VIP. Todos os direitos reservados.
+    <div class="support-info">
+      ✉️ Suporte ao Aluno: <a href="mailto:helpbrivanne@hotmail.com" class="support-link">helpbrivanne@hotmail.com</a>
+    </div>
+    <div>&copy; 2026 Portal de Membros VIP. Todos os direitos reservados.</div>
   </footer>
 
 </body>
