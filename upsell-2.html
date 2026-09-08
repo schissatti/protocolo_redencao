@@ -1,686 +1,427 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Expansão Exclusiva - Amplie Seu Repertório VIP</title>
-  
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-  
-  <!-- CSS Premium -->
-  <link rel="stylesheet" href="css/upsell-2.css">
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/jpeg" href="images/protocolo_redencao_thumb.jpg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oportunidade Especial VIP | Upsell 2</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- CSS Estrito Vermelho Candy Apple Envernizado (Glossy) & Preto Puro #000000 -->
+    <link rel="stylesheet" href="css/upsell-2.css?v=8">
 
-  <style>
-    /* Toast feedback for offline button testing */
-    .toast-local-feedback {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      background: rgba(18, 18, 26, 0.95);
-      border: 1px solid var(--gold-border-bright);
-      color: #FFFFFF;
-      padding: 14px 22px;
-      border-radius: var(--radius-md);
-      box-shadow: var(--gold-glow-strong);
-      z-index: 9999;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.35s ease;
-      pointer-events: none;
-    }
-    .toast-local-feedback.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .toast-local-feedback .toast-icon {
-      font-size: 1.2rem;
-      color: var(--gold-light);
-    }
-  </style>
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="images/protocolo_redencao_thumb.jpg">
+    <link rel="apple-touch-icon" href="images/protocolo_redencao_thumb.jpg">
+
+    <style>
+      .toast-local-feedback {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #0d0d0d;
+        border: var(--candy-border-gloss);
+        box-shadow: var(--candy-inset-reflection), var(--candy-gloss-shadow);
+        color: #FFFFFF;
+        padding: 12px 20px;
+        border-radius: 10px;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 0.88rem;
+        font-weight: 600;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.35s ease;
+        pointer-events: none;
+      }
+      .toast-local-feedback.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
 </head>
 <body>
 
-  <!-- SVG Gradient Definitions -->
-  <svg class="svg-defs">
-    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#FFE259"/>
-      <stop offset="50%" stop-color="#D4AF37"/>
-      <stop offset="100%" stop-color="#FFA751"/>
-    </linearGradient>
-  </svg>
-
-  <!-- Toast Notification for Local Testing -->
-  <div id="localToast" class="toast-local-feedback">
-    <span class="toast-icon">✨</span>
-    <span id="toastMessage">Teste Local: Clique registrado (#checkout)</span>
-  </div>
-
-  <!-- MAIN CONTAINER -->
-  <main>
-
-    <!-- ==========================================================================
-         SEÇÃO 1 — ABERTURA / INTERRUPÇÃO
-         ========================================================================== -->
-    <section class="upsell-section section-hero">
-      <div class="upsell-container">
-        
-        <!-- Status Bar -->
-        <div class="hero-status-bar">
-          <div class="status-item confirmed">
-            <span>✓</span> PAGAMENTO CONFIRMADO
-          </div>
-          <span style="color: var(--text-muted);">|</span>
-          <div class="status-item processing">
-            <span class="pulse-dot"></span> PREPARANDO SEUS ACESSOS...
-          </div>
-        </div>
-
-        <div style="margin-bottom: 12px;">
-          <span class="badge-gold-pill" id="heroBadge">
-            <svg viewBox="0 0 24 24"><path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/></svg>
-            <span id="heroContextTag">Você já deu o primeiro passo...</span>
-          </span>
-        </div>
-
-        <h1 class="hero-main-title" id="heroHeadline">
-          O PROBLEMA NÃO É SABER O QUE FAZER.<br>
-          <span class="highlight-gold">É ACABAR FAZENDO SEMPRE AS MESMAS COISAS.</span>
-        </h1>
-
-        <p class="hero-sub-title" id="heroSubheadline">
-          Você já tem uma base sólida. Agora imagine ter muito mais possibilidades para variar e manter a intimidade do casal longe da rotina.
-        </p>
-
-        <!-- CTA Direct Access -->
-        <div>
-          <a href="#checkout" class="btn-cta-primary local-action-btn">
-            <span>QUERO AMPLIAR MEU REPERTÓRIO</span>
-            <span class="btn-arrow">▶</span>
-          </a>
-        </div>
-
-      </div>
-    </section>
-
-    <div class="upsell-section-divider"></div>
-
-    <!-- ==========================================================================
-         SEÇÃO 2 — RECONHECIMENTO DA DOR (4 CARDS)
-         ========================================================================== -->
-    <section class="upsell-section section-pain">
-      <div class="upsell-container">
-        
-        <span class="badge-gold-pill" id="painTag">✦ DINÂMICA DA INTIMIDADE</span>
-        <h2 class="section-headline" id="painTitle">Como o 'Automático' Acontece Naturalmente</h2>
-        <p class="section-subheadline" id="painSubtitle">
-          No começo tudo é descoberta. Mas com o tempo, é fácil voltar para o que você já conhece. E quando as possibilidades diminuem, a intimidade fica previsível.
-        </p>
-
-        <!-- Grid of 4 Pain Cards -->
-        <div class="pain-grid" id="painCardsGrid">
-          <!-- Populated dynamically via upsell-2-config.js -->
-        </div>
-
-        <p class="pain-flow-note" id="painNote">
-          Isso acontece naturalmente em qualquer relacionamento. A solução não é mudar quem você é, mas ampliar suas opções.
-        </p>
-
-      </div>
-    </section>
-
-    <div class="upsell-section-divider"></div>
-
-    <!-- ==========================================================================
-         SEÇÃO 3 — A NOVA OPORTUNIDADE (COMPARAÇÃO VISUAL)
-         ========================================================================== -->
-    <section class="upsell-section section-opportunity">
-      <div class="upsell-container">
-
-        <span class="badge-gold-pill" id="oppTag">✦ A LÓGICA DA VARIEDADE</span>
-        <h2 class="section-headline" id="oppTitle">Mais Repertório = Mais Variedade</h2>
-        <p class="section-subheadline" id="oppSubtitle">
-          O problema não é falta de interesse ou química. Muitas vezes é apenas falta de opções para alternar no dia a dia.
-        </p>
-
-        <div class="opportunity-flow-container">
-          
-          <!-- Step 1 -->
-          <div class="opportunity-box">
-            <span class="opportunity-box-tag">
-              <span>💎</span> <span id="oppStep1Tag">O QUE VOCÊ JÁ TEM</span>
-            </span>
-            <h3 class="opportunity-box-title" id="oppStep1Title">Uma Base de Técnicas e Conhecimentos</h3>
-            <p class="opportunity-box-desc" id="oppStep1Desc">
-              Você já adquiriu o aprendizado inicial e domina os fundamentos essenciais.
-            </p>
-          </div>
-
-          <div class="flow-arrow-down">↓</div>
-
-          <!-- Step 2 -->
-          <div class="opportunity-box">
-            <span class="opportunity-box-tag">
-              <span>✦</span> <span id="oppStep2Tag">O QUE VOCÊ PODE ADICIONAR</span>
-            </span>
-            <h3 class="opportunity-box-title" id="oppStep2Title">Um Repertório Maior de Possibilidades</h3>
-            <p class="opportunity-box-desc" id="oppStep2Desc">
-              Um catálogo completo de variações, abordagens e novidades para escolher a qualquer momento.
-            </p>
-          </div>
-
-          <div class="flow-arrow-down">↓</div>
-
-          <!-- Step 3 (Result) -->
-          <div class="opportunity-box result-box">
-            <span class="opportunity-box-tag">
-              <span>🏆</span> <span id="oppStep3Tag">O RESULTADO NA PRÁTICA</span>
-            </span>
-            <h3 class="opportunity-box-title" id="oppStep3Title">Liberdade para Nunca Depender da Mesma Opção</h3>
-            <p class="opportunity-box-desc" id="oppStep3Desc">
-              Uma experiência rica e espontânea, onde cada encontro traz uma energia renovada.
-            </p>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <div class="upsell-section-divider"></div>
-
-    <!-- ==========================================================================
-         SEÇÃO 4 — APRESENTAÇÃO DO UPSELL 2
-         ========================================================================== -->
-    <section class="upsell-section section-product-intro">
-      <div class="upsell-container">
-        
-        <div class="product-hero-card">
-          <span class="product-badge" id="productBadge">✦ CONTEÚDO EXCLUSIVO DE EXPANSÃO</span>
-          <h2 class="product-name-title" id="productName">REPERTÓRIO SUPREMO</h2>
-          <p class="product-name-sub" id="productSub">
-            Um conteúdo criado para ampliar seu repertório e trazer mais variedade para a intimidade do casal.
-          </p>
-
-          <a href="#checkout" class="btn-cta-primary local-action-btn" style="max-width:460px;">
-            <span>ADICIONAR AO MEU ACESSO</span>
-            <span class="btn-arrow">▶</span>
-          </a>
-        </div>
-
-      </div>
-    </section>
-
-    <div class="upsell-section-divider"></div>
-
-    <!-- ==========================================================================
-         SEÇÃO 5 — "O QUE VOCÊ VAI ENCONTRAR" (5 CARDS PREMIUM)
-         ========================================================================== -->
-    <section class="upsell-section section-contents">
-      <div class="upsell-container">
-
-        <span class="badge-gold-pill" id="contentsTag">✦ CONTEÚDO EXCLUSIVO</span>
-        <h2 class="section-headline" id="contentsTitle">O Que Você Vai Encontrar Neste Guia</h2>
-        <p class="section-subheadline" id="contentsSubtitle">
-          Estruturado em módulos práticos e objetivos para consulta rápida sempre que quiser surpreender.
-        </p>
-
-        <!-- Grid of 5 Cards -->
-        <div class="contents-grid" id="contentsGrid">
-          <!-- Populated dynamically via upsell-2-config.js -->
-        </div>
-
-      </div>
-    </section>
-
-    <div class="upsell-section-divider"></div>
-
-    <!-- ==========================================================================
-         SEÇÃO 6 — MECANISMO VISUAL (A CAIXA DE FERRAMENTAS)
-         ========================================================================== -->
-    <section class="upsell-section section-mechanism">
-      <div class="upsell-container">
-
-        <span class="badge-gold-pill" id="mechTag">✦ CONCEITO CENTRAL</span>
-        <h2 class="section-headline" id="mechTitle">A Metáfora da Caixa de Ferramentas</h2>
-        
-        <div class="mechanism-wrapper">
-          <div class="mechanism-comparison">
-            
-            <!-- Before -->
-            <div class="mechanism-col before">
-              <h3 class="mechanism-col-title" id="mechBeforeTitle">ANTES (BASE LIMITADA)</h3>
-              <ul class="mechanism-list" id="mechBeforeList">
-                <!-- Populated dynamically -->
-              </ul>
-            </div>
-
-            <!-- After -->
-            <div class="mechanism-col after">
-              <h3 class="mechanism-col-title" id="mechAfterTitle">DEPOIS (REPERTÓRIO COMPLETO)</h3>
-              <ul class="mechanism-list" id="mechAfterList">
-                <!-- Populated dynamically -->
-              </ul>
-            </div>
-
-          </div>
-
-          <!-- Highlighted Key Phrase Box -->
-          <div class="highlight-quote-box">
-            <p class="highlight-quote-text" id="mechQuote">
-              "Você não precisa substituir o que já aprendeu. Você simplesmente passa a ter mais opções."
-            </p>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <div class="upsell-section-divider"></div>
-
-    <!-- ==========================================================================
-         SEÇÃO 7 — QUEBRA DE OBJEÇÕES
-         ========================================================================== -->
-    <section class="upsell-section section-objections">
-      <div class="upsell-container">
-
-        <span class="badge-gold-pill" id="objTag">✦ ESCLARECIMENTOS</span>
-        <h2 class="section-headline" id="objTitle">Dúvidas Frequentes Sobre Esta Expansão</h2>
-
-        <div class="objections-grid" id="objectionsGrid">
-          <!-- Populated dynamically -->
-        </div>
-
-      </div>
-    </section>
-
-    <div class="upsell-section-divider"></div>
-
-    <!-- ==========================================================================
-         SEÇÃO 8 — VISUALIZAÇÃO DO BENEFÍCIO
-         ========================================================================== -->
-    <section class="upsell-section section-vision">
-      <div class="upsell-container">
-
-        <div class="vision-card">
-          <span class="badge-gold-pill" id="visionTag">✦ VISÃO PRÁTICA</span>
-          <h2 class="section-headline section-headline-gold" id="visionTitle">Imagine Não Precisar Depender das Mesmas Ideias...</h2>
-          
-          <ul class="vision-list" id="visionList">
-            <!-- Populated dynamically -->
-          </ul>
-        </div>
-
-      </div>
-    </section>
-
-    <div class="upsell-section-divider"></div>
-
-    <!-- ==========================================================================
-         SEÇÃO 9 — OFERTA PREMIUM
-         ========================================================================== -->
-    <section class="upsell-section section-offer" id="offerSection">
-      <div class="upsell-container">
-
-        <div class="offer-card">
-          <span class="offer-card-badge">OFERTA DE EXPANSÃO VIP</span>
-
-          <h2 class="section-headline" id="offerHeadline" style="font-size:clamp(1.8rem,4vw,2.5rem);">
-            VOCÊ JÁ TEM A BASE.<br>
-            <span class="section-headline-gold">AGORA PODE AMPLIAR SEU REPERTÓRIO.</span>
-          </h2>
-
-          <div class="offer-price-container">
-            <p class="price-regular" id="priceRegular">De R$ 197 por apenas:</p>
-            <p class="price-current" id="priceCurrent">R$ 97</p>
-            <p class="price-installments" id="installmentsText">ou 12x de R$ 9,74</p>
-          </div>
-
-          <!-- Benefits List -->
-          <ul class="offer-benefits-list" id="offerBenefitsList">
-            <!-- Populated dynamically -->
-          </ul>
-
-          <!-- Main CTA -->
-          <a href="#checkout" id="offerCtaBtn" class="btn-cta-primary local-action-btn">
-            <span id="offerCtaText">SIM, QUERO AMPLIAR MEU REPERTÓRIO</span>
-            <span class="btn-arrow">▶</span>
-          </a>
-
-          <div>
-            <a href="#decline" class="btn-decline-link local-decline-btn" id="declineLink">
-              Não, obrigado. Prefiro continuar apenas com o conteúdo que já adquiri.
-            </a>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <div class="upsell-section-divider"></div>
-
-    <!-- ==========================================================================
-         SEÇÃO 10 — URGÊNCIA CONSCIENTE / DECISÃO
-         ========================================================================== -->
-    <section class="upsell-section section-decision">
-      <div class="upsell-container">
-
-        <div class="decision-box">
-          <span class="badge-gold-pill" id="decisionTag">✦ SUA DECISÃO CONSCIENTE</span>
-          <h2 class="section-headline" id="decisionTitle" style="font-size:1.6rem; margin-bottom:12px;">
-            Sua Oportunidade de Decisão
-          </h2>
-          <p class="section-subheadline" id="decisionText" style="max-width:640px;">
-            Você já tomou a decisão inteligente de investir em melhorar sua intimidade. Agora, esta é a oportunidade única de adicionar a biblioteca completa de variações pela fração do valor normal antes de finalizar seu acesso.
-          </p>
-        </div>
-
-      </div>
-    </section>
-
-    <div class="upsell-section-divider"></div>
-
-    <!-- ==========================================================================
-         SEÇÃO 11 — FAQ ACCORDION INTERATIVO
-         ========================================================================== -->
-    <section class="upsell-section section-faq">
-      <div class="upsell-container">
-
-        <span class="badge-gold-pill" id="faqTag">✦ FAQ</span>
-        <h2 class="section-headline" id="faqTitle">Perguntas Frequentes</h2>
-
-        <div class="faq-container" id="faqContainer">
-          <!-- Accordions populated dynamically -->
-        </div>
-
-      </div>
-    </section>
-
-    <div class="upsell-section-divider"></div>
-
-    <!-- ==========================================================================
-         SEÇÃO 12 — CTA FINAL
-         ========================================================================== -->
-    <section class="upsell-section section-final">
-      <div class="upsell-container">
-
-        <div class="final-card">
-          <h2 class="section-headline" id="finalHeadline" style="font-size:clamp(1.9rem,4.5vw,3rem);">
-            VOCÊ JÁ TEM A BASE.<br>
-            <span class="section-headline-gold">AGORA, QUANTAS POSSIBILIDADES VOCÊ QUER TER?</span>
-          </h2>
-
-          <p class="section-subheadline" id="finalSubheadline" style="margin-bottom:32px;">
-            Amplie seu repertório e tenha mais opções para manter a intimidade do casal longe da mesmice.
-          </p>
-
-          <a href="#checkout" class="btn-cta-primary local-action-btn" id="finalCtaBtn">
-            <span id="finalCtaText">SIM, QUERO AMPLIAR MEU REPERTÓRIO</span>
-            <span class="btn-arrow">▶</span>
-          </a>
-
-          <div>
-            <a href="#decline" class="btn-decline-link local-decline-btn" id="finalDeclineText">
-              Não, obrigado. Prefiro continuar apenas com o conteúdo que já adquiri.
-            </a>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="upsell-footer">
-    <div class="upsell-container">
-      &copy; 2026 Protocolo VIP — Todos os direitos reservados.
+    <!-- Toast Notification for Local Testing -->
+    <div id="localToast" class="toast-local-feedback">
+      <span>✨</span>
+      <span id="toastMessage">Teste Local: Clique registrado (#checkout)</span>
     </div>
-  </footer>
 
-  <!-- CONFIGURATION & DOM RENDER SCRIPT -->
-  <script src="js/upsell-2-config.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const cfg = window.upsellConfig || {};
+    <!-- ==================================================
+         1. HERO / TOPO DA PÁGINA (CANDY APPLE RED GLOSSY)
+         ================================================== -->
+    <header class="upsell-hero">
+        <div class="upsell-container">
+            
+            <h1 class="hero-top-announcement">
+                PARABÉNS! SEU ACESSO JÁ ESTÁ SENDO PREPARADO.
+            </h1>
 
-      // Helper function
-      const setText = (id, text) => {
-        const el = document.getElementById(id);
-        if (el && text) el.innerHTML = text;
-      };
-
-      // Populate Hero Section
-      if (cfg.hero) {
-        setText('heroContextTag', cfg.hero.contextTag);
-        setText('heroHeadline', cfg.hero.headline);
-        setText('heroSubheadline', cfg.hero.subheadline);
-      }
-
-      // Populate Pain Section (4 Cards)
-      if (cfg.pain) {
-        setText('painTag', cfg.pain.tag);
-        setText('painTitle', cfg.pain.title);
-        setText('painSubtitle', cfg.pain.subtitle);
-        setText('painNote', cfg.pain.note);
-
-        const grid = document.getElementById('painCardsGrid');
-        if (grid && cfg.pain.cards) {
-          grid.innerHTML = cfg.pain.cards.map(c => `
-            <div class="pain-card">
-              <div class="pain-card-step">Passo ${c.step}</div>
-              <h3 class="pain-card-title">${c.title}</h3>
-              <p class="pain-card-desc">${c.description}</p>
+            <div class="status-pill-container">
+                <span class="status-pill-item status-confirmed">
+                    <span class="status-icon-check">✓</span> PAGAMENTO CONFIRMADO
+                </span>
+                <span class="status-divider">|</span>
+                <span class="status-pill-item status-processing">
+                    <span class="status-pulse-dot"></span> PREPARANDO SEUS ACESSOS...
+                </span>
             </div>
-          `).join('');
-        }
-      }
 
-      // Populate Opportunity Section
-      if (cfg.opportunity) {
-        setText('oppTag', cfg.opportunity.tag);
-        setText('oppTitle', cfg.opportunity.title);
-        setText('oppSubtitle', cfg.opportunity.subtitle);
-
-        setText('oppStep1Tag', cfg.opportunity.step1.tag);
-        setText('oppStep1Title', cfg.opportunity.step1.title);
-        setText('oppStep1Desc', cfg.opportunity.step1.desc);
-
-        setText('oppStep2Tag', cfg.opportunity.step2.tag);
-        setText('oppStep2Title', cfg.opportunity.step2.title);
-        setText('oppStep2Desc', cfg.opportunity.step2.desc);
-
-        setText('oppStep3Tag', cfg.opportunity.step3.tag);
-        setText('oppStep3Title', cfg.opportunity.step3.title);
-        setText('oppStep3Desc', cfg.opportunity.step3.desc);
-      }
-
-      // Populate Product Hero Card
-      if (cfg.product) {
-        setText('productBadge', cfg.product.badge);
-        setText('productName', cfg.product.name);
-        setText('productSub', cfg.product.subheadline);
-
-        setText('priceRegular', `De ${cfg.product.priceRegular} por apenas:`);
-        setText('priceCurrent', cfg.product.priceCurrent);
-        setText('installmentsText', cfg.product.installmentsText);
-      }
-
-      // Populate Contents (5 Cards)
-      if (cfg.contents) {
-        setText('contentsTag', cfg.contents.tag);
-        setText('contentsTitle', cfg.contents.title);
-        setText('contentsSubtitle', cfg.contents.subtitle);
-
-        const grid = document.getElementById('contentsGrid');
-        if (grid && cfg.contents.cards) {
-          grid.innerHTML = cfg.contents.cards.map(c => `
-            <div class="content-card">
-              <div>
-                <div class="content-card-num">${c.num}</div>
-                <h3 class="content-card-title">${c.title}</h3>
-                <p class="content-card-desc">${c.desc}</p>
-              </div>
+            <div>
+                <div class="badge-red-pill">🎁 ANTES DE CONTINUAR...</div>
             </div>
-          `).join('');
-        }
-      }
 
-      // Populate Mechanism (Toolbox Metaphor)
-      if (cfg.mechanism) {
-        setText('mechTag', cfg.mechanism.tag);
-        setText('mechTitle', cfg.mechanism.title);
-        setText('mechBeforeTitle', cfg.mechanism.beforeTitle);
-        setText('mechAfterTitle', cfg.mechanism.afterTitle);
-        setText('mechQuote', cfg.mechanism.quote);
+            <h2 class="hero-sub-title">
+                ACHOU QUE TINHA ACABADO? <span class="highlight-red">CLARO QUE NÃO!</span> QUEREMOS A SUA MAIOR EXPERIÊNCIA!
+            </h2>
 
-        const bList = document.getElementById('mechBeforeList');
-        if (bList && cfg.mechanism.beforeItems) {
-          bList.innerHTML = cfg.mechanism.beforeItems.map(item => `
-            <li class="mechanism-item"><span class="icon">⚠️</span> <span>${item.replace('⚠️ ', '')}</span></li>
-          `).join('');
-        }
+            <a href="#showcase" class="discover-btn">
+                DESCOBRIR O QUE EU GANHEI
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </a>
 
-        const aList = document.getElementById('mechAfterList');
-        if (aList && cfg.mechanism.afterItems) {
-          aList.innerHTML = cfg.mechanism.afterItems.map(item => `
-            <li class="mechanism-item"><span class="icon">✨</span> <span>${item.replace('✨ ', '')}</span></li>
-          `).join('');
-        }
-      }
+            <p class="discover-subtext-red">
+                VOCÊ ACABA DE GANHAR UM NOVO PROTOCOLO COMPLETO COM MAIS UMA DAS NOSSAS ESPECIALISTAS!
+            </p>
 
-      // Populate Objections
-      if (cfg.objections) {
-        setText('objTag', cfg.objections.tag);
-        setText('objTitle', cfg.objections.title);
+        </div>
+    </header>
 
-        const grid = document.getElementById('objectionsGrid');
-        if (grid && cfg.objections.items) {
-          grid.innerHTML = cfg.objections.items.map(o => `
-            <div class="objection-card">
-              <h3 class="objection-question"><span>💬</span> ${o.q}</h3>
-              <p class="objection-answer">${o.a}</p>
+    <!-- ==================================================
+         2. VITRINE DE 3 CARDS DE VÍDEO & BARRA ÚNICA DE 90s COM BOTÃO ACIMA
+         ================================================== -->
+    <section class="showcase-section" id="showcase">
+        <div class="upsell-container">
+            
+            <h2 class="showcase-headline">
+                VEJA UMA PRÉVIA DO QUE ESTÁ ESPERANDO POR VOCÊ
+            </h2>
+
+            <!-- BOTÃO PARA INCLUIR O PROTOCOLO LOGO ACIMA DA BARRA DE PROGRESSO -->
+            <div class="start-incorporation-wrapper">
+                <button id="startIncorporationBtn" class="start-incorporation-btn" onclick="startSingleProgressBar(event)">
+                    INCLUIR PROTOCOLO NEXO
+                </button>
             </div>
-          `).join('');
-        }
-      }
 
-      // Populate Vision
-      if (cfg.vision) {
-        setText('visionTag', cfg.vision.tag);
-        setText('visionTitle', cfg.vision.title);
-
-        const list = document.getElementById('visionList');
-        if (list && cfg.vision.items) {
-          list.innerHTML = cfg.vision.items.map(item => `
-            <li class="vision-item">
-              <span class="vision-item-icon">✦</span>
-              <span>${item}</span>
-            </li>
-          `).join('');
-        }
-      }
-
-      // Populate Offer
-      if (cfg.offer) {
-        setText('offerHeadline', cfg.offer.title);
-        setText('offerCtaText', cfg.offer.ctaText);
-
-        const list = document.getElementById('offerBenefitsList');
-        if (list && cfg.offer.benefits) {
-          list.innerHTML = cfg.offer.benefits.map(b => `
-            <li class="offer-benefit-item"><span class="check">✓</span> <span>${b}</span></li>
-          `).join('');
-        }
-      }
-
-      // Populate Decision
-      if (cfg.decision) {
-        setText('decisionTag', cfg.decision.tag);
-        setText('decisionTitle', cfg.decision.title);
-        setText('decisionText', cfg.decision.text);
-      }
-
-      // Populate FAQ Accordion
-      if (cfg.faq) {
-        setText('faqTag', cfg.faq.tag);
-        setText('faqTitle', cfg.faq.title);
-
-        const container = document.getElementById('faqContainer');
-        if (container && cfg.faq.items) {
-          container.innerHTML = cfg.faq.items.map((item, index) => `
-            <div class="faq-item ${index === 0 ? 'active' : ''}">
-              <button class="faq-question">
-                <span>${item.q}</span>
-                <span class="faq-icon">+</span>
-              </button>
-              <div class="faq-answer">
-                <p>${item.a}</p>
-              </div>
+            <!-- BARRA DE PROGRESSO ÚNICA DE 90 SEGUNDOS -->
+            <div class="overall-progress-container">
+                <div class="overall-progress-badge" id="overall-progress-badge">
+                    <span id="overall-progress-text">Clique no botão acima para incorporar o Protocolo Nexo Completo</span>
+                </div>
+                <div class="overall-progress-bar-bg">
+                    <div class="overall-progress-bar-fill" id="overall-progress-bar-fill"></div>
+                </div>
             </div>
-          `).join('');
 
-          // Accordion Event Listeners
-          const questions = container.querySelectorAll('.faq-question');
-          questions.forEach(q => {
-            q.addEventListener('click', () => {
-              const item = q.parentElement;
-              const isActive = item.classList.contains('active');
-              container.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-              if (!isActive) item.classList.add('active');
+            <!-- MOLDURA DO DASHBOARD (CARDS FRAME) -->
+            <div class="showcase-frame">
+                
+                <div class="showcase-grid">
+                    
+                    <!-- CARD 1: CICLOS DO PRAZER FEMININO -->
+                    <div class="video-card" data-bonus-id="1" data-state="available" onclick="handleCardClick(this, event)">
+                        <video class="card-video" autoplay muted loop playsinline poster="images/boca_magica_thumb.jpg">
+                            <source src="Protocolo nexo/Videos cards/CICLOS DO PRAZER FEMININO.mp4" type="video/mp4">
+                        </video>
+                        <button class="card-sound-btn" onclick="toggleSound(this, event)">
+                            <svg class="sound-off-icon" viewBox="0 0 24 24"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73 4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
+                            <svg class="sound-on-icon" viewBox="0 0 24 24" style="display:none;"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+                            <span class="sound-text">ATIVAR SOM</span>
+                        </button>
+                        <div class="card-play-badge">
+                            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                        <div class="card-text-overlay">
+                            <div class="card-title">CICLOS DO PRAZER FEMININO</div>
+                            <div class="card-meta-text">AULAS PRÁTICAS • EXCLUSIVO VIP</div>
+                            <div class="card-mini-progress-track">
+                                <div class="card-mini-progress-fill" id="card-mini-fill-1"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CARD 2: DOMINANDO NA CAMA -->
+                    <div class="video-card" data-bonus-id="2" data-state="available" onclick="handleCardClick(this, event)">
+                        <video class="card-video" autoplay muted loop playsinline poster="images/posicoes_orgasticas_thumb.jpg">
+                            <source src="Protocolo nexo/Videos cards/DOMINANDO NA CAMA.mp4" type="video/mp4">
+                        </video>
+                        <button class="card-sound-btn" onclick="toggleSound(this, event)">
+                            <svg class="sound-off-icon" viewBox="0 0 24 24"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73 4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
+                            <svg class="sound-on-icon" viewBox="0 0 24 24" style="display:none;"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+                            <span class="sound-text">ATIVAR SOM</span>
+                        </button>
+                        <div class="card-play-badge">
+                            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                        <div class="card-text-overlay">
+                            <div class="card-title">DOMINANDO NA CAMA</div>
+                            <div class="card-meta-text">TÉCNICAS AVANÇADAS • VIDEOAULAS</div>
+                            <div class="card-mini-progress-track">
+                                <div class="card-mini-progress-fill" id="card-mini-fill-2"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CARD 3: AULA EXTRA (LARGURA TOTAL EMBAIXO) -->
+                    <div class="video-card full-width-card" data-bonus-id="3" data-state="available" onclick="handleCardClick(this, event)">
+                        <video class="card-video" autoplay muted loop playsinline poster="images/porta_secreta_thumb.jpg">
+                            <source src="Protocolo nexo/Videos cards/AULA EXTRA.mp4" type="video/mp4">
+                        </video>
+                        <button class="card-sound-btn" onclick="toggleSound(this, event)">
+                            <svg class="sound-off-icon" viewBox="0 0 24 24"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73 4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
+                            <svg class="sound-on-icon" viewBox="0 0 24 24" style="display:none;"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+                            <span class="sound-text">ATIVAR SOM</span>
+                        </button>
+                        <div class="card-play-badge">
+                            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                        <div class="card-text-overlay">
+                            <div class="card-title">AULA EXTRA EXCLUSIVA</div>
+                            <div class="card-meta-text">CONTEÚDO COMPLETO • ESPECIALISTA</div>
+                            <div class="card-mini-progress-track">
+                                <div class="card-mini-progress-fill" id="card-mini-fill-3"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="showcase-footer-bar">
+                    <span>||| ACESSO COMPLETO AO PROTOCOLO NEXO DA ESPECIALISTA</span>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==================================================
+         3. SEÇÃO DE OFERTA E DESBLOQUEIO
+         ================================================== -->
+    <section class="offer-section">
+        <div class="upsell-container">
+            
+            <div class="offer-headline-box">
+                <h2 class="offer-main-title">
+                    SEU PROTOCOLO NEXO ESTÁ PRONTO.
+                </h2>
+                <p class="offer-subtitle">
+                    Confirme abaixo para incorporar o Protocolo Nexo Completo na sua área de membros.
+                </p>
+            </div>
+
+            <div class="bonus-offer-card">
+                <div class="bonus-gift-icon-wrapper">🎁</div>
+                
+                <h2 class="bonus-card-title">
+                    EXPANDA SUA EXPERIÊNCIA AGORA
+                </h2>
+                
+                <p class="bonus-card-description">
+                    Liberamos uma oportunidade única para você incorporar o Protocolo Nexo Completo com nossa especialista diretamente na sua área de membros.
+                </p>
+
+                <div class="bonus-checklist-grid">
+                    <div class="bonus-check-item" data-checklist-id="1">
+                        <span class="check-red-icon">✓</span> Ciclos do Prazer Feminino
+                    </div>
+                    <div class="bonus-check-item" data-checklist-id="2">
+                        <span class="check-red-icon">✓</span> Dominando na Cama
+                    </div>
+                    <div class="bonus-check-item" data-checklist-id="3">
+                        <span class="check-red-icon">✓</span> Aula Extra Exclusiva
+                    </div>
+                </div>
+
+                <button type="button" onclick="handleCheckoutClick(event)" class="cta-red-btn">
+                    SEGUIR PARA MINHA ÁREA DE MEMBROS
+                </button>
+
+            </div>
+
+            <div class="decline-box">
+                <a href="obrigado.html" onclick="handleDeclineClick(event)" class="decline-link">
+                    Não quero incorporar este protocolo exclusivo agora
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- LÓGICA DE INTERAÇÃO, SOM, BARRA ÚNICA DE 90s POR BOTAO E TESTE LOCAL -->
+    <script>
+        // Local Toast Feedback
+        const toast = document.getElementById('localToast');
+        const toastMsg = document.getElementById('toastMessage');
+        let toastTimer = null;
+
+        function showToast(msg) {
+            if (!toast) return;
+            toastMsg.textContent = msg;
+            toast.classList.add('show');
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3200);
+        }
+
+        function handleCheckoutClick(e) {
+            if (e) e.preventDefault();
+            if (!isProgressStarted) {
+                const progressBox = document.querySelector('.overall-progress-container');
+                if (progressBox) {
+                    progressBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+                showToast('Clique em "INCLUIR PROTOCOLO NEXO" para iniciar a incorporação!');
+                return false;
+            }
+            if (!isProgressCompleted) {
+                const progressBox = document.querySelector('.overall-progress-container');
+                if (progressBox) {
+                    progressBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+                showToast('Estamos incorporando o Protocolo Nexo... Por favor aguarde (90s)!');
+                return false;
+            }
+            showToast('Redirecionando para área de membros... (#checkout)');
+        }
+
+        function handleDeclineClick(e) {
+            // Permite o redirecionamento natural para obrigado.html
+            showToast('Redirecionando para a página de obrigado...');
+            return true;
+        }
+
+        function toggleSound(btnElement, event) {
+            if (event) event.stopPropagation();
+            const card = btnElement.closest('.video-card');
+            const video = card.querySelector('video');
+            const isMuted = video.muted;
+
+            document.querySelectorAll('.video-card').forEach(c => {
+                const v = c.querySelector('video');
+                const btn = c.querySelector('.card-sound-btn');
+                if (v && v !== video) {
+                    v.muted = true;
+                    c.classList.remove('sound-active');
+                    if (btn) {
+                        btn.querySelector('.sound-off-icon').style.display = 'block';
+                        btn.querySelector('.sound-on-icon').style.display = 'none';
+                        btn.querySelector('.sound-text').innerText = 'ATIVAR SOM';
+                    }
+                }
             });
-          });
+
+            if (isMuted) {
+                video.muted = false;
+                card.classList.add('sound-active');
+                btnElement.querySelector('.sound-off-icon').style.display = 'none';
+                btnElement.querySelector('.sound-on-icon').style.display = 'block';
+                btnElement.querySelector('.sound-text').innerText = 'SOM ATIVADO';
+            } else {
+                video.muted = true;
+                card.classList.remove('sound-active');
+                btnElement.querySelector('.sound-off-icon').style.display = 'block';
+                btnElement.querySelector('.sound-on-icon').style.display = 'none';
+                btnElement.querySelector('.sound-text').innerText = 'ATIVAR SOM';
+            }
         }
-      }
 
-      // Populate Final Section
-      if (cfg.final) {
-        setText('finalHeadline', cfg.final.headline);
-        setText('finalSubheadline', cfg.final.subheadline);
-        setText('finalCtaText', cfg.final.ctaText);
-        setText('finalDeclineText', cfg.final.declineText);
-      }
+        function handleCardClick(cardElement, event) {
+            if (!event.target.closest('.card-sound-btn')) {
+                startSingleProgressBar(event);
+            }
+        }
 
-      // Local Toast Feedback logic for CTA buttons
-      const toast = document.getElementById('localToast');
-      const toastMsg = document.getElementById('toastMessage');
-      let toastTimer = null;
+        /* LÓGICA DA BARRA DE PROGRESSO ÚNICA DE 90 SEGUNDOS E 3 CARDS */
+        let isProgressStarted = false;
+        let isProgressCompleted = false;
+        const DURATION_MS = 90000; // 90 segundos exatamente
 
-      const showToast = (msg) => {
-        if (!toast) return;
-        toastMsg.textContent = msg;
-        toast.classList.add('show');
-        clearTimeout(toastTimer);
-        toastTimer = setTimeout(() => {
-          toast.classList.remove('show');
-        }, 3200);
-      };
+        function startSingleProgressBar(event) {
+            if (event) event.stopPropagation();
+            if (isProgressStarted) return;
 
-      document.querySelectorAll('.local-action-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          e.preventDefault();
-          showToast('Ambiente Local: Clique de Compra registrado (#checkout)');
+            isProgressStarted = true;
+            
+            const startBtn = document.getElementById('startIncorporationBtn');
+            const badgeText = document.getElementById('overall-progress-text');
+            const fillBar = document.getElementById('overall-progress-bar-fill');
+            const badge = document.getElementById('overall-progress-badge');
+
+            if (startBtn) {
+                startBtn.classList.add('started');
+                startBtn.innerText = 'INCORPORANDO PROTOCOLO NEXO...';
+            }
+
+            document.querySelectorAll('.video-card').forEach(c => c.setAttribute('data-state', 'processing'));
+
+            const intervalTime = 100;
+            let elapsed = 0;
+
+            const timer = setInterval(() => {
+                elapsed += intervalTime;
+                const pct = Math.min(100, Math.floor((elapsed / DURATION_MS) * 100));
+
+                // Atualiza barra principal e mini-barras dos 3 cards
+                if (fillBar) fillBar.style.width = pct + '%';
+                for (let i = 1; i <= 3; i++) {
+                    const miniFill = document.getElementById(`card-mini-fill-${i}`);
+                    if (miniFill) miniFill.style.width = pct + '%';
+                }
+
+                if (badgeText) {
+                    badgeText.innerText = `Estamos incorporando o Protocolo Nexo Completo dentro da sua área de membros... ${pct}%`;
+                }
+
+                // Libera progressivamente os 3 itens do checklist
+                if (pct >= 33) revealCheckItem(1);
+                if (pct >= 66) revealCheckItem(2);
+                if (pct >= 90) revealCheckItem(3);
+
+                if (elapsed >= DURATION_MS) {
+                    clearInterval(timer);
+                    isProgressCompleted = true;
+
+                    if (badgeText) {
+                        badgeText.innerText = `✓ Protocolo Nexo Completo incorporado com sucesso!`;
+                    }
+                    if (badge) badge.classList.add('all-completed');
+
+                    if (startBtn) {
+                        startBtn.innerText = '✓ PROTOCOLO NEXO INCORPORADO';
+                    }
+
+                    document.querySelectorAll('.video-card').forEach((c) => {
+                        c.setAttribute('data-state', 'completed');
+                    });
+
+                    showToast('Protocolo Nexo incorporado com sucesso!');
+                }
+            }, intervalTime);
+        }
+
+        function revealCheckItem(id) {
+            const item = document.querySelector(`.bonus-check-item[data-checklist-id="${id}"]`);
+            if (item) item.classList.add('active');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const videos = document.querySelectorAll('.card-video');
+            videos.forEach(video => {
+                video.play().catch(err => {
+                    console.log("Autoplay aguardando interação:", err);
+                });
+            });
         });
-      });
+    </script>
 
-      document.querySelectorAll('.local-decline-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          e.preventDefault();
-          showToast('Ambiente Local: Opção Recusada registrada (#decline)');
-        });
-      });
-    });
-  </script>
 </body>
 </html>
