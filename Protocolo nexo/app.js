@@ -323,7 +323,7 @@ function selectLesson(lesson) {
   document.getElementById('currentLessonTitle').textContent = lesson.title;
 
   const wrapper = document.getElementById('playerMediaWrapper');
-  const encodedPath = lesson.path.split('/').map(encodeURIComponent).join('/');
+  const encodedPath = encodeURI(lesson.path);
 
   if (lesson.type === 'video') {
     wrapper.className = 'video-player-wrapper';
