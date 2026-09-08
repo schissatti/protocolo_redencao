@@ -25,6 +25,10 @@ http.createServer((req, res) => {
   if (reqUrl === '/') reqUrl = '/selecao.html';
   
   let filePath = path.join(root, decodeURIComponent(reqUrl));
+  if (fs.existsSync(filePath) && fs.statSync(filePath).isDirectory()) {
+    filePath = path.join(filePath, 'index.html');
+  }
+
   if (!fs.existsSync(filePath)) {
     res.writeHead(404);
     res.end('Not found');
