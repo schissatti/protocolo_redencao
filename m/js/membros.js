@@ -351,6 +351,12 @@ document.addEventListener('DOMContentLoaded', () => {
       lessonActiveTitle.textContent = `${lesson.moduleTitle} • ${lesson.title}`;
     }
 
+    // Scroll modal body to top on mobile so player is immediately visible
+    if (window.innerWidth <= 900) {
+      const modalBody = document.querySelector('.modal-body');
+      if (modalBody) modalBody.scrollTop = 0;
+    }
+
     // Toggle Video or PDF Stage
     if (lesson.type === 'pdf') {
       videoPlayer.style.display = 'none';
@@ -373,6 +379,7 @@ document.addEventListener('DOMContentLoaded', () => {
       videoPlayer.style.display = 'block';
       videoPlayer.src = formatMediaUrl(lesson.file);
       videoPlayer.load();
+      videoPlayer.play().catch(() => {});
     }
 
     // Update Mark Complete Button

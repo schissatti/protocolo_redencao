@@ -316,6 +316,11 @@ function renderPlaylistSections() {
   });
 }
 
+function formatMediaUrl(filePath) {
+  if (!filePath) return '';
+  return filePath.split('/').map(seg => encodeURIComponent(seg)).join('/').replace(/%3A/g, ':');
+}
+
 function selectLesson(lesson) {
   activeLesson = lesson;
   renderPlaylistSections();
@@ -323,12 +328,16 @@ function selectLesson(lesson) {
   document.getElementById('currentLessonTitle').textContent = lesson.title;
 
   const wrapper = document.getElementById('playerMediaWrapper');
-  const encodedPath = encodeURI(lesson.path);
+  const encodedPath = formatMediaUrl(lesson.path);
+
+  if (window.innerWidth <= 900 && wrapper) {
+    wrapper.scrollIntoView({ behavior: 'smooth' });
+  }
 
   if (lesson.type === 'video') {
     wrapper.className = 'video-player-wrapper';
     wrapper.innerHTML = `
-      <video id="mainVideoPlayer" controls controlsList="nodownload" style="width:100%; height:100%; object-fit:contain;" preload="metadata">
+      <video id="mainVideoPlayer" controls playsinline webkit-playsinline controlsList="nodownload" style="width:100%; height:100%; object-fit:contain;" preload="metadata">
         <source src="${encodedPath}" type="video/mp4">
         Seu navegador não suporta a reprodução de vídeo.
       </video>
