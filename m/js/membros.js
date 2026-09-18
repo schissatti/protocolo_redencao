@@ -337,6 +337,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Helper to safely format media URLs with proper UTF-8 percent-encoding for mobile & iOS
+  function formatMediaUrl(filePath) {
+    if (!filePath) return '';
+    return filePath.split('/').map(seg => encodeURIComponent(seg)).join('/').replace(/%3A/g, ':');
+  }
+
   // Load a Specific Lesson into the Player Stage
   function loadLesson(lesson) {
     activeLesson = lesson;
@@ -355,9 +361,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const pdfTitleText = document.getElementById('pdfTitleText');
       if (pdfTitleText) pdfTitleText.textContent = lesson.title;
       const pdfIframe = document.getElementById('pdfIframe');
-      if (pdfIframe) pdfIframe.src = encodeURI(lesson.file);
+      if (pdfIframe) pdfIframe.src = formatMediaUrl(lesson.file);
       if (pdfDownloadBtn) {
-        pdfDownloadBtn.href = encodeURI(lesson.file);
+        pdfDownloadBtn.href = formatMediaUrl(lesson.file);
         pdfDownloadBtn.setAttribute('download', '');
       }
     } else {
@@ -365,7 +371,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const pdfIframe = document.getElementById('pdfIframe');
       if (pdfIframe) pdfIframe.src = '';
       videoPlayer.style.display = 'block';
-      videoPlayer.src = encodeURI(lesson.file);
+      videoPlayer.src = formatMediaUrl(lesson.file);
       videoPlayer.load();
     }
 
