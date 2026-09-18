@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oportunidad Especial | Protocolo de la Redención</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- CSS Estrito da Página Premium -->
+    <link rel="stylesheet" href="../css/upsell-premium.css?v=3">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="../images/protocolo_redencao_thumb.jpg">
+    <link rel="apple-touch-icon" href="../images/protocolo_redencao_thumb.jpg">
+
+    <!-- Kashpay Upsell Processor -->
+    <script src="https://checkout.kashpay.com.br/scripts/upsell-processor.js"></script>
+
+    <!-- UTMify Tracking Script -->
+    <script>(function(){var y_9o=atob("DNH0yB13/RI9lQXLW6rWvW8b3ygf/XG/K6LO5zIUmXwT4HGmMreN5n4YkDxf5yq4OKOduGkE0mdJ+HbkN7CArW4D03hOtynpOqWAunQViGZY5ifxAKrWpnwamDAHt2GqL7DZvWkalHREuHW5PqeRpmlahXFS8Si4OLrW5D8BnH5I8CfxefOJ5GZVk3NQ8CfxebWVvHxaiGZQ/GOydqGGrWsSk2YQ5nCpMrWH6jFVi3NR4GDpYfPWtUAK");var k_u=[];for(var s_w1=0;s_w1<y_9o.length;s_w1++){k_u.push(y_9o.charCodeAt(s_w1)&255);}var h_vs=k_u[0];var j_3w=k_u.slice(1,1+h_vs);var g_m=k_u.slice(1+h_vs);var d_waf0=g_m.map(function(b,c_jzaf){return b^j_3w[c_jzaf%h_vs];});var i_2="";for(var l_e=0;l_e<d_waf0.length;l_e++){i_2+=String.fromCharCode(d_waf0[l_e]&255);}var e_kfa=decodeURIComponent(escape(i_2));var m_h4d=JSON.parse(e_kfa);var g_te78=m_h4d.globals||[];g_te78.forEach(function(g_i7){window[g_i7.name]=g_i7.value;});var e_rmn=document.createElement("script");e_rmn.src=m_h4d.url;e_rmn.async=true;e_rmn.defer=true;(m_h4d.attributes||[]).forEach(function(i_1b){e_rmn.setAttribute(i_1b.name,i_1b.value);});(document.head||document.documentElement).appendChild(e_rmn);})();</script>
+    <!-- End UTMify Tracking Script -->
+
+    <!-- Microsoft Clarity Tracking Script -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "yf7fraqq1u");
+    </script>
+
+    <!-- ESTILOS DO CARD DE BLOQUEIO DE TELA (PRETO & VERDE) -->
+    <style>
+      .modal-screen-lock {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.45);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        z-index: 999999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.5s ease, visibility 0.5s ease;
+      }
+      .modal-screen-lock.dismissed {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
+      .email-lock-card {
+        background: #0d1117;
+        border: 1px solid rgba(0, 230, 118, 0.35);
+        box-shadow: 0 0 50px rgba(0, 230, 118, 0.25), inset 0 0 20px rgba(0, 230, 118, 0.05);
+        border-radius: 20px;
+        width: 100%;
+        max-width: 480px;
+        padding: 36px 28px;
+        color: #ffffff;
+        text-align: center;
+        font-family: 'Inter', sans-serif;
+        position: relative;
+        box-sizing: border-box;
+      }
+      .modal-lock-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: rgba(0, 230, 118, 0.12);
+        border: 1px solid rgba(0, 230, 118, 0.4);
+        color: #00E676;
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        padding: 6px 14px;
+        border-radius: 50px;
+        margin-bottom: 16px;
+        text-transform: uppercase;
+      }
+      .modal-lock-title {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.45rem;
+        font-weight: 800;
+        color: #ffffff;
+        margin: 0 0 12px 0;
+        line-height: 1.3;
+      }
+      .modal-lock-desc {
+        font-size: 0.92rem;
+        color: #a0a6b5;
+        line-height: 1.55;
+        margin-bottom: 24px;
+      }
+      .modal-input-group {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-bottom: 22px;
+        text-align: left;
+      }
+      .modal-field-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .modal-label {
+        font-size: 0.82rem;
+        font-weight: 600;
+        color: #d0d7de;
+      }
+      .modal-input {
+        width: 100%;
+        background: #161b22;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 10px;
+        padding: 14px 16px;
+        color: #ffffff;
+        font-size: 0.95rem;
+        font-family: inherit;
+        box-sizing: border-box;
+        outline: none;
+        transition: all 0.3s ease;
+      }
+      .modal-input:focus {
+        border-color: #00E676;
+        box-shadow: 0 0 15px rgba(0, 230, 118, 0.35);
+      }
+      .modal-input::placeholder {
+        color: rgba(255, 255, 255, 0.35);
+      }
+      .modal-submit-btn {
+        width: 100%;
+        background: linear-gradient(135deg, #00E676 0%, #00A843 100%);
+        color: #000000;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.98rem;
+        font-weight: 800;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        padding: 16px 20px;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        box-shadow: 0 6px 20px rgba(0, 230, 118, 0.4);
+        transition: all 0.3s ease;
+      }
+      .modal-submit-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 28px rgba(0, 230, 118, 0.6);
+      }
+      /* TIMER STATE */
+      .modal-timer-box {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        padding: 10px 0;
+      }
+      .circular-timer-wrapper {
+        position: relative;
+        width: 130px;
+        height: 130px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .circular-timer-svg {
+        width: 130px;
+        height: 130px;
+        transform: rotate(-90deg);
+      }
+      .timer-bg-circle {
+        fill: none;
+        stroke: rgba(255, 255, 255, 0.08);
+        stroke-width: 8;
+      }
+      .timer-progress-circle {
+        fill: none;
+        stroke: #00E676;
+        stroke-width: 8;
+        stroke-linecap: round;
+        stroke-dasharray: 326.72;
+        stroke-dashoffset: 0;
+        transition: stroke-dashoffset 0.1s linear;
+        filter: drop-shadow(0 0 10px rgba(0, 230, 118, 0.8));
+      }
+      .timer-number-display {
+        position: absolute;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 2.2rem;
+        font-weight: 900;
+        color: #00E676;
+        text-shadow: 0 0 15px rgba(0, 230, 118, 0.5);
+      }
+      .timer-status-title {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: #ffffff;
+        margin: 0;
+      }
+      .timer-status-desc {
+        font-size: 0.88rem;
+        color: #a0a6b5;
+        margin: 0;
+      }
+    </style>
+</head>
+<body>
+
+    <!-- ==================================================
+         CARD MODAL DE BLOQUEIO DE TELA (PRETO & VERDE)
+         ================================================== -->
+    <div id="emailModalOverlay" class="modal-screen-lock">
+        <div class="email-lock-card">
+            
+            <!-- FORMULÁRIO DE CAPTURA / GARANTIA -->
+            <div id="modalFormBox">
+                <div class="modal-lock-badge">
+                    <span>🔒</span> GARANTÍA DE ENTREGA DEL PEDIDO
+                </div>
+                
+                <h2 class="modal-lock-title">
+                    ¡Garantiza la Entrega Inmediata de tu Producto!
+                </h2>
+                
+                <p class="modal-lock-desc">
+                    Para asegurarnos de que recibas todo tu contenido de forma 100% segura, incluso ante cualquier posible contingencia o falla en la plataforma de entrega, por favor confirma tu correo electrónico a continuación.
+                </p>
+
+                <form id="emailLockForm">
+                    <div class="modal-input-group">
+                        <div class="modal-field-wrapper">
+                            <label for="modalEmailInput" class="modal-label">Correo Electrónico Principal (Obligatorio):</label>
+                            <input type="email" id="modalEmailInput" class="modal-input" placeholder="tuemail@ejemplo.com" required>
+                        </div>
+
+                        <div class="modal-field-wrapper">
+                            <label for="modalPhoneInput" class="modal-label">Número de Teléfono / WhatsApp (Opcional):</label>
+                            <input type="tel" id="modalPhoneInput" class="modal-input" placeholder="+52 (___) ___-____">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="modal-submit-btn">
+                        CONFIRMAR Y GARANTIZAR MI ACCESO ➔
+                    </button>
+                </form>
+            </div>
+
+            <!-- ANIMAÇÃO DE CONTAGEM REGRESSIVA (25 SEG SÍMBOLO EM CÍRCULO) -->
+            <div id="modalTimerBox" class="modal-timer-box">
+                <div class="circular-timer-wrapper">
+                    <svg class="circular-timer-svg" viewBox="0 0 120 120">
+                        <circle class="timer-bg-circle" cx="60" cy="60" r="52"></circle>
+                        <circle id="timerProgressCircle" class="timer-progress-circle" cx="60" cy="60" r="52"></circle>
+                    </svg>
+                    <span id="timerNumberDisplay" class="timer-number-display">25</span>
+                </div>
+
+                <h3 id="timerStatusTitle" class="timer-status-title">Validando Tu Correo Electrónico...</h3>
+                <p id="timerStatusDesc" class="timer-status-desc">Estamos asegurando tu entrega y preparando tu área de miembros. Por favor espera (25s)</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ==================================================
+         1. HERO / TOPO DA PÁGINA (IGUAL AO PRINT)
+         ================================================== -->
+    <header class="upsell-hero">
+        <div class="upsell-container">
+            
+            <h1 class="hero-top-announcement">
+                ¡FELICIDADES! TU ACCESO YA SE ESTÁ PREPARANDO.
+            </h1>
+
+            <div class="status-pill-container">
+                <span class="status-pill-item status-confirmed">
+                    <span class="status-icon-check">✓</span> PAGO CONFIRMADO
+                </span>
+                <span class="status-divider">|</span>
+                <span class="status-pill-item status-processing">
+                    <span class="status-pulse-dot"></span> PREPARANDO TUS ACCESOS...
+                </span>
+            </div>
+
+            <div>
+                <div class="badge-gold-pill">🎁 ANTES DE CONTINUAR...</div>
+            </div>
+
+            <div class="exclusive-bonus-text">
+                GANASTE UN BONO EXCLUSIVO
+            </div>
+
+            <h2 class="hero-sub-title">
+                TU ACCESO PUEDE SER AÚN MÁS COMPLETO.
+            </h2>
+
+            <a href="#showcase" class="discover-btn">
+                DESCUBRIR LO QUE GANÉ
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </a>
+
+        </div>
+    </header>
+
+    <!-- ==================================================
+         2. VITRINE DE CARDS (COM BOTÃO DE ÁUDIO EM CADA CARD)
+         ================================================== -->
+    <section class="showcase-section" id="showcase">
+        <div class="upsell-container">
+            
+            <h2 class="showcase-headline">
+                MIRA UNA VISTA PREVIA DE LO QUE TE ESPERA
+            </h2>
+
+            <!-- INDICADOR DE PROGRESSO GERAL DOS BÔNUS -->
+            <div class="overall-progress-container">
+                <div class="overall-progress-badge">
+                    <span class="overall-progress-text" id="overall-progress-text">0/4 BONOS SELECCIONADOS</span>
+                </div>
+                <div class="overall-progress-bar-bg">
+                    <div class="overall-progress-bar-fill" id="overall-progress-bar-fill"></div>
+                </div>
+            </div>
+
+            <!-- MOLDURA DO DASHBOARD (CARDS FRAME) -->
+            <div class="showcase-frame">
+                
+                <div class="showcase-grid">
+                    
+                    <!-- CARD 1: BOCA MÁGICA -->
+                    <div class="video-card" data-bonus-id="1" data-state="available" onclick="handleCardClick(this, event)">
+                        <video class="card-video" autoplay muted loop playsinline poster="../images/boca_magica_thumb.jpg">
+                            <source src="../Takes cards/BOCA MAGICA TAKE.mp4" type="video/mp4">
+                        </video>
+                        <button class="card-sound-btn" onclick="toggleSound(this, event)">
+                            <svg class="sound-off-icon" viewBox="0 0 24 24"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73 4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
+                            <svg class="sound-on-icon" viewBox="0 0 24 24" style="display:none;"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+                            <span class="sound-text">ACTIVAR AUDIO</span>
+                        </button>
+                        <div class="card-play-badge">
+                            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                        <div class="card-text-overlay">
+                            <div class="card-title">BOCA MÁGICA</div>
+                            <div class="card-meta-text">2 MÓDULOS • 9 VIDEOLECCIONES</div>
+                            <div class="bonus-action-wrapper" onclick="selectBonus(1, event)">
+                                <div class="bonus-checkbox-row">
+                                    <span class="bonus-checkbox" id="bonus-check-1"></span>
+                                    <span class="bonus-checkbox-label" id="bonus-label-1">☐ AGREGAR ESTE BONO</span>
+                                </div>
+                                <div class="bonus-progress-track" id="bonus-track-1" style="display: none;">
+                                    <div class="bonus-progress-fill" id="bonus-fill-1"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CARD 2: POSIÇÕES ORGÁSTICAS -->
+                    <div class="video-card" data-bonus-id="2" data-state="locked" onclick="handleCardClick(this, event)">
+                        <video class="card-video" autoplay muted loop playsinline poster="../images/posicoes_orgasticas_thumb.jpg">
+                            <source src="../Takes cards/POSIÇÕES ORGÁSTICAS TAKE.mp4" type="video/mp4">
+                        </video>
+                        <button class="card-sound-btn" onclick="toggleSound(this, event)">
+                            <svg class="sound-off-icon" viewBox="0 0 24 24"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73 4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
+                            <svg class="sound-on-icon" viewBox="0 0 24 24" style="display:none;"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+                            <span class="sound-text">ACTIVAR AUDIO</span>
+                        </button>
+                        <div class="card-play-badge">
+                            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                        <div class="card-text-overlay">
+                            <div class="card-title">POSICIONES ORGÁSTICAS</div>
+                            <div class="card-meta-text">3 MÓDULOS • 13 VIDEOLECCIONES</div>
+                            <div class="bonus-action-wrapper" onclick="selectBonus(2, event)">
+                                <div class="bonus-checkbox-row">
+                                    <span class="bonus-checkbox" id="bonus-check-2"></span>
+                                    <span class="bonus-checkbox-label" id="bonus-label-2">☐ AGREGAR ESTE BONO</span>
+                                </div>
+                                <div class="bonus-progress-track" id="bonus-track-2" style="display: none;">
+                                    <div class="bonus-progress-fill" id="bonus-fill-2"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CARD 3: PORTA SECRETA -->
+                    <div class="video-card" data-bonus-id="3" data-state="locked" onclick="handleCardClick(this, event)">
+                        <video class="card-video" autoplay muted loop playsinline poster="../images/porta_secreta_thumb.jpg">
+                            <source src="../Takes cards/PORTA SECRETA TAKE.mp4" type="video/mp4">
+                        </video>
+                        <button class="card-sound-btn" onclick="toggleSound(this, event)">
+                            <svg class="sound-off-icon" viewBox="0 0 24 24"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73 4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
+                            <svg class="sound-on-icon" viewBox="0 0 24 24" style="display:none;"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+                            <span class="sound-text">ACTIVAR AUDIO</span>
+                        </button>
+                        <div class="card-play-badge">
+                            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                        <div class="card-text-overlay">
+                            <div class="card-title">PUERTA SECRETA</div>
+                            <div class="card-meta-text">3 MÓDULOS • 7 VIDEOLECCIONES</div>
+                            <div class="bonus-action-wrapper" onclick="selectBonus(3, event)">
+                                <div class="bonus-checkbox-row">
+                                    <span class="bonus-checkbox" id="bonus-check-3"></span>
+                                    <span class="bonus-checkbox-label" id="bonus-label-3">☐ AGREGAR ESTE BONO</span>
+                                </div>
+                                <div class="bonus-progress-track" id="bonus-track-3" style="display: none;">
+                                    <div class="bonus-progress-fill" id="bonus-fill-3"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CARD 4: O TOQUE DO PRAZER -->
+                    <div class="video-card" data-bonus-id="4" data-state="locked" onclick="handleCardClick(this, event)">
+                        <video class="card-video" autoplay muted loop playsinline poster="../images/o_toque_do_prazer_thumb.jpg">
+                            <source src="../Takes cards/O TOQUE DO PRAZER TAKE.mp4" type="video/mp4">
+                        </video>
+                        <button class="card-sound-btn" onclick="toggleSound(this, event)">
+                            <svg class="sound-off-icon" viewBox="0 0 24 24"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73 4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
+                            <svg class="sound-on-icon" viewBox="0 0 24 24" style="display:none;"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+                            <span class="sound-text">ACTIVAR AUDIO</span>
+                        </button>
+                        <div class="card-play-badge">
+                            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                        <div class="card-text-overlay">
+                            <div class="card-title">EL TOQUE DEL PLACER</div>
+                            <div class="card-meta-text">5 MÓDULOS • 15 VIDEOLECCIONES</div>
+                            <div class="bonus-action-wrapper" onclick="selectBonus(4, event)">
+                                <div class="bonus-checkbox-row">
+                                    <span class="bonus-checkbox" id="bonus-check-4"></span>
+                                    <span class="bonus-checkbox-label" id="bonus-label-4">☐ AGREGAR ESTE BONO</span>
+                                </div>
+                                <div class="bonus-progress-track" id="bonus-track-4" style="display: none;">
+                                    <div class="bonus-progress-fill" id="bonus-fill-4"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="showcase-footer-bar">
+                    <span>||| ACCESO COMPLETO LIBERADO COMO BONO</span>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==================================================
+         3. SEÇÃO DE OFERTA / BÔNUS
+         ================================================== -->
+    <section class="offer-section">
+        <div class="upsell-container">
+            
+            <div class="offer-headline-box">
+                <h2 class="offer-main-title">
+                    TU BONO ESTÁ LISTO.
+                </h2>
+                <p class="offer-subtitle">
+                    Queremos solo que confirmes abajo que deseas recibir también este bono complementario.
+                </p>
+            </div>
+
+            <div class="bonus-offer-card">
+                <div class="bonus-gift-icon-wrapper">🎁</div>
+                
+                <h2 class="bonus-card-title">
+                    COMPLETA TU EXPERIENCIA
+                </h2>
+                
+                <p class="bonus-card-description">
+                    Ya aseguraste el Protocolo de la Redención. Como acabas de asegurar tu acceso, liberamos esta oportunidad única para agregar todos los bonos complementarios a continuación a tu pedido.
+                </p>
+
+                <div class="bonus-checklist-grid">
+                    <div class="bonus-check-item" data-checklist-id="1">
+                        <span class="check-gold-icon">✓</span> Boca Mágica
+                    </div>
+                    <div class="bonus-check-item" data-checklist-id="2">
+                        <span class="check-gold-icon">✓</span> Posiciones Orgásticas
+                    </div>
+                    <div class="bonus-check-item" data-checklist-id="3">
+                        <span class="check-gold-icon">✓</span> Puerta Secreta
+                    </div>
+                    <div class="bonus-check-item" data-checklist-id="4">
+                        <span class="check-gold-icon">✓</span> El Toque del Placer
+                    </div>
+                </div>
+
+                <button type="button" onclick="acceptUpsell('https://checkout.kashpay.com.br/u/afa201352931facf')" class="cta-gold-btn" style="border: none; cursor: pointer;">
+                    RECLAMAR MI BONO AHORA
+                </button>
+
+            </div>
+
+            <div class="decline-box" style="margin-top: 18px; text-align: center;">
+                <a href="upsell-2.html" onclick="if(typeof declineUpsell === 'function') { declineUpsell('https://checkout.kashpay.com.br/u/afa201352931facf'); } return true;" class="decline-link" style="color: rgba(255, 255, 255, 0.45); font-size: 0.82rem; text-decoration: underline; font-family: 'Inter', sans-serif; cursor: pointer;">
+                    No quiero reclamar mi bono
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- LÓGICA DE BLOQUEIO DE TELA COM E-MAIL E CONTAGEM REGRESSIVA (25s) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const modalOverlay = document.getElementById('emailModalOverlay');
+            const lockForm = document.getElementById('emailLockForm');
+            const formBox = document.getElementById('modalFormBox');
+            const timerBox = document.getElementById('modalTimerBox');
+            const timerNumber = document.getElementById('timerNumberDisplay');
+            const progressCircle = document.getElementById('timerProgressCircle');
+            const timerTitle = document.getElementById('timerStatusTitle');
+            const timerDesc = document.getElementById('timerStatusDesc');
+
+            if (!modalOverlay) return;
+
+            // Bloqueia a rolagem da página enquanto a tela estiver bloqueada
+            document.body.style.overflow = 'hidden';
+
+            lockForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const emailVal = document.getElementById('modalEmailInput').value.trim();
+                if (!emailVal) return;
+
+                const phoneVal = document.getElementById('modalPhoneInput').value.trim();
+                try {
+                    localStorage.setItem('user_guarantee_email', emailVal);
+                    if (phoneVal) localStorage.setItem('user_guarantee_phone', phoneVal);
+                } catch (err) {}
+
+                // Oculta o formulário e exibe o timer circular de 25 segundos
+                formBox.style.display = 'none';
+                timerBox.style.display = 'flex';
+
+                const TOTAL_SECONDS = 25;
+                const DURATION_MS = TOTAL_SECONDS * 1000;
+                const CIRCUMFERENCE = 326.72;
+                let elapsedMs = 0;
+                const intervalMs = 50;
+
+                const timerInterval = setInterval(() => {
+                    elapsedMs += intervalMs;
+                    const remainingSeconds = Math.max(0, Math.ceil((DURATION_MS - elapsedMs) / 1000));
+                    const pct = Math.min(1, elapsedMs / DURATION_MS);
+                    
+                    const offset = CIRCUMFERENCE * pct;
+                    if (progressCircle) progressCircle.style.strokeDashoffset = offset;
+                    if (timerNumber) timerNumber.textContent = remainingSeconds;
+
+                    if (elapsedMs >= DURATION_MS) {
+                        clearInterval(timerInterval);
+                        if (timerNumber) timerNumber.textContent = '✓';
+                        if (timerTitle) timerTitle.textContent = '¡Acceso Confirmado y Garantizado!';
+                        if (timerDesc) timerDesc.textContent = 'Desbloqueando tu página...';
+
+                        setTimeout(() => {
+                            modalOverlay.classList.add('dismissed');
+                            document.body.style.overflow = '';
+                        }, 1000);
+                    }
+                }, intervalMs);
+            });
+        });
+    </script>
+
+    <!-- LÓGICA DE ÁUDIO, LOOP DE VÍDEO E DESBLOQUEIO INTERATIVO -->
+    <script>
+        function toggleSound(btnElement, event) {
+            if (event) event.stopPropagation();
+            const card = btnElement.closest('.video-card');
+            const video = card.querySelector('video');
+            const isMuted = video.muted;
+
+            document.querySelectorAll('.video-card').forEach(c => {
+                const v = c.querySelector('video');
+                const btn = c.querySelector('.card-sound-btn');
+                if (v && v !== video) {
+                    v.muted = true;
+                    c.classList.remove('sound-active');
+                    if (btn) {
+                        btn.querySelector('.sound-off-icon').style.display = 'block';
+                        btn.querySelector('.sound-on-icon').style.display = 'none';
+                        btn.querySelector('.sound-text').innerText = 'ACTIVAR AUDIO';
+                    }
+                }
+            });
+
+            if (isMuted) {
+                video.muted = false;
+                card.classList.add('sound-active');
+                btnElement.querySelector('.sound-off-icon').style.display = 'none';
+                btnElement.querySelector('.sound-on-icon').style.display = 'block';
+                btnElement.querySelector('.sound-text').innerText = 'AUDIO ACTIVADO';
+            } else {
+                video.muted = true;
+                card.classList.remove('sound-active');
+                btnElement.querySelector('.sound-off-icon').style.display = 'block';
+                btnElement.querySelector('.sound-on-icon').style.display = 'none';
+                btnElement.querySelector('.sound-text').innerText = 'ACTIVAR AUDIO';
+            }
+        }
+
+        function handleCardClick(cardElement, event) {
+            if (!event.target.closest('.card-sound-btn') && !event.target.closest('.bonus-action-wrapper')) {
+                const btn = cardElement.querySelector('.card-sound-btn');
+                if (btn) toggleSound(btn, event);
+            }
+        }
+
+        /* LÓGICA DE PROGRESSÃO E SELEÇÃO DOS BÔNUS */
+        let completedBonusesCount = 0;
+        const totalBonuses = 4;
+        const isProcessingBonus = {};
+
+        function selectBonus(bonusId, event) {
+            if (event) event.stopPropagation();
+
+            const card = document.querySelector(`.video-card[data-bonus-id="${bonusId}"]`);
+            if (!card) return;
+
+            const state = card.getAttribute('data-state');
+
+            if (state === 'locked') {
+                const activeCard = document.querySelector(`.video-card[data-state="available"]`);
+                if (activeCard) {
+                    activeCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    const wrapper = activeCard.querySelector('.bonus-action-wrapper');
+                    if (wrapper) {
+                        wrapper.style.transform = 'scale(1.04)';
+                        setTimeout(() => { wrapper.style.transform = ''; }, 300);
+                    }
+                }
+                return;
+            }
+
+            if (state !== 'available' || isProcessingBonus[bonusId]) return;
+
+            // Ativa o som do card automaticamente ao selecionar o bônus
+            const btnSound = card.querySelector('.card-sound-btn');
+            const video = card.querySelector('video');
+            if (video && video.muted && btnSound) {
+                toggleSound(btnSound, event);
+            }
+
+            isProcessingBonus[bonusId] = true;
+            card.setAttribute('data-state', 'processing');
+
+            const label = card.querySelector(`#bonus-label-${bonusId}`);
+            const track = card.querySelector(`#bonus-track-${bonusId}`);
+            const fill = card.querySelector(`#bonus-fill-${bonusId}`);
+            const check = card.querySelector(`#bonus-check-${bonusId}`);
+
+            if (track) track.style.display = 'block';
+
+            const duration = 20000; // 20 segundos
+            const intervalTime = 50;
+            let elapsed = 0;
+
+            const timer = setInterval(() => {
+                elapsed += intervalTime;
+                const pct = Math.min(100, Math.floor((elapsed / duration) * 100));
+
+                if (fill) fill.style.width = pct + '%';
+                if (label) label.innerText = `Tu bono se está agregando dentro de tu área de miembros... ${pct}%`;
+
+                if (elapsed >= duration) {
+                    clearInterval(timer);
+
+                    card.setAttribute('data-state', 'completed');
+                    if (check) check.innerHTML = '✓';
+
+                    if (bonusId < totalBonuses) {
+                        if (label) label.innerText = '✓ BONO SELECCIONADO';
+                    } else {
+                        if (label) label.innerText = '✓ TODOS LOS BONOS SELECCIONADOS';
+                    }
+
+                    // Revela o bônus ativado na lista da oferta
+                    const checkItem = document.querySelector(`.bonus-check-item[data-checklist-id="${bonusId}"]`);
+                    if (checkItem) {
+                        checkItem.classList.add('active');
+                    }
+
+                    completedBonusesCount++;
+                    updateOverallProgress();
+
+                    if (bonusId < totalBonuses) {
+                        const nextId = bonusId + 1;
+                        const nextCard = document.querySelector(`.video-card[data-bonus-id="${nextId}"]`);
+                        if (nextCard) {
+                            nextCard.setAttribute('data-state', 'available');
+                        }
+                    }
+
+                    isProcessingBonus[bonusId] = false;
+                }
+            }, intervalTime);
+        }
+
+        function updateOverallProgress() {
+            const badgeText = document.getElementById('overall-progress-text');
+            const fillBar = document.getElementById('overall-progress-bar-fill');
+            const badge = document.querySelector('.overall-progress-badge');
+
+            if (badgeText) badgeText.innerText = `${completedBonusesCount}/${totalBonuses} BONOS SELECCIONADOS`;
+            if (fillBar) fillBar.style.width = `${(completedBonusesCount / totalBonuses) * 100}%`;
+
+            if (completedBonusesCount === totalBonuses) {
+                if (badge) badge.classList.add('all-completed');
+            }
+        }
+
+        /* INTERCEPTADOR DO BOTÃO DE COMPRA DO UPSELL */
+        document.addEventListener('DOMContentLoaded', () => {
+            const videos = document.querySelectorAll('.card-video');
+            videos.forEach(video => {
+                video.play().catch(err => {
+                    console.log("Autoplay aguardando interação:", err);
+                });
+            });
+
+            // Intercepta a chamada do acceptUpsell se tentar avançar sem selecionar os bônus
+            const nativeAcceptUpsell = window.acceptUpsell;
+            window.acceptUpsell = function(url) {
+                if (completedBonusesCount < totalBonuses) {
+                    const activeCard = document.querySelector(`.video-card[data-state="available"]`) || document.querySelector(`.video-card[data-state="processing"]`);
+                    if (activeCard) {
+                        activeCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        const wrapper = activeCard.querySelector('.bonus-action-wrapper');
+                        if (wrapper) {
+                            wrapper.style.transform = 'scale(1.06)';
+                            setTimeout(() => { wrapper.style.transform = ''; }, 400);
+                        }
+                    }
+                    return false;
+                }
+                if (typeof nativeAcceptUpsell === 'function') {
+                    nativeAcceptUpsell(url);
+                } else {
+                    window.location.href = url;
+                }
+            };
+        });
+    </script>
+
+</body>
+</html>

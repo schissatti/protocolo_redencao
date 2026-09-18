@@ -34,6 +34,10 @@ body {
     padding-bottom: 60px;
 }
 
+.card-sound-btn {
+    display: none !important;
+}
+
 .upsell-container {
     width: 100%;
     max-width: 960px;

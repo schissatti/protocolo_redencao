@@ -252,14 +252,14 @@
                     </div>
                 </div>
 
-                <button type="button" onclick="acceptUpsell('https://checkout.kashpay.com.br/u/25795321e014aeca')" class="cta-red-btn">
-                    SEGUIR PARA MINHA ÁREA DE MEMBROS
+                <button type="button" onclick="acceptUpsell('https://checkout.kashpay.com.br/u/2ba2d6a6b46ba779')" class="cta-red-btn">
+                    IR PARA MINHA ÁREA DE MEMBROS
                 </button>
 
             </div>
 
             <div class="decline-box">
-                <a href="obrigado.html" onclick="handleDeclineClick(event)" class="decline-link">
+                <a href="obrigado.html" onclick="if(typeof declineUpsell === 'function') { declineUpsell('https://checkout.kashpay.com.br/u/2ba2d6a6b46ba779'); } handleDeclineClick(event); return true;" class="decline-link">
                     Não quero incorporar este protocolo exclusivo agora
                 </a>
             </div>
