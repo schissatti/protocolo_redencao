@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal de Selección - Área de Miembros VIP</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="/images/protocolo_redencao_thumb.jpg">
+
+  <style>
+    :root {
+      --bg-dark: #07070a;
+      --bg-card: rgba(18, 18, 26, 0.75);
+      --bg-card-hover: rgba(26, 26, 38, 0.9);
+      --gold-primary: #D4AF37;
+      --gold-light: #FFE259;
+      --gold-dark: #AA7C11;
+      --gold-gradient: linear-gradient(135deg, #FFE259 0%, #D4AF37 50%, #FFA751 100%);
+      --gold-gradient-hover: linear-gradient(135deg, #FFF099 0%, #E5C158 50%, #FFB870 100%);
+      --gold-border: rgba(212, 175, 55, 0.35);
+      --gold-border-bright: rgba(255, 226, 89, 0.75);
+      --gold-glow: 0 0 25px rgba(212, 175, 55, 0.25);
+      --gold-glow-strong: 0 0 45px rgba(255, 226, 89, 0.45);
+      --text-main: #FFFFFF;
+      --text-muted: #9A9AB0;
+      --radius-lg: 20px;
+      --radius-md: 12px;
+      --transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--bg-dark);
+      background-image: 
+        radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.12) 0%, transparent 60%),
+        radial-gradient(circle at 10% 90%, rgba(212, 175, 55, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 90% 90%, rgba(212, 175, 55, 0.05) 0%, transparent 40%);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 30px 20px 40px;
+      overflow-x: hidden;
+    }
+
+    /* SVG Gradient definitions */
+    .svg-defs {
+      position: absolute;
+      width: 0;
+      height: 0;
+      overflow: hidden;
+    }
+
+    /* Header Nav */
+    .portal-header {
+      width: 100%;
+      max-width: 1200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-bottom: 20px;
+    }
+
+    .brand-badge-top {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 20px;
+      background: rgba(212, 175, 55, 0.08);
+      border: 1px solid var(--gold-border);
+      border-radius: 50px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .brand-badge-top svg {
+      width: 20px;
+      height: 20px;
+      fill: url(#goldGrad);
+    }
+
+    .brand-badge-text {
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold-light);
+    }
+
+    /* Main Content Container */
+    .portal-container {
+      width: 100%;
+      max-width: 1000px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin: auto 0;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--gold-primary);
+      margin-bottom: 12px;
+      background: rgba(212, 175, 55, 0.1);
+      padding: 6px 16px;
+      border-radius: 30px;
+      border: 1px solid var(--gold-border);
+    }
+
+    .hero-title {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 16px;
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    }
+
+    .hero-subtitle {
+      font-size: clamp(0.95rem, 1.8vw, 1.15rem);
+      color: var(--text-muted);
+      max-width: 680px;
+      margin-bottom: 48px;
+      line-height: 1.6;
+    }
+
+    /* Cards Grid */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+      width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      .cards-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+    }
+
+    /* Member Card Component */
+    .member-card {
+      background: var(--bg-card);
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: var(--text-main);
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .member-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--gold-gradient);
+      opacity: 0.6;
+      transition: var(--transition);
+    }
+
+    .member-card:hover {
+      transform: translateY(-8px);
+      background: var(--bg-card-hover);
+      border-color: var(--gold-border-bright);
+      box-shadow: var(--gold-glow-strong), 0 25px 50px rgba(0, 0, 0, 0.8);
+    }
+
+    .member-card:hover::before {
+      opacity: 1;
+      height: 4px;
+    }
+
+    /* Card Media Thumbnail Wrapper */
+    .card-media-wrapper {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16/9;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      margin-bottom: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+    }
+
+    .card-media-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .member-card:hover .card-media-img {
+      transform: scale(1.05);
+    }
+
+    .card-badge-tag {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(7, 7, 10, 0.85);
+      border: 1px solid var(--gold-border);
+      color: var(--gold-light);
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 5px 12px;
+      border-radius: 20px;
+      backdrop-filter: blur(8px);
+      letter-spacing: 1px;
+    }
+
+    /* Card Content */
+    .card-content-body {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      text-align: left;
+    }
+
+    .card-title {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 10px;
+      transition: var(--transition);
+    }
+
+    .member-card:hover .card-title {
+      color: var(--gold-light);
+    }
+
+    .card-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin-bottom: 24px;
+      flex: 1;
+    }
+
+    /* Card Action Button */
+    .card-btn {
+      width: 100%;
+      padding: 14px 20px;
+      background: var(--gold-gradient);
+      border: none;
+      border-radius: var(--radius-md);
+      color: #07070a;
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+      transition: var(--transition);
+    }
+
+    .member-card:hover .card-btn {
+      background: var(--gold-gradient-hover);
+      box-shadow: 0 8px 28px rgba(255, 226, 89, 0.5);
+    }
+
+    .btn-arrow {
+      font-size: 0.85rem;
+      transition: transform 0.3s ease;
+    }
+
+    .member-card:hover .btn-arrow {
+      transform: translateX(4px);
+    }
+
+    /* Footer */
+    .portal-footer {
+      width: 100%;
+      max-width: 1200px;
+      text-align: center;
+      padding-top: 40px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .support-info {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .support-link {
+      color: var(--gold-primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .support-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SVG Gradient Definitions -->
+  <svg class="svg-defs">
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFE259"/>
+      <stop offset="50%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#FFA751"/>
+    </linearGradient>
+  </svg>
+
+  <!-- Top Header -->
+  <header class="portal-header">
+    <div class="brand-badge-top">
+      <svg viewBox="0 0 24 24">
+        <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/>
+      </svg>
+      <span class="brand-badge-text">Portal Exclusivo VIP</span>
+    </div>
+  </header>
+
+  <!-- Main Section -->
+  <main class="portal-container">
+    <span class="hero-tag">✦ ACCESO RESTRINGIDO A ALUMNOS</span>
+    <h1 class="hero-title">Elige tu área de miembros</h1>
+    <p class="hero-subtitle">Selecciona a continuación el área que deseas acceder para ver tus clases, módulos y entrenamientos.</p>
+
+    <!-- Cards Grid -->
+    <div class="cards-grid">
+      
+      <!-- CARD 1: Protocolo Redención -->
+      <a href="/m/membros" class="member-card" id="cardRedencao">
+        <div class="card-media-wrapper">
+          <img src="/images/protocolo_redencao_thumb.jpg" alt="Protocolo Redención" class="card-media-img">
+          <span class="card-badge-tag">💎 PLATINUM VIP</span>
+        </div>
+        <div class="card-content-body">
+          <h2 class="card-title">Protocolo Redención</h2>
+          <p class="card-desc">
+            Entrenamiento VIP completo de Maestría &amp; Seducción. Accede a todas las video-clases, módulos prácticos, e-books y materiales exclusivos de tu portal.
+          </p>
+        </div>
+        <button class="card-btn">
+          <span>Acceder a Protocolo Redención</span>
+          <span class="btn-arrow">▶</span>
+        </button>
+      </a>
+
+      <!-- CARD 2: Protocolo Nexo -->
+      <a href="/m/Protocolo nexo/area-membros-protocolonexo.html" class="member-card" id="cardNexo">
+        <div class="card-media-wrapper">
+          <img src="/Protocolo nexo/images/protocolo_nexo_thumb.jpg" alt="Protocolo Nexo" class="card-media-img">
+          <span class="card-badge-tag">👑 VIP PLATINUM</span>
+        </div>
+        <div class="card-content-body">
+          <h2 class="card-title">Protocolo Nexo</h2>
+          <p class="card-desc">
+            Entrenamiento exclusivo de alta inteligencia conductual y atracción avanzada con guiones estratégicos y módulos prácticos.
+          </p>
+        </div>
+        <button class="card-btn">
+          <span>Acceder a Protocolo Nexo</span>
+          <span class="btn-arrow">▶</span>
+        </button>
+      </a>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="portal-footer">
+    <div class="support-info">
+      ✉️ Soporte al Alumno: <a href="mailto:helpbrivanne@hotmail.com" class="support-link">helpbrivanne@hotmail.com</a>
+    </div>
+    <div>&copy; 2026 Portal de Miembros VIP. Todos los derechos reservados.</div>
+  </footer>
+
+</body>
+</html>

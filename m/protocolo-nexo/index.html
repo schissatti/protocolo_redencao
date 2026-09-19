@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PROTOCOLO NEXO - Área de Miembros VIP Platinum</title>
+  <meta name="description" content="Área de miembros VIP exclusiva del Entrenamiento Protocolo Nexo.">
+  <link rel="stylesheet" href="/Protocolo nexo/styles.css">
+</head>
+<body>
+
+  <!-- Top Header Navbar -->
+  <header class="header-navbar">
+    <div class="brand-container">
+      <span class="crown-icon">👑</span>
+      <span class="brand-name">PROTOCOLO NEXO</span>
+      <span class="brand-badge">VIP PLATINUM</span>
+    </div>
+
+    <div class="search-box-wrapper">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="searchInput" class="search-input" placeholder="Buscar clase o módulo..." autocomplete="off">
+    </div>
+
+    <div class="user-nav-right">
+      <a href="/m/selecao" style="display:inline-flex;align-items:center;gap:6px;padding:6px 14px;background:rgba(220,20,60,0.15);border:1px solid rgba(220,20,60,0.45);border-radius:20px;color:#ff4d6d;font-size:0.75rem;font-weight:700;text-decoration:none;transition:all 0.3s;" onmouseover="this.style.background='rgba(220,20,60,0.3)'" onmouseout="this.style.background='rgba(220,20,60,0.15)'">✦ Cambiar Área</a>
+      <div class="global-progress-bar-container">
+        <span class="global-percent-text" id="headerPercentText">0%</span>
+        <div class="global-progress-track">
+          <div class="global-progress-fill" id="headerProgressFill"></div>
+        </div>
+      </div>
+
+      <div class="user-avatar-btn" title="Perfil del Miembro">AG</div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="main-wrapper">
+
+    <!-- Hero Banner Card -->
+    <section class="hero-banner-card">
+      <div class="hero-badge-tag">
+        <span>+</span> ENTRENAMIENTO EXCLUSIVO VIP
+      </div>
+      <h1 class="hero-title">Tu Viaje de Maestría &amp; Seducción</h1>
+      <button class="hero-btn" id="continueBtn">
+        <span>▶</span> Continuar donde lo dejé
+      </button>
+    </section>
+
+    <!-- Gamification Rank Level Card -->
+    <section class="gamification-card">
+      <div class="gamification-header">
+        <div class="level-current-info">
+          <span class="level-label">✦ NIVEL ACTUAL:</span>
+          <span class="level-name" id="currentLevelName">Novato en la Cama</span>
+        </div>
+
+        <div class="completion-stat">
+          <span class="completion-percent" id="completionPercentText">0%</span>
+          <span class="completion-label">CONCLUIDO</span>
+        </div>
+      </div>
+
+      <div class="next-level-row">
+        <div class="next-level-pill">
+          <span class="next-level-label">PRÓXIMO NIVEL:</span>
+          <span class="next-level-name" id="nextLevelName">Seductor</span>
+          <span class="next-level-badge" id="nextLevelNeededBadge">Faltan 20% para desbloquear</span>
+        </div>
+      </div>
+
+      <!-- Roadmap Timeline -->
+      <div class="roadmap-timeline-container">
+        <div class="roadmap-track-line"></div>
+        <div class="roadmap-progress-fill-line" id="roadmapProgressFill"></div>
+
+        <div class="roadmap-nodes-wrapper">
+          <!-- Node 1: Novato (0%) -->
+          <div class="roadmap-node active" data-percent="0">
+            <div class="node-icon-circle">✓</div>
+            <span class="node-title">Novato</span>
+            <span class="node-percent">0%</span>
+          </div>
+
+          <!-- Node 2: Seductor (20%) -->
+          <div class="roadmap-node" data-percent="20">
+            <div class="node-icon-circle">2</div>
+            <span class="node-title">Seductor</span>
+            <span class="node-percent">20%</span>
+          </div>
+
+          <!-- Node 3: Conquistador (40%) -->
+          <div class="roadmap-node" data-percent="40">
+            <div class="node-icon-circle">3</div>
+            <span class="node-title">Conquistador</span>
+            <span class="node-percent">40%</span>
+          </div>
+
+          <!-- Node 4: Señor (60%) -->
+          <div class="roadmap-node" data-percent="60">
+            <div class="node-icon-circle">4</div>
+            <span class="node-title">Señor</span>
+            <span class="node-percent">60%</span>
+          </div>
+
+          <!-- Node 5: Dominante (80%) -->
+          <div class="roadmap-node" data-percent="80">
+            <div class="node-icon-circle">5</div>
+            <span class="node-title">Dominante</span>
+            <span class="node-percent">80%</span>
+          </div>
+
+          <!-- Node 6: Maestro (100%) -->
+          <div class="roadmap-node" data-percent="100" style="position: relative;">
+            <span class="node-crown">👑</span>
+            <div class="node-icon-circle">6</div>
+            <span class="node-title">Maestro</span>
+            <span class="node-percent">100%</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modules Header & Filter Tabs -->
+    <section class="modules-header-bar">
+      <h2 class="section-main-title">Módulos de Entrenamiento</h2>
+
+      <div class="filter-tabs-group">
+        <button class="filter-tab-btn active" data-category="all">Todos los Contenidos</button>
+        <button class="filter-tab-btn" data-category="cursos">Cursos Principales</button>
+        <button class="filter-tab-btn" data-category="playlists">Recursos &amp; Playlists</button>
+      </div>
+    </section>
+
+    <!-- Modules Grid -->
+    <section class="modules-grid" id="modulesGrid">
+      <!-- Dynamic JS Content -->
+    </section>
+
+  </main>
+
+  <!-- Video Player Modal -->
+  <div class="modal-backdrop" id="playerModal">
+    <div class="player-modal-container">
+      <div class="modal-top-bar">
+        <span class="modal-module-title" id="modalModuleTitle">Módulo</span>
+        <button class="modal-close-btn" id="closePlayerModalBtn">✕</button>
+      </div>
+
+      <div class="player-content-layout">
+        <!-- Main Player Section -->
+        <div class="video-main-section">
+          <div class="video-player-wrapper" id="playerMediaWrapper">
+            <video id="mainVideoPlayer" controls playsinline webkit-playsinline controlsList="nodownload" preload="metadata">
+              <source src="" type="video/mp4">
+              Tu navegador no soporta la reproducción de video.
+            </video>
+          </div>
+
+          <div class="lesson-info-bar">
+            <div>
+              <h3 class="lesson-title-heading" id="currentLessonTitle">Nombre de la Clase</h3>
+            </div>
+            <button class="complete-lesson-btn" id="toggleCompleteBtn">
+              <span id="completeBtnIcon">○</span>
+              <span id="completeBtnText">Marcar como concluida</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Sidebar Playlist -->
+        <div class="sidebar-playlist">
+          <div class="playlist-header">
+            <span>Contenido del Módulo</span>
+          </div>
+          <div id="playlistSectionsContainer">
+            <!-- Dynamic Sections/Lessons -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Locked Upsell Modal -->
+  <div class="modal-backdrop" id="upsellModal">
+    <div class="upsell-modal-box">
+      <button class="modal-close-btn" id="closeUpsellModalBtn" style="position: absolute; top: 16px; right: 16px;">✕</button>
+      
+      <div class="upsell-lock-circle">🔒</div>
+      <h2 class="upsell-title" id="upsellModalTitle">Contenido Exclusivo VIP</h2>
+      <p class="upsell-desc" id="upsellModalDesc">
+        Este módulo es un entrenamiento de elite con técnicas exclusivas de alta performance. Garantiza tu acceso ilimitado para desbloquear todas las clases.
+      </p>
+
+      <a href="#" target="_blank" class="upsell-cta-btn">
+        🔓 QUIERO DESBLOQUEAR MI ACCESO VIP
+      </a>
+
+      <span class="demo-unlock-link" id="demoUnlockBtn">Simular Desbloqueo (Modo Demonstración)</span>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="/m/Protocolo nexo/data.js"></script>
+  <script src="/m/Protocolo nexo/app.js"></script>
+</body>
+</html>
