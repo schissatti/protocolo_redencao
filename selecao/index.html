@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="es-MX">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portal de Seleção - Área de Membros VIP</title>
+  <title>Portal de Selección - Área de Miembros VIP</title>
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   
   <!-- Favicon -->
-  <link rel="icon" type="image/jpeg" href="images/protocolo_redencao_thumb.jpg">
+  <link rel="icon" type="image/jpeg" href="/images/protocolo_redencao_thumb.jpg">
 
   <style>
     :root {
@@ -98,84 +98,84 @@
       font-weight: 700;
       letter-spacing: 2px;
       text-transform: uppercase;
-      background: var(--gold-gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: var(--gold-light);
     }
 
-    /* Main Container */
+    /* Main Content Container */
     .portal-container {
       width: 100%;
-      max-width: 1100px;
-      margin: 0 auto;
+      max-width: 1000px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       text-align: center;
+      margin: auto 0;
     }
 
-    /* Hero Titles */
     .hero-tag {
+      display: inline-block;
       font-size: 0.8rem;
       font-weight: 700;
       letter-spacing: 2.5px;
       text-transform: uppercase;
       color: var(--gold-primary);
       margin-bottom: 12px;
-      display: inline-block;
+      background: rgba(212, 175, 55, 0.1);
+      padding: 6px 16px;
+      border-radius: 30px;
+      border: 1px solid var(--gold-border);
     }
 
     .hero-title {
-      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-size: clamp(2rem, 4vw, 3.2rem);
       font-weight: 800;
-      letter-spacing: -0.5px;
       line-height: 1.15;
-      margin-bottom: 14px;
-      background: linear-gradient(180deg, #FFFFFF 0%, #D1D1E0 100%);
+      margin-bottom: 16px;
+      background: var(--gold-gradient);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      text-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
     }
 
     .hero-subtitle {
-      font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+      font-size: clamp(0.95rem, 1.8vw, 1.15rem);
       color: var(--text-muted);
-      max-width: 620px;
-      margin: 0 auto 45px;
+      max-width: 680px;
+      margin-bottom: 48px;
       line-height: 1.6;
-      font-weight: 400;
     }
 
-    /* Grid of Cards */
+    /* Cards Grid */
     .cards-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 32px;
       width: 100%;
-      margin-bottom: 30px;
     }
 
-    @media (max-width: 868px) {
+    @media (max-width: 768px) {
       .cards-grid {
         grid-template-columns: 1fr;
-        gap: 28px;
+        gap: 24px;
       }
     }
 
-    /* Individual Card */
+    /* Member Card Component */
     .member-card {
       background: var(--bg-card);
       border: 1px solid var(--gold-border);
       border-radius: var(--radius-lg);
-      padding: 28px;
+      padding: 24px;
       display: flex;
       flex-direction: column;
-      align-items: stretch;
-      justify-content: space-between;
       text-decoration: none;
       color: var(--text-main);
       position: relative;
       overflow: hidden;
-      backdrop-filter: blur(16px);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
       transition: var(--transition);
       cursor: pointer;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
     }
 
     .member-card::before {
@@ -191,10 +191,10 @@
     }
 
     .member-card:hover {
+      transform: translateY(-8px);
       background: var(--bg-card-hover);
       border-color: var(--gold-border-bright);
-      transform: translateY(-8px);
-      box-shadow: var(--gold-glow-strong), 0 20px 40px rgba(0, 0, 0, 0.8);
+      box-shadow: var(--gold-glow-strong), 0 25px 50px rgba(0, 0, 0, 0.8);
     }
 
     .member-card:hover::before {
@@ -202,100 +202,100 @@
       height: 4px;
     }
 
-    /* Card Media Header */
+    /* Card Media Thumbnail Wrapper */
     .card-media-wrapper {
       position: relative;
       width: 100%;
-      height: 200px;
+      aspect-ratio: 16/9;
       border-radius: var(--radius-md);
       overflow: hidden;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
       border: 1px solid rgba(255, 255, 255, 0.08);
-      background: #000;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
     }
 
     .card-media-img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: transform 0.5s ease;
     }
 
     .member-card:hover .card-media-img {
-      transform: scale(1.06);
+      transform: scale(1.05);
     }
 
     .card-badge-tag {
       position: absolute;
-      top: 14px;
-      right: 14px;
-      background: rgba(10, 10, 15, 0.85);
-      border: 1px solid var(--gold-primary);
+      top: 12px;
+      right: 12px;
+      background: rgba(7, 7, 10, 0.85);
+      border: 1px solid var(--gold-border);
       color: var(--gold-light);
-      padding: 6px 14px;
-      border-radius: 50px;
       font-size: 0.72rem;
       font-weight: 800;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 20px;
       backdrop-filter: blur(8px);
-      box-shadow: var(--gold-glow);
+      letter-spacing: 1px;
     }
 
     /* Card Content */
     .card-content-body {
-      text-align: left;
-      flex-grow: 1;
       display: flex;
       flex-direction: column;
+      flex: 1;
+      text-align: left;
     }
 
     .card-title {
-      font-size: 1.6rem;
+      font-size: 1.45rem;
       font-weight: 800;
-      letter-spacing: -0.3px;
+      color: #FFFFFF;
       margin-bottom: 10px;
-      background: var(--gold-gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      line-height: 1.25;
+      transition: var(--transition);
+    }
+
+    .member-card:hover .card-title {
+      color: var(--gold-light);
     }
 
     .card-desc {
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       color: var(--text-muted);
-      line-height: 1.6;
-      margin-bottom: 28px;
-      font-weight: 400;
+      line-height: 1.55;
+      margin-bottom: 24px;
+      flex: 1;
     }
 
-    /* Card Footer Button */
+    /* Card Action Button */
     .card-btn {
+      width: 100%;
+      padding: 14px 20px;
+      background: var(--gold-gradient);
+      border: none;
+      border-radius: var(--radius-md);
+      color: #07070a;
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
-      width: 100%;
-      padding: 16px 24px;
-      background: var(--gold-gradient);
-      color: #000000;
-      font-weight: 800;
-      font-size: 1rem;
-      border-radius: var(--radius-md);
-      border: none;
+      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
       transition: var(--transition);
-      box-shadow: var(--gold-glow);
-      letter-spacing: 0.3px;
     }
 
     .member-card:hover .card-btn {
       background: var(--gold-gradient-hover);
-      box-shadow: var(--gold-glow-strong);
-      transform: scale(1.02);
+      box-shadow: 0 8px 28px rgba(255, 226, 89, 0.5);
     }
 
     .btn-arrow {
-      font-size: 1.1rem;
+      font-size: 0.85rem;
       transition: transform 0.3s ease;
     }
 
@@ -303,76 +303,350 @@
       transform: translateX(4px);
     }
 
-    /* Red Luxury Card Theme for Protocolo Nexo */
-    #cardNexo {
-      border-color: rgba(220, 20, 60, 0.4);
-    }
-    #cardNexo::before {
-      background: linear-gradient(135deg, #ff3355 0%, #dc143c 50%, #800020 100%);
-    }
-    #cardNexo:hover {
-      border-color: rgba(255, 77, 109, 0.85);
-      box-shadow: 0 0 45px rgba(220, 20, 60, 0.5), 0 20px 40px rgba(0, 0, 0, 0.8);
-    }
-    #cardNexo .card-badge-tag {
-      border-color: #dc143c;
-      color: #ff8095;
-      box-shadow: 0 0 20px rgba(220, 20, 60, 0.4);
-    }
-    #cardNexo .card-title {
-      background: linear-gradient(135deg, #ff6b81 0%, #dc143c 50%, #ff3355 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    #cardNexo .card-btn {
-      background: linear-gradient(135deg, #ff3355 0%, #d90429 50%, #900c3f 100%);
-      color: #ffffff;
-      box-shadow: 0 0 25px rgba(220, 20, 60, 0.4);
-    }
-    #cardNexo:hover .card-btn {
-      background: linear-gradient(135deg, #ff4d6d 0%, #e6193c 50%, #a70c38 100%);
-      box-shadow: 0 0 35px rgba(220, 20, 60, 0.65);
-    }
-
     /* Footer */
     .portal-footer {
-      font-size: 0.85rem;
+      width: 100%;
+      max-width: 1200px;
+      text-align: center;
+      padding-top: 40px;
+      font-size: 0.82rem;
       color: var(--text-muted);
-      margin-top: 25px;
       display: flex;
       flex-direction: column;
-      align-items: center;
       gap: 8px;
-      line-height: 1.5;
     }
 
-    .portal-footer .support-info {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(255, 255, 255, 0.04);
-      padding: 6px 16px;
-      border-radius: 50px;
-      border: 1px solid rgba(212, 175, 55, 0.15);
-      color: var(--text-muted);
+    .support-info {
+      color: rgba(255, 255, 255, 0.7);
     }
 
-    .portal-footer .support-link {
-      color: var(--gold-light);
+    .support-link {
+      color: var(--gold-primary);
       text-decoration: none;
       font-weight: 600;
-      transition: var(--transition);
     }
 
-    .portal-footer .support-link:hover {
-      color: #ffffff;
+    .support-link:hover {
       text-decoration: underline;
+    }
+
+    /* Notice Modal Glassmorphism Styles */
+    .notice-modal-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      background: rgba(4, 5, 8, 0.65);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .notice-modal-overlay.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .notice-modal-box {
+      background: rgba(14, 15, 22, 0.94);
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.9), 0 0 40px rgba(212, 175, 55, 0.25);
+      border-radius: 20px;
+      max-width: 650px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 32px 28px;
+      position: relative;
+      color: #ffffff;
+      backdrop-filter: blur(20px);
+      animation: noticeScaleUp 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes noticeScaleUp {
+      from { transform: scale(0.92); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .notice-modal-close-x {
+      position: absolute;
+      top: 16px;
+      right: 18px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #ffffff;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .notice-modal-close-x:hover {
+      background: #D4AF37;
+      color: #000;
+      border-color: #D4AF37;
+    }
+
+    .notice-header {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .notice-badge {
+      display: inline-block;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: #FFE259;
+      background: rgba(212, 175, 55, 0.15);
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      padding: 6px 14px;
+      border-radius: 30px;
+      margin-bottom: 10px;
+    }
+
+    .notice-subtitle {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .notice-body {
+      font-size: 0.93rem;
+      line-height: 1.6;
+      color: #d0d2e0;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      text-align: left;
+    }
+
+    .notice-body p {
+      margin: 0;
+    }
+
+    .notice-highlight-box {
+      background: rgba(212, 175, 55, 0.08);
+      border-left: 4px solid #D4AF37;
+      padding: 14px 18px;
+      border-radius: 8px;
+    }
+
+    .highlight-title {
+      font-weight: 800;
+      color: #FFE259;
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
+    .notice-section-box {
+      background: rgba(220, 20, 60, 0.08);
+      border: 1px solid rgba(220, 20, 60, 0.3);
+      padding: 16px 20px;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .section-box-title {
+      font-weight: 800;
+      color: #ff4d6d;
+      font-size: 1rem;
+    }
+
+    .red-alert-tag {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(220, 20, 60, 0.2);
+      border: 1px solid rgba(220, 20, 60, 0.5);
+      padding: 8px 14px;
+      border-radius: 8px;
+      color: #ffffff;
+      font-size: 0.9rem;
+    }
+
+    .red-dot {
+      font-size: 1rem;
+      animation: pulseRed 1.5s infinite;
+    }
+
+    @keyframes pulseRed {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.2); }
+    }
+
+    .notice-guarantee-box {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 16px 20px;
+      border-radius: 12px;
+    }
+
+    .guarantee-title {
+      font-weight: 800;
+      color: #ffffff;
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+    }
+
+    .notice-support-footer {
+      text-align: center;
+      padding: 12px;
+      background: rgba(212, 175, 55, 0.05);
+      border-radius: 10px;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+    }
+
+    .support-email-pill {
+      margin-top: 6px;
+      font-weight: 700;
+    }
+
+    .support-email-pill a {
+      color: #FFE259;
+      text-decoration: none;
+    }
+
+    .support-email-pill a:hover {
+      text-decoration: underline;
+    }
+
+    .notice-closing-text {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #e0e2f0;
+      margin-top: 4px;
+    }
+
+    .notice-modal-footer {
+      margin-top: 24px;
+    }
+
+    .btn-confirm-notice {
+      width: 100%;
+      padding: 15px 24px;
+      background: linear-gradient(135deg, #FFE259 0%, #D4AF37 50%, #FFA751 100%);
+      border: none;
+      border-radius: 12px;
+      color: #07070a;
+      font-weight: 800;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 6px 25px rgba(212, 175, 55, 0.35);
+      transition: all 0.3s ease;
+    }
+
+    .btn-confirm-notice:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(255, 226, 89, 0.5);
     }
   </style>
 </head>
 <body>
 
-  <!-- SVG Definition -->
+  <!-- MODAL AVISO IMPORTANTE SOBRE EL ACCESO -->
+  <div id="noticeModalOverlay" class="notice-modal-overlay">
+    <div class="notice-modal-box">
+      <button class="notice-modal-close-x" id="btnCloseNoticeX" title="Cerrar aviso">&times;</button>
+      
+      <div class="notice-header">
+        <div class="notice-badge">🔔 COMUNICADO IMPORTANTE SOBRE TU ACCESO</div>
+        <h2 class="notice-subtitle">Actualización temporal de nuestra plataforma</h2>
+      </div>
+
+      <div class="notice-body">
+        <p>El <strong>PROTOCOLO REDENCIÓN</strong> forma parte de una plataforma de contenido internacional, por lo que nuestro sistema administra contenidos en diferentes idiomas y servidores.</p>
+
+        <p>Debido a las fuertes lluvias de los últimos días, nuestra plataforma presentó una inestabilidad temporal que afectó la carga de algunos contenidos en español.</p>
+
+        <p>Nuestro equipo técnico ya está trabajando para normalizar completamente el sistema y restablecer los contenidos en español lo más rápido posible.</p>
+
+        <div class="notice-highlight-box">
+          <div class="highlight-title">⏱️ PLAZO MÁXIMO: 48 HORAS</div>
+          <p>Todos los módulos en español estarán disponibles nuevamente en un plazo máximo de 48 horas.</p>
+        </div>
+
+        <p>Mientras nuestro equipo finaliza este proceso, ya puedes comenzar con el contenido que está disponible en español.</p>
+
+        <div class="notice-section-box">
+          <div class="section-box-title">🇲🇽 ¿POR DÓNDE DEBO COMENZAR?</div>
+          <p>Dentro de <strong>PROTOCOLO REDENCIÓN</strong>, encontrarás un módulo presentado por <strong>Dani Rebellato</strong>.</p>
+          <div class="red-alert-tag">
+            <span class="red-dot">🔴</span>
+            <span>Busca el módulo identificado en <strong>color ROJO</strong>.</span>
+          </div>
+          <p>Este módulo ya está disponible completamente en español, así que puedes comenzar por él mientras se restablecen los demás contenidos.</p>
+          <p style="font-size: 0.88rem; color: #a0a5b5; margin-top: 4px;">Una vez que nuestros servidores estén funcionando nuevamente con normalidad, las clases de la Dra. Talita Góis estarán disponibles para que puedas continuar con el protocolo.</p>
+        </div>
+
+        <div class="notice-guarantee-box">
+          <div class="guarantee-title">🔐 TU ACCESO Y TU COMPRA ESTÁN PROTEGIDOS</div>
+          <p>Queremos que tengas total tranquilidad durante este proceso.</p>
+          <p>Si los módulos en español no están completamente disponibles dentro del plazo máximo de 48 horas, podrás solicitar el reembolso de tu compra.</p>
+          <p style="margin-top: 6px;">Nuestro equipo está trabajando para que puedas tener acceso a toda la experiencia del PROTOCOLO REDENCIÓN en español lo antes posible.</p>
+        </div>
+
+        <div class="notice-support-footer">
+          <p>Si tienes cualquier duda o necesitas ayuda con tu acceso, puedes comunicarte con nuestro equipo de soporte:</p>
+          <div class="support-email-pill">
+            📩 <a href="mailto:helpbrivanne@hotmail.com">helpbrivanne@hotmail.com</a>
+          </div>
+        </div>
+
+        <p class="notice-closing-text">
+          Gracias por tu comprensión y por confiar en nosotros.<br>
+          🇲🇽 <strong>Esperamos que disfrutes tu experiencia con el PROTOCOLO REDENCIÓN.</strong>
+        </p>
+      </div>
+
+      <div class="notice-modal-footer">
+        <button class="btn-confirm-notice" id="btnConfirmNotice">
+          <span>ENTENDIDO Y CONTINUAR</span>
+          <span>➔</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const overlay = document.getElementById('noticeModalOverlay');
+      const btnCloseX = document.getElementById('btnCloseNoticeX');
+      const btnConfirm = document.getElementById('btnConfirmNotice');
+
+      function closeNotice() {
+        if (overlay) overlay.classList.add('hidden');
+      }
+
+      if (btnCloseX) btnCloseX.addEventListener('click', closeNotice);
+      if (btnConfirm) btnConfirm.addEventListener('click', closeNotice);
+      if (overlay) {
+        overlay.addEventListener('click', (e) => {
+          if (e.target === overlay) closeNotice();
+        });
+      }
+    });
+  </script>
+
+  <!-- SVG Gradient Definitions -->
   <svg class="svg-defs">
     <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#FFE259"/>
@@ -393,33 +667,33 @@
 
   <!-- Main Section -->
   <main class="portal-container">
-    <span class="hero-tag">✦ ACESSO RESTRITO A ALUNOS</span>
-    <h1 class="hero-title">Escolha sua área de membros</h1>
-    <p class="hero-subtitle">Selecione abaixo a área que você deseja acessar para visualizar suas aulas, módulos e treinamentos.</p>
+    <span class="hero-tag">✦ ACCESO RESTRINGIDO A ALUMNOS</span>
+    <h1 class="hero-title">Elige tu área de miembros</h1>
+    <p class="hero-subtitle">Selecciona a continuación el área que deseas acceder para ver tus clases, módulos y entrenamientos.</p>
 
     <!-- Cards Grid -->
     <div class="cards-grid">
       
-      <!-- CARD 1: Protocolo Redenção -->
-      <a href="/membros" class="member-card" id="cardRedencao">
+      <!-- CARD 1: Protocolo Redención -->
+      <a href="/m/membros" class="member-card" id="cardRedencao">
         <div class="card-media-wrapper">
-          <img src="/images/protocolo_redencao_thumb.jpg" alt="Protocolo Redenção" class="card-media-img">
+          <img src="/images/protocolo_redencao_thumb.jpg" alt="Protocolo Redención" class="card-media-img">
           <span class="card-badge-tag">💎 PLATINUM VIP</span>
         </div>
         <div class="card-content-body">
-          <h2 class="card-title">Protocolo Redenção</h2>
+          <h2 class="card-title">Protocolo Redención</h2>
           <p class="card-desc">
-            Treinamento VIP completo de Maestria & Sedução. Acesse todas as videoaulas, módulos práticos, e-books e materiais exclusivos do seu portal.
+            Entrenamiento VIP completo de Maestría &amp; Seducción. Accede a todas las video-clases, módulos prácticos, e-books y materiales exclusivos de tu portal.
           </p>
         </div>
         <button class="card-btn">
-          <span>Acessar Protocolo Redenção</span>
+          <span>Acceder a Protocolo Redención</span>
           <span class="btn-arrow">▶</span>
         </button>
       </a>
 
       <!-- CARD 2: Protocolo Nexo -->
-      <a href="/Protocolo nexo/area-membros-protocolonexo.html" class="member-card" id="cardNexo">
+      <a href="/m/Protocolo nexo/area-membros-protocolonexo.html" class="member-card" id="cardNexo">
         <div class="card-media-wrapper">
           <img src="/Protocolo nexo/images/protocolo_nexo_thumb.jpg" alt="Protocolo Nexo" class="card-media-img">
           <span class="card-badge-tag">👑 VIP PLATINUM</span>
@@ -427,11 +701,11 @@
         <div class="card-content-body">
           <h2 class="card-title">Protocolo Nexo</h2>
           <p class="card-desc">
-            Treinamento exclusivo de alta inteligência comportamental e atração avançada com roteiros estratégicos e módulos práticos.
+            Entrenamiento exclusivo de alta inteligencia conductual y atracción avanzada con guiones estratégicos y módulos prácticos.
           </p>
         </div>
         <button class="card-btn">
-          <span>Acessar Protocolo Nexo</span>
+          <span>Acceder a Protocolo Nexo</span>
           <span class="btn-arrow">▶</span>
         </button>
       </a>
@@ -442,9 +716,9 @@
   <!-- Footer -->
   <footer class="portal-footer">
     <div class="support-info">
-      ✉️ Suporte ao Aluno: <a href="mailto:helpbrivanne@hotmail.com" class="support-link">helpbrivanne@hotmail.com</a>
+      ✉️ Soporte al Alumno: <a href="mailto:helpbrivanne@hotmail.com" class="support-link">helpbrivanne@hotmail.com</a>
     </div>
-    <div>&copy; 2026 Portal de Membros VIP. Todos os direitos reservados.</div>
+    <div>&copy; 2026 Portal de Miembros VIP. Todos los derechos reservados.</div>
   </footer>
 
 </body>

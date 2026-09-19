@@ -329,9 +329,322 @@
     .support-link:hover {
       text-decoration: underline;
     }
+
+    /* Notice Modal Glassmorphism Styles */
+    .notice-modal-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      background: rgba(4, 5, 8, 0.65);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .notice-modal-overlay.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .notice-modal-box {
+      background: rgba(14, 15, 22, 0.94);
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.9), 0 0 40px rgba(212, 175, 55, 0.25);
+      border-radius: 20px;
+      max-width: 650px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 32px 28px;
+      position: relative;
+      color: #ffffff;
+      backdrop-filter: blur(20px);
+      animation: noticeScaleUp 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes noticeScaleUp {
+      from { transform: scale(0.92); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .notice-modal-close-x {
+      position: absolute;
+      top: 16px;
+      right: 18px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #ffffff;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .notice-modal-close-x:hover {
+      background: #D4AF37;
+      color: #000;
+      border-color: #D4AF37;
+    }
+
+    .notice-header {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .notice-badge {
+      display: inline-block;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: #FFE259;
+      background: rgba(212, 175, 55, 0.15);
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      padding: 6px 14px;
+      border-radius: 30px;
+      margin-bottom: 10px;
+    }
+
+    .notice-subtitle {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .notice-body {
+      font-size: 0.93rem;
+      line-height: 1.6;
+      color: #d0d2e0;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      text-align: left;
+    }
+
+    .notice-body p {
+      margin: 0;
+    }
+
+    .notice-highlight-box {
+      background: rgba(212, 175, 55, 0.08);
+      border-left: 4px solid #D4AF37;
+      padding: 14px 18px;
+      border-radius: 8px;
+    }
+
+    .highlight-title {
+      font-weight: 800;
+      color: #FFE259;
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
+    .notice-section-box {
+      background: rgba(220, 20, 60, 0.08);
+      border: 1px solid rgba(220, 20, 60, 0.3);
+      padding: 16px 20px;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .section-box-title {
+      font-weight: 800;
+      color: #ff4d6d;
+      font-size: 1rem;
+    }
+
+    .red-alert-tag {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(220, 20, 60, 0.2);
+      border: 1px solid rgba(220, 20, 60, 0.5);
+      padding: 8px 14px;
+      border-radius: 8px;
+      color: #ffffff;
+      font-size: 0.9rem;
+    }
+
+    .red-dot {
+      font-size: 1rem;
+      animation: pulseRed 1.5s infinite;
+    }
+
+    @keyframes pulseRed {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.2); }
+    }
+
+    .notice-guarantee-box {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 16px 20px;
+      border-radius: 12px;
+    }
+
+    .guarantee-title {
+      font-weight: 800;
+      color: #ffffff;
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+    }
+
+    .notice-support-footer {
+      text-align: center;
+      padding: 12px;
+      background: rgba(212, 175, 55, 0.05);
+      border-radius: 10px;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+    }
+
+    .support-email-pill {
+      margin-top: 6px;
+      font-weight: 700;
+    }
+
+    .support-email-pill a {
+      color: #FFE259;
+      text-decoration: none;
+    }
+
+    .support-email-pill a:hover {
+      text-decoration: underline;
+    }
+
+    .notice-closing-text {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #e0e2f0;
+      margin-top: 4px;
+    }
+
+    .notice-modal-footer {
+      margin-top: 24px;
+    }
+
+    .btn-confirm-notice {
+      width: 100%;
+      padding: 15px 24px;
+      background: linear-gradient(135deg, #FFE259 0%, #D4AF37 50%, #FFA751 100%);
+      border: none;
+      border-radius: 12px;
+      color: #07070a;
+      font-weight: 800;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 6px 25px rgba(212, 175, 55, 0.35);
+      transition: all 0.3s ease;
+    }
+
+    .btn-confirm-notice:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(255, 226, 89, 0.5);
+    }
   </style>
 </head>
 <body>
+
+  <!-- MODAL AVISO IMPORTANTE SOBRE EL ACCESO -->
+  <div id="noticeModalOverlay" class="notice-modal-overlay">
+    <div class="notice-modal-box">
+      <button class="notice-modal-close-x" id="btnCloseNoticeX" title="Cerrar aviso">&times;</button>
+      
+      <div class="notice-header">
+        <div class="notice-badge">🔔 COMUNICADO IMPORTANTE SOBRE TU ACCESO</div>
+        <h2 class="notice-subtitle">Actualización temporal de nuestra plataforma</h2>
+      </div>
+
+      <div class="notice-body">
+        <p>El <strong>PROTOCOLO REDENCIÓN</strong> forma parte de una plataforma de contenido internacional, por lo que nuestro sistema administra contenidos en diferentes idiomas y servidores.</p>
+
+        <p>Debido a las fuertes lluvias de los últimos días, nuestra plataforma presentó una inestabilidad temporal que afectó la carga de algunos contenidos en español.</p>
+
+        <p>Nuestro equipo técnico ya está trabajando para normalizar completamente el sistema y restablecer los contenidos en español lo más rápido posible.</p>
+
+        <div class="notice-highlight-box">
+          <div class="highlight-title">⏱️ PLAZO MÁXIMO: 48 HORAS</div>
+          <p>Todos los módulos en español estarán disponibles nuevamente en un plazo máximo de 48 horas.</p>
+        </div>
+
+        <p>Mientras nuestro equipo finaliza este proceso, ya puedes comenzar con el contenido que está disponible en español.</p>
+
+        <div class="notice-section-box">
+          <div class="section-box-title">🇲🇽 ¿POR DÓNDE DEBO COMENZAR?</div>
+          <p>Dentro de <strong>PROTOCOLO REDENCIÓN</strong>, encontrarás un módulo presentado por <strong>Dani Rebellato</strong>.</p>
+          <div class="red-alert-tag">
+            <span class="red-dot">🔴</span>
+            <span>Busca el módulo identificado en <strong>color ROJO</strong>.</span>
+          </div>
+          <p>Este módulo ya está disponible completamente en español, así que puedes comenzar por él mientras se restablecen los demás contenidos.</p>
+          <p style="font-size: 0.88rem; color: #a0a5b5; margin-top: 4px;">Una vez que nuestros servidores estén funcionando nuevamente con normalidad, las clases de la Dra. Talita Góis estarán disponibles para que puedas continuar con el protocolo.</p>
+        </div>
+
+        <div class="notice-guarantee-box">
+          <div class="guarantee-title">🔐 TU ACCESO Y TU COMPRA ESTÁN PROTEGIDOS</div>
+          <p>Queremos que tengas total tranquilidad durante este proceso.</p>
+          <p>Si los módulos en español no están completamente disponibles dentro del plazo máximo de 48 horas, podrás solicitar el reembolso de tu compra.</p>
+          <p style="margin-top: 6px;">Nuestro equipo está trabajando para que puedas tener acceso a toda la experiencia del PROTOCOLO REDENCIÓN en español lo antes posible.</p>
+        </div>
+
+        <div class="notice-support-footer">
+          <p>Si tienes cualquier duda o necesitas ayuda con tu acceso, puedes comunicarte con nuestro equipo de soporte:</p>
+          <div class="support-email-pill">
+            📩 <a href="mailto:helpbrivanne@hotmail.com">helpbrivanne@hotmail.com</a>
+          </div>
+        </div>
+
+        <p class="notice-closing-text">
+          Gracias por tu comprensión y por confiar en nosotros.<br>
+          🇲🇽 <strong>Esperamos que disfrutes tu experiencia con el PROTOCOLO REDENCIÓN.</strong>
+        </p>
+      </div>
+
+      <div class="notice-modal-footer">
+        <button class="btn-confirm-notice" id="btnConfirmNotice">
+          <span>ENTENDIDO Y CONTINUAR</span>
+          <span>➔</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const overlay = document.getElementById('noticeModalOverlay');
+      const btnCloseX = document.getElementById('btnCloseNoticeX');
+      const btnConfirm = document.getElementById('btnConfirmNotice');
+
+      function closeNotice() {
+        if (overlay) overlay.classList.add('hidden');
+      }
+
+      if (btnCloseX) btnCloseX.addEventListener('click', closeNotice);
+      if (btnConfirm) btnConfirm.addEventListener('click', closeNotice);
+      if (overlay) {
+        overlay.addEventListener('click', (e) => {
+          if (e.target === overlay) closeNotice();
+        });
+      }
+    });
+  </script>
 
   <!-- SVG Gradient Definitions -->
   <svg class="svg-defs">
