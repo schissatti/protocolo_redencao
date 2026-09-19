@@ -214,9 +214,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const isLocked = course.locked === true;
 
       const cardEl = document.createElement('div');
-      cardEl.className = `course-card ${isLocked ? 'is-locked' : ''}`;
+      cardEl.className = `course-card ${isLocked ? 'is-locked' : ''} ${course.cardClass || ''}`;
       cardEl.innerHTML = `
         <div class="card-thumb-wrapper">
+          ${course.badge ? `<span class="card-badge ${course.badgeClass || ''}">${course.badge}</span>` : ''}
           ${isLocked ? `
             <div class="lock-badge">🔒 BLOQUEADO</div>
             <div class="lock-center-icon">

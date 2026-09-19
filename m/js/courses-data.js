@@ -643,11 +643,12 @@ window.COURSES_DATA = [
   },
   {
     "id": "protocolo-nexo-espanhol",
-    "title": "Protocolo Nexo (Español)",
-    "badge": "MÓDULO EXCLUSIVO",
-    "badgeClass": "badge-gold",
+    "title": "Protocolo Nexo",
+    "badge": "MÓDULO EXCLUSIVO VIP",
+    "badgeClass": "badge-red",
+    "cardClass": "card-red",
     "category": "principais",
-    "thumb": "/images/protocolo_redencao_thumb.jpg",
+    "thumb": "/Protocolo nexo/images/protocolo_nexo_thumb.jpg",
     "desc": "Masterclass exclusiva en video-clases enfocado en la fisiología femenina, mapeo de zonas erógenas y secuencias prácticas de estimulación de la teoría a la pulsación.",
     "dirName": "NEXO ESPANHOL",
     "modules": [
@@ -737,85 +738,6 @@ window.COURSES_DATA = [
             "id": "nexo-espanhol-m4-l1",
             "title": "Clase 01: Cierre del Entrenamiento & Próximos Pasos",
             "file": "/Entregável/NEXO ESPANHOL/CIERRE/CIERRE.mov",
-            "type": "video"
-          }
-        ]
-      }
-    ],
-    "locked": false
-  },
-  {
-    "id": "protocolo-nexo-pt",
-    "title": "Protocolo Nexo (Português)",
-    "badge": "MÓDULO PRINCIPAL",
-    "badgeClass": "badge-gold",
-    "category": "principais",
-    "thumb": "/Protocolo nexo/images/protocolo_nexo_thumb.jpg",
-    "desc": "Treinamento exclusivo em videoaulas focado em anatomia sensorial, fisiologia do orgasmo, técnica de ciclos do prazer e método rei do sexo.",
-    "dirName": "Protocolo do Nexo",
-    "modules": [
-      {
-        "id": "nexo-pt-m1",
-        "title": "Ciclos do Prazer Feminino",
-        "lessons": [
-          {
-            "id": "nexo-pt-m1-l1",
-            "title": "Aula 1: Boas-Vindas & Dominando os Ciclos do Prazer",
-            "file": "/Protocolo nexo/Conteudo área de membros/Ciclos do Prazer Feminino/01. Boas-vindas/Aula 1.mp4",
-            "type": "video"
-          },
-          {
-            "id": "nexo-pt-m1-l2",
-            "title": "Aula 2: Anatomia Sensorial & Fisiologia do Orgasmo",
-            "file": "/Protocolo nexo/Conteudo área de membros/Ciclos do Prazer Feminino/02. Desvendando o Prazer Feminino/Aula 1.mp4",
-            "type": "video"
-          },
-          {
-            "id": "nexo-pt-m1-l3",
-            "title": "Aula 3: Mapeamento Completo das Zonas Erógenas",
-            "file": "/Protocolo nexo/Conteudo área de membros/Ciclos do Prazer Feminino/02. Desvendando o Prazer Feminino/Aula 2.mp4",
-            "type": "video"
-          },
-          {
-            "id": "nexo-pt-m1-l4",
-            "title": "Aula 4: Despertando a Mente e a Fantasia Feminina",
-            "file": "/Protocolo nexo/Conteudo área de membros/Ciclos do Prazer Feminino/02. Desvendando o Prazer Feminino/Aula 3.mp4",
-            "type": "video"
-          },
-          {
-            "id": "nexo-pt-m1-l5",
-            "title": "Aula 5: Gatilhos Emocionais para Orgasmos Múltiplos",
-            "file": "/Protocolo nexo/Conteudo área de membros/Ciclos do Prazer Feminino/02. Desvendando o Prazer Feminino/Aula 4.mp4",
-            "type": "video"
-          }
-        ]
-      },
-      {
-        "id": "nexo-pt-m2",
-        "title": "Método Rei do Sexo",
-        "lessons": [
-          {
-            "id": "nexo-pt-m2-l1",
-            "title": "Aula 1: Bem-Vindo à Mentalidade de Alta Performance",
-            "file": "/Protocolo nexo/Conteudo área de membros/Metodo Rei do Sexo/01. Boas Vindas/Aula 1.mp4",
-            "type": "video"
-          },
-          {
-            "id": "nexo-pt-m2-l2",
-            "title": "Aula 2: Construindo a Presença Alfa e Dominância",
-            "file": "/Protocolo nexo/Conteudo área de membros/Metodo Rei do Sexo/02. A Mentalidade do Rei/Aula 1.mp4",
-            "type": "video"
-          },
-          {
-            "id": "nexo-pt-m2-l3",
-            "title": "Aula 3: Eliminando a Ansiedade e o Medo de Falhar",
-            "file": "/Protocolo nexo/Conteudo área de membros/Metodo Rei do Sexo/02. A Mentalidade do Rei/Aula 2.mp4",
-            "type": "video"
-          },
-          {
-            "id": "nexo-pt-m2-l4",
-            "title": "Aula 4: Controle Ejaculatório Absoluto Passo a Passo",
-            "file": "/Protocolo nexo/Conteudo área de membros/Metodo Rei do Sexo/03. A Performance do Rei/Aula 1.mp4",
             "type": "video"
           }
         ]
