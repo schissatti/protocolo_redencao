@@ -640,5 +640,187 @@ window.COURSES_DATA = [
       }
     ],
     "locked": false
+  },
+  {
+    "id": "protocolo-nexo-espanhol",
+    "title": "Protocolo Nexo (Español)",
+    "badge": "MÓDULO EXCLUSIVO",
+    "badgeClass": "badge-gold",
+    "category": "principais",
+    "thumb": "/images/protocolo_redencao_thumb.jpg",
+    "desc": "Masterclass exclusiva en video-clases enfocado en la fisiología femenina, mapeo de zonas erógenas y secuencias prácticas de estimulación de la teoría a la pulsación.",
+    "dirName": "NEXO ESPANHOL",
+    "modules": [
+      {
+        "id": "nexo-espanhol-m1",
+        "title": "BIENVENIDA & DOMINIO DEL NEXO",
+        "lessons": [
+          {
+            "id": "nexo-espanhol-m1-l1",
+            "title": "Clase 01: Bienvenida & Dominando el Protocolo Nexo",
+            "file": "/Entregável/NEXO ESPANHOL/BIENVENIDA/AULA 1.mov",
+            "type": "video"
+          }
+        ]
+      },
+      {
+        "id": "nexo-espanhol-m2",
+        "title": "DESVELANDO EL PLACER FEMENINO",
+        "lessons": [
+          {
+            "id": "nexo-espanhol-m2-l1",
+            "title": "Clase 01: Anatomía Sensorial & Fisiología del Orgasmo",
+            "file": "/Entregável/NEXO ESPANHOL/DESVELANDO EL PLACER FEMENINO/AULA 1.mov",
+            "type": "video"
+          },
+          {
+            "id": "nexo-espanhol-m2-l2",
+            "title": "Clase 02: Mapeo Completo de las Zonas Erógenas",
+            "file": "/Entregável/NEXO ESPANHOL/DESVELANDO EL PLACER FEMENINO/AULA 2.mov",
+            "type": "video"
+          },
+          {
+            "id": "nexo-espanhol-m2-l3",
+            "title": "Clase 03: Despertando la Mente y la Fantasía Femenina",
+            "file": "/Entregável/NEXO ESPANHOL/DESVELANDO EL PLACER FEMENINO/AULA 3.mov",
+            "type": "video"
+          },
+          {
+            "id": "nexo-espanhol-m2-l4",
+            "title": "Clase 04: Gatillos Emocionales para Orgasmos Múltiples",
+            "file": "/Entregável/NEXO ESPANHOL/DESVELANDO EL PLACER FEMENINO/AULA 4.mov",
+            "type": "video"
+          }
+        ]
+      },
+      {
+        "id": "nexo-espanhol-m3",
+        "title": "DE LA TEORÍA A LA PULSACIÓN",
+        "lessons": [
+          {
+            "id": "nexo-espanhol-m3-l1",
+            "title": "Clase 01: Masaje Estimulante y Técnicas Sensoriales",
+            "file": "/Entregável/NEXO ESPANHOL/DE LA TEORÍA A LA PULSACIÓN/AULA 1.mov",
+            "type": "video"
+          },
+          {
+            "id": "nexo-espanhol-m3-l2",
+            "title": "Clase 02: Toques Graduales y Control del Ritmo",
+            "file": "/Entregável/NEXO ESPANHOL/DE LA TEORÍA A LA PULSACIÓN/AULA 2.mov",
+            "type": "video"
+          },
+          {
+            "id": "nexo-espanhol-m3-l3",
+            "title": "Clase 03: Secuencia Práctica del Orgasmo Múltiplo",
+            "file": "/Entregável/NEXO ESPANHOL/DE LA TEORÍA A LA PULSACIÓN/AULA 3.mov",
+            "type": "video"
+          },
+          {
+            "id": "nexo-espanhol-m3-l4",
+            "title": "Clase 04: Conducción Sensorial y Clímax",
+            "file": "/Entregável/NEXO ESPANHOL/DE LA TEORÍA A LA PULSACIÓN/AULA 4.mov",
+            "type": "video"
+          },
+          {
+            "id": "nexo-espanhol-m3-l5",
+            "title": "Clase 05: Maestría en la Sensibilidad Femenina",
+            "file": "/Entregável/NEXO ESPANHOL/DE LA TEORÍA A LA PULSACIÓN/AULA 5.mov",
+            "type": "video"
+          }
+        ]
+      },
+      {
+        "id": "nexo-espanhol-m4",
+        "title": "CIERRE Y MAESTRÍA",
+        "lessons": [
+          {
+            "id": "nexo-espanhol-m4-l1",
+            "title": "Clase 01: Cierre del Entrenamiento & Próximos Pasos",
+            "file": "/Entregável/NEXO ESPANHOL/CIERRE/CIERRE.mov",
+            "type": "video"
+          }
+        ]
+      }
+    ],
+    "locked": false
+  },
+  {
+    "id": "protocolo-nexo-pt",
+    "title": "Protocolo Nexo (Português)",
+    "badge": "MÓDULO PRINCIPAL",
+    "badgeClass": "badge-gold",
+    "category": "principais",
+    "thumb": "/Protocolo nexo/images/protocolo_nexo_thumb.jpg",
+    "desc": "Treinamento exclusivo em videoaulas focado em anatomia sensorial, fisiologia do orgasmo, técnica de ciclos do prazer e método rei do sexo.",
+    "dirName": "Protocolo do Nexo",
+    "modules": [
+      {
+        "id": "nexo-pt-m1",
+        "title": "Ciclos do Prazer Feminino",
+        "lessons": [
+          {
+            "id": "nexo-pt-m1-l1",
+            "title": "Aula 1: Boas-Vindas & Dominando os Ciclos do Prazer",
+            "file": "/Protocolo nexo/Conteudo área de membros/Ciclos do Prazer Feminino/01. Boas-vindas/Aula 1.mp4",
+            "type": "video"
+          },
+          {
+            "id": "nexo-pt-m1-l2",
+            "title": "Aula 2: Anatomia Sensorial & Fisiologia do Orgasmo",
+            "file": "/Protocolo nexo/Conteudo área de membros/Ciclos do Prazer Feminino/02. Desvendando o Prazer Feminino/Aula 1.mp4",
+            "type": "video"
+          },
+          {
+            "id": "nexo-pt-m1-l3",
+            "title": "Aula 3: Mapeamento Completo das Zonas Erógenas",
+            "file": "/Protocolo nexo/Conteudo área de membros/Ciclos do Prazer Feminino/02. Desvendando o Prazer Feminino/Aula 2.mp4",
+            "type": "video"
+          },
+          {
+            "id": "nexo-pt-m1-l4",
+            "title": "Aula 4: Despertando a Mente e a Fantasia Feminina",
+            "file": "/Protocolo nexo/Conteudo área de membros/Ciclos do Prazer Feminino/02. Desvendando o Prazer Feminino/Aula 3.mp4",
+            "type": "video"
+          },
+          {
+            "id": "nexo-pt-m1-l5",
+            "title": "Aula 5: Gatilhos Emocionais para Orgasmos Múltiples",
+            "file": "/Protocolo nexo/Conteudo área de membros/Ciclos do Prazer Feminino/02. Desvendando o Prazer Feminino/Aula 4.mp4",
+            "type": "video"
+          }
+        ]
+      },
+      {
+        "id": "nexo-pt-m2",
+        "title": "Método Rei do Sexo",
+        "lessons": [
+          {
+            "id": "nexo-pt-m2-l1",
+            "title": "Aula 1: Bem-Vindo à Mentalidade de Alta Performance",
+            "file": "/Protocolo nexo/Conteudo área de membros/Metodo Rei do Sexo/01. Boas Vindas/Aula 1.mp4",
+            "type": "video"
+          },
+          {
+            "id": "nexo-pt-m2-l2",
+            "title": "Aula 2: Construindo a Presença Alfa e Dominância",
+            "file": "/Protocolo nexo/Conteudo área de membros/Metodo Rei do Sexo/02. A Mentalidade do Rei/Aula 1.mp4",
+            "type": "video"
+          },
+          {
+            "id": "nexo-pt-m2-l3",
+            "title": "Aula 3: Eliminando a Ansiedade e o Medo de Falhar",
+            "file": "/Protocolo nexo/Conteudo área de membros/Metodo Rei do Sexo/02. A Mentalidade do Rei/Aula 2.mp4",
+            "type": "video"
+          },
+          {
+            "id": "nexo-pt-m2-l4",
+            "title": "Aula 4: Controle Ejaculatório Absoluto Passo a Passo",
+            "file": "/Protocolo nexo/Conteudo área de membros/Metodo Rei do Sexo/03. A Performance do Rei/Aula 1.mp4",
+            "type": "video"
+          }
+        ]
+      }
+    ],
+    "locked": false
   }
 ];
