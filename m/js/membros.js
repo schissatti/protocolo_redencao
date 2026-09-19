@@ -398,6 +398,18 @@ document.addEventListener('DOMContentLoaded', () => {
       videoPlayer.src = formatMediaUrl(lesson.file);
       videoPlayer.load();
       videoPlayer.play().catch(() => {});
+      videoPlayer.onerror = function() {
+        const currentSrc = videoPlayer.src;
+        if (currentSrc.includes('.mp4')) {
+          videoPlayer.src = currentSrc.replace('.mp4', '.mov');
+          videoPlayer.load();
+          videoPlayer.play().catch(() => {});
+        } else if (currentSrc.includes('.mov')) {
+          videoPlayer.src = currentSrc.replace('.mov', '.mp4');
+          videoPlayer.load();
+          videoPlayer.play().catch(() => {});
+        }
+      };
     }
 
     // Update Mark Complete Button

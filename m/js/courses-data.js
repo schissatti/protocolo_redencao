@@ -191,7 +191,7 @@ window.COURSES_DATA = [
       },
       {
         "id": "efeito-touro-nexo",
-        "title": "MÓDULO EXTRA - PROTOCOLO NEXO (ESPAÑOL)",
+        "title": "PROTOCOLO NEXO",
         "lessons": [
           {
             "id": "efeito-touro-nexo-l1",
