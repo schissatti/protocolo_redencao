@@ -188,6 +188,90 @@ window.COURSES_DATA = [
             "type": "video"
           }
         ]
+      },
+      {
+        "id": "efeito-touro-nexo",
+        "title": "MÓDULO EXTRA - PROTOCOLO NEXO (ESPAÑOL)",
+        "lessons": [
+          {
+            "id": "efeito-touro-nexo-l1",
+            "title": "Bienvenida & Dominando el Protocolo Nexo",
+            "file": "/Entregável/NEXO ESPANHOL/BIENVENIDA/AULA 1.mp4",
+            "type": "video"
+          },
+          {
+            "id": "efeito-touro-nexo-l2",
+            "title": "Clase 01: Anatomía Sensorial & Fisiología del Orgasmo",
+            "file": "/Entregável/NEXO ESPANHOL/DESVELANDO EL PLACER FEMENINO/AULA 1.mp4",
+            "type": "video"
+          },
+          {
+            "id": "efeito-touro-nexo-l3",
+            "title": "Clase 02: Mapeo Completo de las Zonas Erógenas",
+            "file": "/Entregável/NEXO ESPANHOL/DESVELANDO EL PLACER FEMENINO/AULA 2.mp4",
+            "type": "video"
+          },
+          {
+            "id": "efeito-touro-nexo-l4",
+            "title": "Clase 03: Despertando la Mente y la Fantasía Femenina",
+            "file": "/Entregável/NEXO ESPANHOL/DESVELANDO EL PLACER FEMENINO/AULA 3.mp4",
+            "type": "video"
+          },
+          {
+            "id": "efeito-touro-nexo-l5",
+            "title": "Clase 04: Gatillos Emocionais para Orgasmos Múltiples",
+            "file": "/Entregável/NEXO ESPANHOL/DESVELANDO EL PLACER FEMENINO/AULA 4.mp4",
+            "type": "video"
+          },
+          {
+            "id": "efeito-touro-nexo-l6",
+            "title": "Clase 05: Masaje Estimulante y Técnicas Sensoriales",
+            "file": "/Entregável/NEXO ESPANHOL/DE LA TEORÍA A LA PULSACIÓN/AULA 1.mp4",
+            "type": "video"
+          },
+          {
+            "id": "efeito-touro-nexo-l7",
+            "title": "Clase 06: Toques Graduales y Control del Ritmo",
+            "file": "/Entregável/NEXO ESPANHOL/DE LA TEORÍA A LA PULSACIÓN/AULA 2.mp4",
+            "type": "video"
+          },
+          {
+            "id": "efeito-touro-nexo-l8",
+            "title": "Clase 07: Secuencia Práctica del Orgasmo Múltiplo",
+            "file": "/Entregável/NEXO ESPANHOL/DE LA TEORÍA A LA PULSACIÓN/AULA 3.mp4",
+            "type": "video"
+          },
+          {
+            "id": "efeito-touro-nexo-l9",
+            "title": "Clase 08: Conducción Sensorial y Clímax",
+            "file": "/Entregável/NEXO ESPANHOL/DE LA TEORÍA A LA PULSACIÓN/AULA 4.mp4",
+            "type": "video"
+          },
+          {
+            "id": "efeito-touro-nexo-l10",
+            "title": "Clase 09: Maestría en la Sensibilidad Femenina",
+            "file": "/Entregável/NEXO ESPANHOL/DE LA TEORÍA A LA PULSACIÓN/AULA 5.mp4",
+            "type": "video"
+          },
+          {
+            "id": "efeito-touro-nexo-l11",
+            "title": "Clase 10: Cierre del Entrenamiento & Próximos Pasos",
+            "file": "/Entregável/NEXO ESPANHOL/CIERRE/CIERRE.mp4",
+            "type": "video"
+          },
+          {
+            "id": "efeito-touro-nexo-l12",
+            "title": "Avisos Importantes",
+            "file": "/Entregável/NEXO ESPANHOL/AVISOS IMPORTANTES/AVISOS IMPORTANTES.png",
+            "type": "image"
+          },
+          {
+            "id": "efeito-touro-nexo-l13",
+            "title": "Otros Cursos",
+            "file": "/Entregável/NEXO ESPANHOL/AVISOS IMPORTANTES/OUTROS CURSOS.png",
+            "type": "image"
+          }
+        ]
       }
     ],
     "locked": false
@@ -659,7 +743,7 @@ window.COURSES_DATA = [
           {
             "id": "nexo-espanhol-m1-l1",
             "title": "Clase 01: Bienvenida & Dominando el Protocolo Nexo",
-            "file": "/Entregável/NEXO ESPANHOL/BIENVENIDA/AULA 1.mov",
+            "file": "/Entregável/NEXO ESPANHOL/BIENVENIDA/AULA 1.mp4",
             "type": "video"
           }
         ]
@@ -671,25 +755,25 @@ window.COURSES_DATA = [
           {
             "id": "nexo-espanhol-m2-l1",
             "title": "Clase 01: Anatomía Sensorial & Fisiología del Orgasmo",
-            "file": "/Entregável/NEXO ESPANHOL/DESVELANDO EL PLACER FEMENINO/AULA 1.mov",
+            "file": "/Entregável/NEXO ESPANHOL/DESVELANDO EL PLACER FEMENINO/AULA 1.mp4",
             "type": "video"
           },
           {
             "id": "nexo-espanhol-m2-l2",
             "title": "Clase 02: Mapeo Completo de las Zonas Erógenas",
-            "file": "/Entregável/NEXO ESPANHOL/DESVELANDO EL PLACER FEMENINO/AULA 2.mov",
+            "file": "/Entregável/NEXO ESPANHOL/DESVELANDO EL PLACER FEMENINO/AULA 2.mp4",
             "type": "video"
           },
           {
             "id": "nexo-espanhol-m2-l3",
             "title": "Clase 03: Despertando la Mente y la Fantasía Femenina",
-            "file": "/Entregável/NEXO ESPANHOL/DESVELANDO EL PLACER FEMENINO/AULA 3.mov",
+            "file": "/Entregável/NEXO ESPANHOL/DESVELANDO EL PLACER FEMENINO/AULA 3.mp4",
             "type": "video"
           },
           {
             "id": "nexo-espanhol-m2-l4",
             "title": "Clase 04: Gatillos Emocionales para Orgasmos Múltiples",
-            "file": "/Entregável/NEXO ESPANHOL/DESVELANDO EL PLACER FEMENINO/AULA 4.mov",
+            "file": "/Entregável/NEXO ESPANHOL/DESVELANDO EL PLACER FEMENINO/AULA 4.mp4",
             "type": "video"
           }
         ]
@@ -701,31 +785,31 @@ window.COURSES_DATA = [
           {
             "id": "nexo-espanhol-m3-l1",
             "title": "Clase 01: Masaje Estimulante y Técnicas Sensoriales",
-            "file": "/Entregável/NEXO ESPANHOL/DE LA TEORÍA A LA PULSACIÓN/AULA 1.mov",
+            "file": "/Entregável/NEXO ESPANHOL/DE LA TEORÍA A LA PULSACIÓN/AULA 1.mp4",
             "type": "video"
           },
           {
             "id": "nexo-espanhol-m3-l2",
             "title": "Clase 02: Toques Graduales y Control del Ritmo",
-            "file": "/Entregável/NEXO ESPANHOL/DE LA TEORÍA A LA PULSACIÓN/AULA 2.mov",
+            "file": "/Entregável/NEXO ESPANHOL/DE LA TEORÍA A LA PULSACIÓN/AULA 2.mp4",
             "type": "video"
           },
           {
             "id": "nexo-espanhol-m3-l3",
             "title": "Clase 03: Secuencia Práctica del Orgasmo Múltiplo",
-            "file": "/Entregável/NEXO ESPANHOL/DE LA TEORÍA A LA PULSACIÓN/AULA 3.mov",
+            "file": "/Entregável/NEXO ESPANHOL/DE LA TEORÍA A LA PULSACIÓN/AULA 3.mp4",
             "type": "video"
           },
           {
             "id": "nexo-espanhol-m3-l4",
             "title": "Clase 04: Conducción Sensorial y Clímax",
-            "file": "/Entregável/NEXO ESPANHOL/DE LA TEORÍA A LA PULSACIÓN/AULA 4.mov",
+            "file": "/Entregável/NEXO ESPANHOL/DE LA TEORÍA A LA PULSACIÓN/AULA 4.mp4",
             "type": "video"
           },
           {
             "id": "nexo-espanhol-m3-l5",
             "title": "Clase 05: Maestría en la Sensibilidad Femenina",
-            "file": "/Entregável/NEXO ESPANHOL/DE LA TEORÍA A LA PULSACIÓN/AULA 5.mov",
+            "file": "/Entregável/NEXO ESPANHOL/DE LA TEORÍA A LA PULSACIÓN/AULA 5.mp4",
             "type": "video"
           }
         ]
@@ -737,8 +821,26 @@ window.COURSES_DATA = [
           {
             "id": "nexo-espanhol-m4-l1",
             "title": "Clase 01: Cierre del Entrenamiento & Próximos Pasos",
-            "file": "/Entregável/NEXO ESPANHOL/CIERRE/CIERRE.mov",
+            "file": "/Entregável/NEXO ESPANHOL/CIERRE/CIERRE.mp4",
             "type": "video"
+          }
+        ]
+      },
+      {
+        "id": "nexo-espanhol-m5",
+        "title": "AVISOS IMPORTANTES",
+        "lessons": [
+          {
+            "id": "nexo-espanhol-m5-l1",
+            "title": "Avisos Importantes",
+            "file": "/Entregável/NEXO ESPANHOL/AVISOS IMPORTANTES/AVISOS IMPORTANTES.png",
+            "type": "image"
+          },
+          {
+            "id": "nexo-espanhol-m5-l2",
+            "title": "Otros Cursos",
+            "file": "/Entregável/NEXO ESPANHOL/AVISOS IMPORTANTES/OUTROS CURSOS.png",
+            "type": "image"
           }
         ]
       }

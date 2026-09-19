@@ -756,67 +756,385 @@ window.COURSES_DATA = [
     "modules": [
       {
         "id": "nexo-pt-m1",
-        "title": "Ciclos do Prazer Feminino",
+        "title": "Ciclos do Prazer Feminino • 01. Boas-vindas",
         "lessons": [
           {
-            "id": "nexo-pt-m1-l1",
+            "id": "nexo-pt-l1",
             "title": "Aula 1: Boas-Vindas & Dominando os Ciclos do Prazer",
             "file": "/Protocolo nexo/Conteudo área de membros/Ciclos do Prazer Feminino/01. Boas-vindas/Aula 1.mp4",
-            "type": "video"
-          },
-          {
-            "id": "nexo-pt-m1-l2",
-            "title": "Aula 2: Anatomia Sensorial & Fisiologia do Orgasmo",
-            "file": "/Protocolo nexo/Conteudo área de membros/Ciclos do Prazer Feminino/02. Desvendando o Prazer Feminino/Aula 1.mp4",
-            "type": "video"
-          },
-          {
-            "id": "nexo-pt-m1-l3",
-            "title": "Aula 3: Mapeamento Completo das Zonas Erógenas",
-            "file": "/Protocolo nexo/Conteudo área de membros/Ciclos do Prazer Feminino/02. Desvendando o Prazer Feminino/Aula 2.mp4",
-            "type": "video"
-          },
-          {
-            "id": "nexo-pt-m1-l4",
-            "title": "Aula 4: Despertando a Mente e a Fantasia Feminina",
-            "file": "/Protocolo nexo/Conteudo área de membros/Ciclos do Prazer Feminino/02. Desvendando o Prazer Feminino/Aula 3.mp4",
-            "type": "video"
-          },
-          {
-            "id": "nexo-pt-m1-l5",
-            "title": "Aula 5: Gatilhos Emocionais para Orgasmos Múltiples",
-            "file": "/Protocolo nexo/Conteudo área de membros/Ciclos do Prazer Feminino/02. Desvendando o Prazer Feminino/Aula 4.mp4",
             "type": "video"
           }
         ]
       },
       {
         "id": "nexo-pt-m2",
-        "title": "Método Rei do Sexo",
+        "title": "Ciclos do Prazer Feminino • 02. Desvendando o Prazer Feminino",
         "lessons": [
           {
-            "id": "nexo-pt-m2-l1",
-            "title": "Aula 1: Bem-Vindo à Mentalidade de Alta Performance",
-            "file": "/Protocolo nexo/Conteudo área de membros/Metodo Rei do Sexo/01. Boas Vindas/Aula 1.mp4",
+            "id": "nexo-pt-l2",
+            "title": "Aula 1: Anatomia Sensorial & Fisiologia do Orgasmo",
+            "file": "/Protocolo nexo/Conteudo área de membros/Ciclos do Prazer Feminino/02. Desvendando o Prazer Feminino/Aula 1.mp4",
             "type": "video"
           },
           {
-            "id": "nexo-pt-m2-l2",
-            "title": "Aula 2: Construindo a Presença Alfa e Dominância",
+            "id": "nexo-pt-l3",
+            "title": "Aula 2: Mapeamento Completo das Zonas Erógenas",
+            "file": "/Protocolo nexo/Conteudo área de membros/Ciclos do Prazer Feminino/02. Desvendando o Prazer Feminino/Aula 2.mp4",
+            "type": "video"
+          },
+          {
+            "id": "nexo-pt-l4",
+            "title": "Aula 3: Despertando a Mente e a Fantasia Feminina",
+            "file": "/Protocolo nexo/Conteudo área de membros/Ciclos do Prazer Feminino/02. Desvendando o Prazer Feminino/Aula 3.mp4",
+            "type": "video"
+          },
+          {
+            "id": "nexo-pt-l5",
+            "title": "Aula 4: Gatilhos Emocionais para Orgasmos Múltiplos",
+            "file": "/Protocolo nexo/Conteudo área de membros/Ciclos do Prazer Feminino/02. Desvendando o Prazer Feminino/Aula 4.mp4",
+            "type": "video"
+          }
+        ]
+      },
+      {
+        "id": "nexo-pt-m3",
+        "title": "Ciclos do Prazer Feminino • 03. Da Teoria ao Toque",
+        "lessons": [
+          {
+            "id": "nexo-pt-l6",
+            "title": "Aula 1: Preparação do Clima e Toques Sensoriais",
+            "file": "/Protocolo nexo/Conteudo área de membros/Ciclos do Prazer Feminino/03. Da Teoria ao Toque/Aula 1.mp4",
+            "type": "video"
+          },
+          {
+            "id": "nexo-pt-l7",
+            "title": "Aula 2: Ritmo Sensorial e Aceleração Gradativa",
+            "file": "/Protocolo nexo/Conteudo área de membros/Ciclos do Prazer Feminino/03. Da Teoria ao Toque/Aula 2.mp4",
+            "type": "video"
+          },
+          {
+            "id": "nexo-pt-l8",
+            "title": "Aula 3: Estimulação Direta e Controle de Intensidade",
+            "file": "/Protocolo nexo/Conteudo área de membros/Ciclos do Prazer Feminino/03. Da Teoria ao Toque/Aula 3.mp4",
+            "type": "video"
+          },
+          {
+            "id": "nexo-pt-l9",
+            "title": "Aula 4: Conduzindo Qualquer Mulher ao Ápice",
+            "file": "/Protocolo nexo/Conteudo área de membros/Ciclos do Prazer Feminino/03. Da Teoria ao Toque/Aula 4.mp4",
+            "type": "video"
+          },
+          {
+            "id": "nexo-pt-l10",
+            "title": "Aula 5: Ancoragem Pós-Orgasmo & Conexão Profunda",
+            "file": "/Protocolo nexo/Conteudo área de membros/Ciclos do Prazer Feminino/03. Da Teoria ao Toque/Aula 5.mp4",
+            "type": "video"
+          }
+        ]
+      },
+      {
+        "id": "nexo-pt-m4",
+        "title": "Ciclos do Prazer Feminino • 04. Bonus",
+        "lessons": [
+          {
+            "id": "nexo-pt-l11",
+            "title": "Aula 1: Bônus VIP - Segredos do Orgasmo Eletrizante",
+            "file": "/Protocolo nexo/Conteudo área de membros/Ciclos do Prazer Feminino/04. Bonus/Aula 1.mp4",
+            "type": "video"
+          }
+        ]
+      },
+      {
+        "id": "nexo-pt-m5",
+        "title": "Ciclos do Prazer Feminino • 05. Encerramento",
+        "lessons": [
+          {
+            "id": "nexo-pt-l12",
+            "title": "Aula Final: Plano Prático para Aplicação Imediata",
+            "file": "/Protocolo nexo/Conteudo área de membros/Ciclos do Prazer Feminino/05. Encerramento/Aula final.mp4",
+            "type": "video"
+          }
+        ]
+      },
+      {
+        "id": "nexo-pt-m6",
+        "title": "Ciclos do Prazer Feminino • 06. Ebook",
+        "lessons": [
+          {
+            "id": "nexo-pt-l13",
+            "title": "Manual Prático Ciclos do Prazer Feminino (PDF)",
+            "file": "/Protocolo nexo/Conteudo área de membros/Ciclos do Prazer Feminino/06. Ebook/Documento_Ebook.pdf",
+            "type": "pdf"
+          }
+        ]
+      },
+      {
+        "id": "nexo-pt-m7",
+        "title": "Método Rei do Sexo • 01. Boas Vindas",
+        "lessons": [
+          {
+            "id": "nexo-pt-l14",
+            "title": "Aula 1: Bem-Vindo à Mentalidade de Alta Performance",
+            "file": "/Protocolo nexo/Conteudo área de membros/Metodo Rei do Sexo/01. Boas Vindas/Aula 1.mp4",
+            "type": "video"
+          }
+        ]
+      },
+      {
+        "id": "nexo-pt-m8",
+        "title": "Método Rei do Sexo • 02. A Mentalidade do Rei",
+        "lessons": [
+          {
+            "id": "nexo-pt-l15",
+            "title": "Aula 1: Construindo a Presença Alfa e Dominância",
             "file": "/Protocolo nexo/Conteudo área de membros/Metodo Rei do Sexo/02. A Mentalidade do Rei/Aula 1.mp4",
             "type": "video"
           },
           {
-            "id": "nexo-pt-m2-l3",
-            "title": "Aula 3: Eliminando a Ansiedade e o Medo de Falhar",
+            "id": "nexo-pt-l16",
+            "title": "Aula 2: Eliminando a Ansiedade e o Medo de Falhar",
             "file": "/Protocolo nexo/Conteudo área de membros/Metodo Rei do Sexo/02. A Mentalidade do Rei/Aula 2.mp4",
             "type": "video"
           },
           {
-            "id": "nexo-pt-m2-l4",
-            "title": "Aula 4: Controle Ejaculatório Absoluto Passo a Passo",
+            "id": "nexo-pt-l17",
+            "title": "Aula 3: O Poder da Postura Masculina Inabalável",
+            "file": "/Protocolo nexo/Conteudo área de membros/Metodo Rei do Sexo/02. A Mentalidade do Rei/Aula 3.mp4",
+            "type": "video"
+          },
+          {
+            "id": "nexo-pt-l18",
+            "title": "Aula 4",
+            "file": "/Protocolo nexo/Conteudo área de membros/Metodo Rei do Sexo/02. A Mentalidade do Rei/Aula 4.mp4",
+            "type": "video"
+          }
+        ]
+      },
+      {
+        "id": "nexo-pt-m9",
+        "title": "Método Rei do Sexo • 03. A Performance do Rei",
+        "lessons": [
+          {
+            "id": "nexo-pt-l19",
+            "title": "Aula 1: Controle Ejaculatório Absoluto Passo a Passo",
             "file": "/Protocolo nexo/Conteudo área de membros/Metodo Rei do Sexo/03. A Performance do Rei/Aula 1.mp4",
             "type": "video"
+          },
+          {
+            "id": "nexo-pt-l20",
+            "title": "Aula 2: Respiração de Bloqueio e Resiliência Física",
+            "file": "/Protocolo nexo/Conteudo área de membros/Metodo Rei do Sexo/03. A Performance do Rei/Aula 2.mp4",
+            "type": "video"
+          },
+          {
+            "id": "nexo-pt-l21",
+            "title": "Aula 3: Técnica de Prolongamento e Fricção Controlada",
+            "file": "/Protocolo nexo/Conteudo área de membros/Metodo Rei do Sexo/03. A Performance do Rei/Aula 3.mp4",
+            "type": "video"
+          }
+        ]
+      },
+      {
+        "id": "nexo-pt-m10",
+        "title": "Método Rei do Sexo • 04. A Coroacao do Rei",
+        "lessons": [
+          {
+            "id": "nexo-pt-l22",
+            "title": "Aula 1: A Arte da Penetração Hipnótica",
+            "file": "/Protocolo nexo/Conteudo área de membros/Metodo Rei do Sexo/04. A Coroacao do Rei/Aula 1.mp4",
+            "type": "video"
+          },
+          {
+            "id": "nexo-pt-l23",
+            "title": "Aula 2: Fazendo Ela Pedir Mais e Ficar Viciada",
+            "file": "/Protocolo nexo/Conteudo área de membros/Metodo Rei do Sexo/04. A Coroacao do Rei/Aula 2.mp4",
+            "type": "video"
+          },
+          {
+            "id": "nexo-pt-l24",
+            "title": "Aula 3: Fidelização Sensorial e Obsessão Feminina",
+            "file": "/Protocolo nexo/Conteudo área de membros/Metodo Rei do Sexo/04. A Coroacao do Rei/Aula 3.mp4",
+            "type": "video"
+          }
+        ]
+      },
+      {
+        "id": "nexo-pt-m11",
+        "title": "Método Rei do Sexo • 05. Encerramento",
+        "lessons": [
+          {
+            "id": "nexo-pt-l25",
+            "title": "Aula 1: O Legado do Rei na Cama",
+            "file": "/Protocolo nexo/Conteudo área de membros/Metodo Rei do Sexo/05. Encerramento/Aula 1.mp4",
+            "type": "video"
+          }
+        ]
+      },
+      {
+        "id": "nexo-pt-m12",
+        "title": "Método Rei do Sexo • 06. Ebook",
+        "lessons": [
+          {
+            "id": "nexo-pt-l26",
+            "title": "Guia Supremo Método Rei do Sexo (PDF)",
+            "file": "/Protocolo nexo/Conteudo área de membros/Metodo Rei do Sexo/06. Ebook/Documento_Ebook.pdf",
+            "type": "pdf"
+          }
+        ]
+      },
+      {
+        "id": "nexo-pt-m13",
+        "title": "Método Rei do Sexo • 07. Avisos Importantes",
+        "lessons": [
+          {
+            "id": "nexo-pt-l27",
+            "title": "Avisos Importantes & Diretrizes do Aluno VIP",
+            "file": "/Protocolo nexo/Conteudo área de membros/Metodo Rei do Sexo/07. Avisos Importantes/Documento Avisos.mp4",
+            "type": "image"
+          }
+        ]
+      },
+      {
+        "id": "nexo-pt-m14",
+        "title": "Método Sedução Invisível • 01. Conteudo Principal",
+        "lessons": [
+          {
+            "id": "nexo-pt-l28",
+            "title": "Masterclass Completa: Psicologia Secreta da Sedução Subliminar",
+            "file": "/Protocolo nexo/Conteudo área de membros/Metodo Seducao Invisivel/01. Conteudo Principal/Metodo Seducao Invisivel.mp4",
+            "type": "video"
+          }
+        ]
+      },
+      {
+        "id": "nexo-pt-m15",
+        "title": "Protocolo do Nexo • 01. Boas-vindas",
+        "lessons": [
+          {
+            "id": "nexo-pt-l29",
+            "title": "Aula 1: Introdução ao Protocolo Sensoriomotor",
+            "file": "/Protocolo nexo/Conteudo área de membros/Protocolo do Nexo/01. Boas-vindas/Aula 1.mp4",
+            "type": "video"
+          }
+        ]
+      },
+      {
+        "id": "nexo-pt-m16",
+        "title": "Protocolo do Nexo • 02. Desvendando o Prazer Feminino",
+        "lessons": [
+          {
+            "id": "nexo-pt-l30",
+            "title": "Aula 1: Sincronia de Estímulos e Toque Hipnótico",
+            "file": "/Protocolo nexo/Conteudo área de membros/Protocolo do Nexo/02. Desvendando o Prazer Feminino/Aula 1.mp4",
+            "type": "video"
+          },
+          {
+            "id": "nexo-pt-l31",
+            "title": "Aula 2: Frequência Sensorial e Sensibilidade Maximizada",
+            "file": "/Protocolo nexo/Conteudo área de membros/Protocolo do Nexo/02. Desvendando o Prazer Feminino/Aula 2.mp4",
+            "type": "video"
+          },
+          {
+            "id": "nexo-pt-l32",
+            "title": "Aula 3: Criando a Atmosfera e Iluminação Ideal",
+            "file": "/Protocolo nexo/Conteudo área de membros/Protocolo do Nexo/02. Desvendando o Prazer Feminino/Aula 3.mp4",
+            "type": "video"
+          },
+          {
+            "id": "nexo-pt-l33",
+            "title": "Aula 4: Gatilhos Auditivos de Ansiedade Erótica",
+            "file": "/Protocolo nexo/Conteudo área de membros/Protocolo do Nexo/02. Desvendando o Prazer Feminino/Aula 4.mp4",
+            "type": "video"
+          }
+        ]
+      },
+      {
+        "id": "nexo-pt-m17",
+        "title": "Protocolo do Nexo • 03. Da Teoria ao Toque",
+        "lessons": [
+          {
+            "id": "nexo-pt-l34",
+            "title": "Aula 1: Técnica da Massagem de Ancoragem Sensorial",
+            "file": "/Protocolo nexo/Conteudo área de membros/Protocolo do Nexo/03. Da Teoria ao Toque/Aula 1.mp4",
+            "type": "video"
+          },
+          {
+            "id": "nexo-pt-l35",
+            "title": "Aula 2: Sequência dos Toques Espirais",
+            "file": "/Protocolo nexo/Conteudo área de membros/Protocolo do Nexo/03. Da Teoria ao Toque/Aula 2.mp4",
+            "type": "video"
+          },
+          {
+            "id": "nexo-pt-l36",
+            "title": "Aula 3: Estimulação Contínua do Ponto G",
+            "file": "/Protocolo nexo/Conteudo área de membros/Protocolo do Nexo/03. Da Teoria ao Toque/Aula 3.mp4",
+            "type": "video"
+          },
+          {
+            "id": "nexo-pt-l37",
+            "title": "Aula 4: Passo a Passo da Intensificação Erógena",
+            "file": "/Protocolo nexo/Conteudo área de membros/Protocolo do Nexo/03. Da Teoria ao Toque/Aula 4.mp4",
+            "type": "video"
+          },
+          {
+            "id": "nexo-pt-l38",
+            "title": "Aula 5: Finalização Inesquecível do Momento H",
+            "file": "/Protocolo nexo/Conteudo área de membros/Protocolo do Nexo/03. Da Teoria ao Toque/Aula 5.mp4",
+            "type": "video"
+          }
+        ]
+      },
+      {
+        "id": "nexo-pt-m18",
+        "title": "Protocolo do Nexo • 04. Bonus",
+        "lessons": [
+          {
+            "id": "nexo-pt-l39",
+            "title": "Aula 1: Bônus Nexo - Toques de Máxima Intensidade",
+            "file": "/Protocolo nexo/Conteudo área de membros/Protocolo do Nexo/04. Bonus/Aula 1.mp4",
+            "type": "video"
+          }
+        ]
+      },
+      {
+        "id": "nexo-pt-m19",
+        "title": "Protocolo do Nexo • 05. Encerramento",
+        "lessons": [
+          {
+            "id": "nexo-pt-l40",
+            "title": "Aula 1: Conclusão e Consolidação do Protocolo",
+            "file": "/Protocolo nexo/Conteudo área de membros/Protocolo do Nexo/05. Encerramento/Aula 1.mp4",
+            "type": "video"
+          }
+        ]
+      },
+      {
+        "id": "nexo-pt-m20",
+        "title": "Protocolo do Nexo • 06. Playlist de Musicas Hot",
+        "lessons": [
+          {
+            "id": "nexo-pt-l41",
+            "title": "Playlist Oficial de Músicas Hot (Spotify)",
+            "file": "/Protocolo nexo/Conteudo área de membros/Protocolo do Nexo/06. Playlist de Musicas Hot/Playlist musicas hot.txt",
+            "type": "spotify"
+          }
+        ]
+      },
+      {
+        "id": "nexo-pt-m21",
+        "title": "Protocolo do Nexo • 07. Avisos Importantes",
+        "lessons": [
+          {
+            "id": "nexo-pt-l42",
+            "title": "Orientações Gerais do Protocolo do Nexo",
+            "file": "/Protocolo nexo/Conteudo área de membros/Protocolo do Nexo/07. Avisos Importantes/IMPORTANTE.png",
+            "type": "image"
+          },
+          {
+            "id": "nexo-pt-l43",
+            "title": "Cursos e Treinamentos Complementares VIP",
+            "file": "/Protocolo nexo/Conteudo área de membros/Protocolo do Nexo/07. Avisos Importantes/OUTROS_CURSOS.png",
+            "type": "image"
           }
         ]
       }

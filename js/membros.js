@@ -364,7 +364,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (modalBody) modalBody.scrollTop = 0;
     }
 
-    // Toggle Video or PDF Stage
+    // Toggle Video, PDF or Image Stage
     if (lesson.type === 'pdf') {
       videoPlayer.style.display = 'none';
       videoPlayer.pause();
@@ -379,11 +379,28 @@ document.addEventListener('DOMContentLoaded', () => {
         pdfDownloadBtn.href = formatMediaUrl(lesson.file);
         pdfDownloadBtn.setAttribute('download', '');
       }
+    } else if (lesson.type === 'image') {
+      videoPlayer.style.display = 'none';
+      videoPlayer.pause();
+      videoPlayer.src = '';
+      
+      pdfViewerBox.style.display = 'flex';
+      const pdfTitleText = document.getElementById('pdfTitleText');
+      if (pdfTitleText) pdfTitleText.textContent = lesson.title;
+      const pdfIframe = document.getElementById('pdfIframe');
+      if (pdfIframe) pdfIframe.src = formatMediaUrl(lesson.file);
+      if (pdfDownloadBtn) {
+        pdfDownloadBtn.href = formatMediaUrl(lesson.file);
+        pdfDownloadBtn.removeAttribute('download');
+        pdfDownloadBtn.setAttribute('target', '_blank');
+      }
     } else {
       pdfViewerBox.style.display = 'none';
       const pdfIframe = document.getElementById('pdfIframe');
       if (pdfIframe) pdfIframe.src = '';
       videoPlayer.style.display = 'block';
+      videoPlayer.setAttribute('playsinline', '');
+      videoPlayer.setAttribute('webkit-playsinline', '');
       videoPlayer.src = formatMediaUrl(lesson.file);
       videoPlayer.load();
       videoPlayer.play().catch(() => {});
